@@ -17,10 +17,10 @@ steps:
 - task: VSBuild@1
   inputs:
     solution: 'KickoffTHTestLib/KickoffTHTestLib.csproj'
-    msbuildArgs: '/p:Configuration=Release'
+    msbuildArgs: '/p:Configuration=Debug'
     platform: 'Any CPU'
-    configuration: 'Release'
+    configuration: 'Debug'
 
 - script: |
-    .\KickoffTHTestLib\bin\Release\KickoffTHTestLib.exe
+    .\KickoffTHTestLib\bin\Debug\KickoffTHTestLib.exe
   displayName: Run Scorpion Runner
