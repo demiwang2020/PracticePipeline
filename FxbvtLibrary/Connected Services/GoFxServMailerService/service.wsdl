@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="https://ddse.redmond.corp.microsoft.com/GoFxServMailer/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="https://ddse.redmond.corp.microsoft.com/GoFxServMailer/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://ddse.redmond.corp.microsoft.com/GoFxServMailer/">
+      <s:element name="Test_SendEmail">
+        <s:complexType />
+      </s:element>
+      <s:element name="Test_SendEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Test_SendEmailResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendErrorMail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="exceptionMsg" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customMsg" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendErrorMailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendErrorMailResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="body" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendMailResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="toList" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="ccList" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="body" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendEmailResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendEmailwAtt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="toList" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="ccList" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="body" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="attachments" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendEmailwAttResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendEmailwAttResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="boolean" type="s:boolean" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Test_SendEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:Test_SendEmail" />
+  </wsdl:message>
+  <wsdl:message name="Test_SendEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:Test_SendEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendErrorMailSoapIn">
+    <wsdl:part name="parameters" element="tns:SendErrorMail" />
+  </wsdl:message>
+  <wsdl:message name="SendErrorMailSoapOut">
+    <wsdl:part name="parameters" element="tns:SendErrorMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMailSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMail" />
+  </wsdl:message>
+  <wsdl:message name="SendMailSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:SendEmail" />
+  </wsdl:message>
+  <wsdl:message name="SendEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:SendEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendEmailwAttSoapIn">
+    <wsdl:part name="parameters" element="tns:SendEmailwAtt" />
+  </wsdl:message>
+  <wsdl:message name="SendEmailwAttSoapOut">
+    <wsdl:part name="parameters" element="tns:SendEmailwAttResponse" />
+  </wsdl:message>
+  <wsdl:message name="Test_SendEmailHttpGetIn" />
+  <wsdl:message name="Test_SendEmailHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SendErrorMailHttpGetIn">
+    <wsdl:part name="exceptionMsg" type="s:string" />
+    <wsdl:part name="subject" type="s:string" />
+    <wsdl:part name="customMsg" type="s:string" />
+    <wsdl:part name="userName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendErrorMailHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SendMailHttpGetIn">
+    <wsdl:part name="subject" type="s:string" />
+    <wsdl:part name="body" type="s:string" />
+    <wsdl:part name="userName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMailHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="Test_SendEmailHttpPostIn" />
+  <wsdl:message name="Test_SendEmailHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SendErrorMailHttpPostIn">
+    <wsdl:part name="exceptionMsg" type="s:string" />
+    <wsdl:part name="subject" type="s:string" />
+    <wsdl:part name="customMsg" type="s:string" />
+    <wsdl:part name="userName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendErrorMailHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SendMailHttpPostIn">
+    <wsdl:part name="subject" type="s:string" />
+    <wsdl:part name="body" type="s:string" />
+    <wsdl:part name="userName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMailHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:portType name="GoFxServMailerSoap">
+    <wsdl:operation name="Test_SendEmail">
+      <wsdl:input message="tns:Test_SendEmailSoapIn" />
+      <wsdl:output message="tns:Test_SendEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendErrorMail">
+      <wsdl:input message="tns:SendErrorMailSoapIn" />
+      <wsdl:output message="tns:SendErrorMailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMail">
+      <wsdl:input message="tns:SendMailSoapIn" />
+      <wsdl:output message="tns:SendMailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendEmail">
+      <wsdl:input message="tns:SendEmailSoapIn" />
+      <wsdl:output message="tns:SendEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendEmailwAtt">
+      <wsdl:input message="tns:SendEmailwAttSoapIn" />
+      <wsdl:output message="tns:SendEmailwAttSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="GoFxServMailerHttpGet">
+    <wsdl:operation name="Test_SendEmail">
+      <wsdl:input message="tns:Test_SendEmailHttpGetIn" />
+      <wsdl:output message="tns:Test_SendEmailHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendErrorMail">
+      <wsdl:input message="tns:SendErrorMailHttpGetIn" />
+      <wsdl:output message="tns:SendErrorMailHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMail">
+      <wsdl:input message="tns:SendMailHttpGetIn" />
+      <wsdl:output message="tns:SendMailHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="GoFxServMailerHttpPost">
+    <wsdl:operation name="Test_SendEmail">
+      <wsdl:input message="tns:Test_SendEmailHttpPostIn" />
+      <wsdl:output message="tns:Test_SendEmailHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendErrorMail">
+      <wsdl:input message="tns:SendErrorMailHttpPostIn" />
+      <wsdl:output message="tns:SendErrorMailHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMail">
+      <wsdl:input message="tns:SendMailHttpPostIn" />
+      <wsdl:output message="tns:SendMailHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GoFxServMailerSoap" type="tns:GoFxServMailerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Test_SendEmail">
+      <soap:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServMailer/Test_SendEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendErrorMail">
+      <soap:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServMailer/SendErrorMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMail">
+      <soap:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServMailer/SendMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendEmail">
+      <soap:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServMailer/SendEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendEmailwAtt">
+      <soap:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServMailer/SendEmailwAtt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GoFxServMailerSoap12" type="tns:GoFxServMailerSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Test_SendEmail">
+      <soap12:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServMailer/Test_SendEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendErrorMail">
+      <soap12:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServMailer/SendErrorMail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMail">
+      <soap12:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServMailer/SendMail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendEmail">
+      <soap12:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServMailer/SendEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendEmailwAtt">
+      <soap12:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServMailer/SendEmailwAtt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GoFxServMailerHttpGet" type="tns:GoFxServMailerHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="Test_SendEmail">
+      <http:operation location="/Test_SendEmail" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendErrorMail">
+      <http:operation location="/SendErrorMail" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMail">
+      <http:operation location="/SendMail" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GoFxServMailerHttpPost" type="tns:GoFxServMailerHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="Test_SendEmail">
+      <http:operation location="/Test_SendEmail" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendErrorMail">
+      <http:operation location="/SendErrorMail" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMail">
+      <http:operation location="/SendMail" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GoFxServMailer">
+    <wsdl:port name="GoFxServMailerSoap" binding="tns:GoFxServMailerSoap">
+      <soap:address location="https://ddse/GoFxServMailer/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GoFxServMailerSoap12" binding="tns:GoFxServMailerSoap12">
+      <soap12:address location="https://ddse/GoFxServMailer/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GoFxServMailerHttpGet" binding="tns:GoFxServMailerHttpGet">
+      <http:address location="https://ddse/GoFxServMailer/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GoFxServMailerHttpPost" binding="tns:GoFxServMailerHttpPost">
+      <http:address location="https://ddse/GoFxServMailer/service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

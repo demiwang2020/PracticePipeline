@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <StartArguments>"\\clrdrop\ddrelqa\.NET-core-Testing\202511\xmls\2025-11 .NET 9.0.11 Update for ARM64 Client %28KB5071067%29 SiteSUSCatalogAU.xml" /eReleaseDate:2025-11-11 /eCveID: /eKBArticleID:5071067 /eAU:False /output:test.log</StartArguments>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,6 @@
+{
+  "RestAPIBaseUrl": "https://packagecloud.azure-api.net/",
+  "RestAPIEndPoint": "packageservicing/api/v2/",
+  "GetPackageArtifacts": "requests/{0}/artifacts",
+  "RestAPIResourceId": "d70e0be5-6e3a-47e2-922b-8372a23c52f3"
+}

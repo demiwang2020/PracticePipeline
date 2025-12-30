@@ -1,0 +1,2399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s1="https://ddse.redmond.corp.microsoft.com/GoFxServicing/AbstractTypes" xmlns:tns="https://ddse.redmond.corp.microsoft.com/GoFxServicing/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="https://ddse.redmond.corp.microsoft.com/GoFxServicing/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://ddse.redmond.corp.microsoft.com/GoFxServicing/">
+      <s:element name="TestEmail">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TestEmailResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateBuildRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="WorkItemId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateBuildRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateBuildRequestResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageInfoByKbNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="KbArticle" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageInfoByKbNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPackageInfoByKbNumberResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPackageInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="WSDBugId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsNetOnly" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPackageInfoResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWindowsReleaseTicketId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="WSDBugId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWindowsReleaseTicketIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetWindowsReleaseTicketIdResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetKBNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="release" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OS" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetKBNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetKBNumberResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCheckinInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="WSDBugId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCheckinInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCheckinInfoResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBugChangelistCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="WSDBugId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBugChangelistCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetBugChangelistCountResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReleaseTicketId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="release" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OS" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsSecRelease" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReleaseTicketIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetReleaseTicketIdResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReleaseBranches">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="release" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsSecRelease" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReleaseBranchesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReleaseBranchesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBuildStampForReleaseTicket">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="releaseTicketId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBuildStampForReleaseTicketResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetBuildStampForReleaseTicketResult" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBuildInfoForReleaseTicket">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="releaseTicketId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBuildInfoForReleaseTicketResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBuildInfoForReleaseTicketResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageRequestStateByBugId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="packageBugId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageRequestStateByBugIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPackageRequestStateByBugIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageRequestStateByKBNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="kbNumber" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageRequestStateByKBNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPackageRequestStateByKBNumberResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBranchForReleaseTicket">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="releaseTicketId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBranchForReleaseTicketResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBranchForReleaseTicketResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTitleFromWI">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="workItemId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="project" type="tns:TFSProject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="TFSProject">
+        <s:restriction base="s:string">
+          <s:enumeration value="DevDivServicing" />
+          <s:enumeration value="DevDivVSO" />
+          <s:enumeration value="MSFTVSO" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetTitleFromWIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTitleFromWIResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWorkItemType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="workItemId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="project" type="tns:TFSProject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWorkItemTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWorkItemTypeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetParametersFromWI">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="workItemId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="project" type="tns:TFSProject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetParametersFromWIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetParametersFromWIResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListFieldsFromWI">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="workItemId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="project" type="tns:TFSProject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListFieldsFromWIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListFieldsFromWIResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WorkItemExists">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="workItemId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="project" type="tns:TFSProject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WorkItemExistsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="WorkItemExistsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetParameterFromWI">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="workItemId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="project" type="tns:TFSProject" />
+            <s:element minOccurs="0" maxOccurs="1" name="fieldName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetParameterFromWIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetParameterFromWIResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetParameterOnWI">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="workItemId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="project" type="tns:TFSProject" />
+            <s:element minOccurs="0" maxOccurs="1" name="fieldName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fieldValue" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetParameterOnWIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetParameterOnWIResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAttachmentToWI">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="workItemId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="project" type="tns:TFSProject" />
+            <s:element minOccurs="0" maxOccurs="1" name="attachmentPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="attachmentComment" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAttachmentToWIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddAttachmentToWIResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddHyperlinkToWI">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="workItemId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="project" type="tns:TFSProject" />
+            <s:element minOccurs="0" maxOccurs="1" name="url" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="comment" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddHyperlinkToWIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddHyperlinkToWIResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAttachmentUrlFromWI">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="workItemId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="project" type="tns:TFSProject" />
+            <s:element minOccurs="0" maxOccurs="1" name="attachmentName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="attachmentComment" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAttachmentUrlFromWIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAttachmentUrlFromWIResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetParametersOnWI">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="workItemId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="project" type="tns:TFSProject" />
+            <s:element minOccurs="0" maxOccurs="1" name="fields" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="values" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetParametersOnWIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetParametersOnWIResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateVSOWorkItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="project" type="tns:TFSProject" />
+            <s:element minOccurs="0" maxOccurs="1" name="workItemXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateVSOWorkItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateVSOWorkItemResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFunctionalTestingTaskIds">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="kbNumber" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="mtp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="osToMatch" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFunctionalTestingTaskIdsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFunctionalTestingTaskIdsResult" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="int" type="s:int" />
+      <s:element name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="dateTime" type="s:dateTime" />
+      <s:element name="ArrayOfInt" nillable="true" type="tns:ArrayOfInt" />
+    </s:schema>
+    <s:schema targetNamespace="https://ddse.redmond.corp.microsoft.com/GoFxServicing/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="TestEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:TestEmail" />
+  </wsdl:message>
+  <wsdl:message name="TestEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:TestEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateBuildRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateBuildRequest" />
+  </wsdl:message>
+  <wsdl:message name="CreateBuildRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateBuildRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageInfoByKbNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPackageInfoByKbNumber" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageInfoByKbNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPackageInfoByKbNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPackageInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPackageInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWindowsReleaseTicketIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWindowsReleaseTicketId" />
+  </wsdl:message>
+  <wsdl:message name="GetWindowsReleaseTicketIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWindowsReleaseTicketIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetKBNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:GetKBNumber" />
+  </wsdl:message>
+  <wsdl:message name="GetKBNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:GetKBNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCheckinInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCheckinInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetCheckinInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCheckinInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBugChangelistCountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBugChangelistCount" />
+  </wsdl:message>
+  <wsdl:message name="GetBugChangelistCountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBugChangelistCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReleaseTicketIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReleaseTicketId" />
+  </wsdl:message>
+  <wsdl:message name="GetReleaseTicketIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReleaseTicketIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReleaseBranchesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReleaseBranches" />
+  </wsdl:message>
+  <wsdl:message name="GetReleaseBranchesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReleaseBranchesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBuildStampForReleaseTicketSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBuildStampForReleaseTicket" />
+  </wsdl:message>
+  <wsdl:message name="GetBuildStampForReleaseTicketSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBuildStampForReleaseTicketResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBuildInfoForReleaseTicketSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBuildInfoForReleaseTicket" />
+  </wsdl:message>
+  <wsdl:message name="GetBuildInfoForReleaseTicketSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBuildInfoForReleaseTicketResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageRequestStateByBugIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPackageRequestStateByBugId" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageRequestStateByBugIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPackageRequestStateByBugIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageRequestStateByKBNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPackageRequestStateByKBNumber" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageRequestStateByKBNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPackageRequestStateByKBNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBranchForReleaseTicketSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBranchForReleaseTicket" />
+  </wsdl:message>
+  <wsdl:message name="GetBranchForReleaseTicketSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBranchForReleaseTicketResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTitleFromWISoapIn">
+    <wsdl:part name="parameters" element="tns:GetTitleFromWI" />
+  </wsdl:message>
+  <wsdl:message name="GetTitleFromWISoapOut">
+    <wsdl:part name="parameters" element="tns:GetTitleFromWIResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkItemTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWorkItemType" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkItemTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWorkItemTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetParametersFromWISoapIn">
+    <wsdl:part name="parameters" element="tns:GetParametersFromWI" />
+  </wsdl:message>
+  <wsdl:message name="GetParametersFromWISoapOut">
+    <wsdl:part name="parameters" element="tns:GetParametersFromWIResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListFieldsFromWISoapIn">
+    <wsdl:part name="parameters" element="tns:ListFieldsFromWI" />
+  </wsdl:message>
+  <wsdl:message name="ListFieldsFromWISoapOut">
+    <wsdl:part name="parameters" element="tns:ListFieldsFromWIResponse" />
+  </wsdl:message>
+  <wsdl:message name="WorkItemExistsSoapIn">
+    <wsdl:part name="parameters" element="tns:WorkItemExists" />
+  </wsdl:message>
+  <wsdl:message name="WorkItemExistsSoapOut">
+    <wsdl:part name="parameters" element="tns:WorkItemExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetParameterFromWISoapIn">
+    <wsdl:part name="parameters" element="tns:GetParameterFromWI" />
+  </wsdl:message>
+  <wsdl:message name="GetParameterFromWISoapOut">
+    <wsdl:part name="parameters" element="tns:GetParameterFromWIResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetParameterOnWISoapIn">
+    <wsdl:part name="parameters" element="tns:SetParameterOnWI" />
+  </wsdl:message>
+  <wsdl:message name="SetParameterOnWISoapOut">
+    <wsdl:part name="parameters" element="tns:SetParameterOnWIResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddAttachmentToWISoapIn">
+    <wsdl:part name="parameters" element="tns:AddAttachmentToWI" />
+  </wsdl:message>
+  <wsdl:message name="AddAttachmentToWISoapOut">
+    <wsdl:part name="parameters" element="tns:AddAttachmentToWIResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddHyperlinkToWISoapIn">
+    <wsdl:part name="parameters" element="tns:AddHyperlinkToWI" />
+  </wsdl:message>
+  <wsdl:message name="AddHyperlinkToWISoapOut">
+    <wsdl:part name="parameters" element="tns:AddHyperlinkToWIResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAttachmentUrlFromWISoapIn">
+    <wsdl:part name="parameters" element="tns:GetAttachmentUrlFromWI" />
+  </wsdl:message>
+  <wsdl:message name="GetAttachmentUrlFromWISoapOut">
+    <wsdl:part name="parameters" element="tns:GetAttachmentUrlFromWIResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetParametersOnWISoapIn">
+    <wsdl:part name="parameters" element="tns:SetParametersOnWI" />
+  </wsdl:message>
+  <wsdl:message name="SetParametersOnWISoapOut">
+    <wsdl:part name="parameters" element="tns:SetParametersOnWIResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateVSOWorkItemSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateVSOWorkItem" />
+  </wsdl:message>
+  <wsdl:message name="CreateVSOWorkItemSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateVSOWorkItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFunctionalTestingTaskIdsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFunctionalTestingTaskIds" />
+  </wsdl:message>
+  <wsdl:message name="GetFunctionalTestingTaskIdsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFunctionalTestingTaskIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestEmailHttpGetIn" />
+  <wsdl:message name="TestEmailHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="CreateBuildRequestHttpGetIn">
+    <wsdl:part name="WorkItemId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateBuildRequestHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageInfoByKbNumberHttpGetIn">
+    <wsdl:part name="KbArticle" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageInfoByKbNumberHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageInfoHttpGetIn">
+    <wsdl:part name="WSDBugId" type="s:string" />
+    <wsdl:part name="IsNetOnly" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetWindowsReleaseTicketIdHttpGetIn">
+    <wsdl:part name="WSDBugId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWindowsReleaseTicketIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetKBNumberHttpGetIn">
+    <wsdl:part name="release" type="s:string" />
+    <wsdl:part name="OS" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetKBNumberHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCheckinInfoHttpGetIn">
+    <wsdl:part name="WSDBugId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCheckinInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetBugChangelistCountHttpGetIn">
+    <wsdl:part name="WSDBugId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBugChangelistCountHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetReleaseTicketIdHttpGetIn">
+    <wsdl:part name="release" type="s:string" />
+    <wsdl:part name="OS" type="s:string" />
+    <wsdl:part name="IsSecRelease" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetReleaseTicketIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetReleaseBranchesHttpGetIn">
+    <wsdl:part name="release" type="s:string" />
+    <wsdl:part name="IsSecRelease" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetReleaseBranchesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetBuildStampForReleaseTicketHttpGetIn">
+    <wsdl:part name="releaseTicketId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBuildStampForReleaseTicketHttpGetOut">
+    <wsdl:part name="Body" element="tns:dateTime" />
+  </wsdl:message>
+  <wsdl:message name="GetBuildInfoForReleaseTicketHttpGetIn">
+    <wsdl:part name="releaseTicketId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBuildInfoForReleaseTicketHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageRequestStateByBugIdHttpGetIn">
+    <wsdl:part name="packageBugId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageRequestStateByBugIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageRequestStateByKBNumberHttpGetIn">
+    <wsdl:part name="kbNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageRequestStateByKBNumberHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBranchForReleaseTicketHttpGetIn">
+    <wsdl:part name="releaseTicketId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBranchForReleaseTicketHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTitleFromWIHttpGetIn">
+    <wsdl:part name="workItemId" type="s:string" />
+    <wsdl:part name="project" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTitleFromWIHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkItemTypeHttpGetIn">
+    <wsdl:part name="workItemId" type="s:string" />
+    <wsdl:part name="project" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkItemTypeHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetParametersFromWIHttpGetIn">
+    <wsdl:part name="workItemId" type="s:string" />
+    <wsdl:part name="project" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetParametersFromWIHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ListFieldsFromWIHttpGetIn">
+    <wsdl:part name="workItemId" type="s:string" />
+    <wsdl:part name="project" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListFieldsFromWIHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="WorkItemExistsHttpGetIn">
+    <wsdl:part name="workItemId" type="s:string" />
+    <wsdl:part name="project" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WorkItemExistsHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetParameterFromWIHttpGetIn">
+    <wsdl:part name="workItemId" type="s:string" />
+    <wsdl:part name="project" type="s:string" />
+    <wsdl:part name="fieldName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetParameterFromWIHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetParameterOnWIHttpGetIn">
+    <wsdl:part name="workItemId" type="s:string" />
+    <wsdl:part name="project" type="s:string" />
+    <wsdl:part name="fieldName" type="s:string" />
+    <wsdl:part name="fieldValue" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetParameterOnWIHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AddAttachmentToWIHttpGetIn">
+    <wsdl:part name="workItemId" type="s:string" />
+    <wsdl:part name="project" type="s:string" />
+    <wsdl:part name="attachmentPath" type="s:string" />
+    <wsdl:part name="attachmentComment" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddAttachmentToWIHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AddHyperlinkToWIHttpGetIn">
+    <wsdl:part name="workItemId" type="s:string" />
+    <wsdl:part name="project" type="s:string" />
+    <wsdl:part name="url" type="s:string" />
+    <wsdl:part name="comment" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddHyperlinkToWIHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetAttachmentUrlFromWIHttpGetIn">
+    <wsdl:part name="workItemId" type="s:string" />
+    <wsdl:part name="project" type="s:string" />
+    <wsdl:part name="attachmentName" type="s:string" />
+    <wsdl:part name="attachmentComment" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAttachmentUrlFromWIHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetParametersOnWIHttpGetIn">
+    <wsdl:part name="workItemId" type="s:string" />
+    <wsdl:part name="project" type="s:string" />
+    <wsdl:part name="fields" type="s1:StringArray" />
+    <wsdl:part name="values" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="SetParametersOnWIHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="CreateVSOWorkItemHttpGetIn">
+    <wsdl:part name="project" type="s:string" />
+    <wsdl:part name="workItemXML" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateVSOWorkItemHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetFunctionalTestingTaskIdsHttpGetIn">
+    <wsdl:part name="kbNumber" type="s:string" />
+    <wsdl:part name="mtp" type="s:string" />
+    <wsdl:part name="osToMatch" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFunctionalTestingTaskIdsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfInt" />
+  </wsdl:message>
+  <wsdl:message name="TestEmailHttpPostIn" />
+  <wsdl:message name="TestEmailHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="CreateBuildRequestHttpPostIn">
+    <wsdl:part name="WorkItemId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateBuildRequestHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageInfoByKbNumberHttpPostIn">
+    <wsdl:part name="KbArticle" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageInfoByKbNumberHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageInfoHttpPostIn">
+    <wsdl:part name="WSDBugId" type="s:string" />
+    <wsdl:part name="IsNetOnly" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetWindowsReleaseTicketIdHttpPostIn">
+    <wsdl:part name="WSDBugId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWindowsReleaseTicketIdHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetKBNumberHttpPostIn">
+    <wsdl:part name="release" type="s:string" />
+    <wsdl:part name="OS" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetKBNumberHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCheckinInfoHttpPostIn">
+    <wsdl:part name="WSDBugId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCheckinInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetBugChangelistCountHttpPostIn">
+    <wsdl:part name="WSDBugId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBugChangelistCountHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetReleaseTicketIdHttpPostIn">
+    <wsdl:part name="release" type="s:string" />
+    <wsdl:part name="OS" type="s:string" />
+    <wsdl:part name="IsSecRelease" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetReleaseTicketIdHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetReleaseBranchesHttpPostIn">
+    <wsdl:part name="release" type="s:string" />
+    <wsdl:part name="IsSecRelease" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetReleaseBranchesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetBuildStampForReleaseTicketHttpPostIn">
+    <wsdl:part name="releaseTicketId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBuildStampForReleaseTicketHttpPostOut">
+    <wsdl:part name="Body" element="tns:dateTime" />
+  </wsdl:message>
+  <wsdl:message name="GetBuildInfoForReleaseTicketHttpPostIn">
+    <wsdl:part name="releaseTicketId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBuildInfoForReleaseTicketHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageRequestStateByBugIdHttpPostIn">
+    <wsdl:part name="packageBugId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageRequestStateByBugIdHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageRequestStateByKBNumberHttpPostIn">
+    <wsdl:part name="kbNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageRequestStateByKBNumberHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBranchForReleaseTicketHttpPostIn">
+    <wsdl:part name="releaseTicketId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBranchForReleaseTicketHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTitleFromWIHttpPostIn">
+    <wsdl:part name="workItemId" type="s:string" />
+    <wsdl:part name="project" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTitleFromWIHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkItemTypeHttpPostIn">
+    <wsdl:part name="workItemId" type="s:string" />
+    <wsdl:part name="project" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkItemTypeHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetParametersFromWIHttpPostIn">
+    <wsdl:part name="workItemId" type="s:string" />
+    <wsdl:part name="project" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetParametersFromWIHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ListFieldsFromWIHttpPostIn">
+    <wsdl:part name="workItemId" type="s:string" />
+    <wsdl:part name="project" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListFieldsFromWIHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="WorkItemExistsHttpPostIn">
+    <wsdl:part name="workItemId" type="s:string" />
+    <wsdl:part name="project" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WorkItemExistsHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetParameterFromWIHttpPostIn">
+    <wsdl:part name="workItemId" type="s:string" />
+    <wsdl:part name="project" type="s:string" />
+    <wsdl:part name="fieldName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetParameterFromWIHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetParameterOnWIHttpPostIn">
+    <wsdl:part name="workItemId" type="s:string" />
+    <wsdl:part name="project" type="s:string" />
+    <wsdl:part name="fieldName" type="s:string" />
+    <wsdl:part name="fieldValue" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetParameterOnWIHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AddAttachmentToWIHttpPostIn">
+    <wsdl:part name="workItemId" type="s:string" />
+    <wsdl:part name="project" type="s:string" />
+    <wsdl:part name="attachmentPath" type="s:string" />
+    <wsdl:part name="attachmentComment" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddAttachmentToWIHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AddHyperlinkToWIHttpPostIn">
+    <wsdl:part name="workItemId" type="s:string" />
+    <wsdl:part name="project" type="s:string" />
+    <wsdl:part name="url" type="s:string" />
+    <wsdl:part name="comment" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddHyperlinkToWIHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetAttachmentUrlFromWIHttpPostIn">
+    <wsdl:part name="workItemId" type="s:string" />
+    <wsdl:part name="project" type="s:string" />
+    <wsdl:part name="attachmentName" type="s:string" />
+    <wsdl:part name="attachmentComment" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAttachmentUrlFromWIHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetParametersOnWIHttpPostIn">
+    <wsdl:part name="workItemId" type="s:string" />
+    <wsdl:part name="project" type="s:string" />
+    <wsdl:part name="fields" type="s1:StringArray" />
+    <wsdl:part name="values" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="SetParametersOnWIHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="CreateVSOWorkItemHttpPostIn">
+    <wsdl:part name="project" type="s:string" />
+    <wsdl:part name="workItemXML" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateVSOWorkItemHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetFunctionalTestingTaskIdsHttpPostIn">
+    <wsdl:part name="kbNumber" type="s:string" />
+    <wsdl:part name="mtp" type="s:string" />
+    <wsdl:part name="osToMatch" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFunctionalTestingTaskIdsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfInt" />
+  </wsdl:message>
+  <wsdl:portType name="GoFxServiceSoap">
+    <wsdl:operation name="TestEmail">
+      <wsdl:input message="tns:TestEmailSoapIn" />
+      <wsdl:output message="tns:TestEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateBuildRequest">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GoFxServices v2.0 - Published on 5/19/2023 2:35 PM</wsdl:documentation>
+      <wsdl:input message="tns:CreateBuildRequestSoapIn" />
+      <wsdl:output message="tns:CreateBuildRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageInfoByKbNumber">
+      <wsdl:input message="tns:GetPackageInfoByKbNumberSoapIn" />
+      <wsdl:output message="tns:GetPackageInfoByKbNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageInfo">
+      <wsdl:input message="tns:GetPackageInfoSoapIn" />
+      <wsdl:output message="tns:GetPackageInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWindowsReleaseTicketId">
+      <wsdl:input message="tns:GetWindowsReleaseTicketIdSoapIn" />
+      <wsdl:output message="tns:GetWindowsReleaseTicketIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKBNumber">
+      <wsdl:input message="tns:GetKBNumberSoapIn" />
+      <wsdl:output message="tns:GetKBNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCheckinInfo">
+      <wsdl:input message="tns:GetCheckinInfoSoapIn" />
+      <wsdl:output message="tns:GetCheckinInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBugChangelistCount">
+      <wsdl:input message="tns:GetBugChangelistCountSoapIn" />
+      <wsdl:output message="tns:GetBugChangelistCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReleaseTicketId">
+      <wsdl:input message="tns:GetReleaseTicketIdSoapIn" />
+      <wsdl:output message="tns:GetReleaseTicketIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReleaseBranches">
+      <wsdl:input message="tns:GetReleaseBranchesSoapIn" />
+      <wsdl:output message="tns:GetReleaseBranchesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBuildStampForReleaseTicket">
+      <wsdl:input message="tns:GetBuildStampForReleaseTicketSoapIn" />
+      <wsdl:output message="tns:GetBuildStampForReleaseTicketSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBuildInfoForReleaseTicket">
+      <wsdl:input message="tns:GetBuildInfoForReleaseTicketSoapIn" />
+      <wsdl:output message="tns:GetBuildInfoForReleaseTicketSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageRequestStateByBugId">
+      <wsdl:input message="tns:GetPackageRequestStateByBugIdSoapIn" />
+      <wsdl:output message="tns:GetPackageRequestStateByBugIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageRequestStateByKBNumber">
+      <wsdl:input message="tns:GetPackageRequestStateByKBNumberSoapIn" />
+      <wsdl:output message="tns:GetPackageRequestStateByKBNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchForReleaseTicket">
+      <wsdl:input message="tns:GetBranchForReleaseTicketSoapIn" />
+      <wsdl:output message="tns:GetBranchForReleaseTicketSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTitleFromWI">
+      <wsdl:input message="tns:GetTitleFromWISoapIn" />
+      <wsdl:output message="tns:GetTitleFromWISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkItemType">
+      <wsdl:input message="tns:GetWorkItemTypeSoapIn" />
+      <wsdl:output message="tns:GetWorkItemTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParametersFromWI">
+      <wsdl:input message="tns:GetParametersFromWISoapIn" />
+      <wsdl:output message="tns:GetParametersFromWISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListFieldsFromWI">
+      <wsdl:input message="tns:ListFieldsFromWISoapIn" />
+      <wsdl:output message="tns:ListFieldsFromWISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WorkItemExists">
+      <wsdl:input message="tns:WorkItemExistsSoapIn" />
+      <wsdl:output message="tns:WorkItemExistsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParameterFromWI">
+      <wsdl:input message="tns:GetParameterFromWISoapIn" />
+      <wsdl:output message="tns:GetParameterFromWISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetParameterOnWI">
+      <wsdl:input message="tns:SetParameterOnWISoapIn" />
+      <wsdl:output message="tns:SetParameterOnWISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAttachmentToWI">
+      <wsdl:input message="tns:AddAttachmentToWISoapIn" />
+      <wsdl:output message="tns:AddAttachmentToWISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddHyperlinkToWI">
+      <wsdl:input message="tns:AddHyperlinkToWISoapIn" />
+      <wsdl:output message="tns:AddHyperlinkToWISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachmentUrlFromWI">
+      <wsdl:input message="tns:GetAttachmentUrlFromWISoapIn" />
+      <wsdl:output message="tns:GetAttachmentUrlFromWISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetParametersOnWI">
+      <wsdl:input message="tns:SetParametersOnWISoapIn" />
+      <wsdl:output message="tns:SetParametersOnWISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateVSOWorkItem">
+      <wsdl:input message="tns:CreateVSOWorkItemSoapIn" />
+      <wsdl:output message="tns:CreateVSOWorkItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFunctionalTestingTaskIds">
+      <wsdl:input message="tns:GetFunctionalTestingTaskIdsSoapIn" />
+      <wsdl:output message="tns:GetFunctionalTestingTaskIdsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="GoFxServiceHttpGet">
+    <wsdl:operation name="TestEmail">
+      <wsdl:input message="tns:TestEmailHttpGetIn" />
+      <wsdl:output message="tns:TestEmailHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateBuildRequest">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GoFxServices v2.0 - Published on 5/19/2023 2:35 PM</wsdl:documentation>
+      <wsdl:input message="tns:CreateBuildRequestHttpGetIn" />
+      <wsdl:output message="tns:CreateBuildRequestHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageInfoByKbNumber">
+      <wsdl:input message="tns:GetPackageInfoByKbNumberHttpGetIn" />
+      <wsdl:output message="tns:GetPackageInfoByKbNumberHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageInfo">
+      <wsdl:input message="tns:GetPackageInfoHttpGetIn" />
+      <wsdl:output message="tns:GetPackageInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWindowsReleaseTicketId">
+      <wsdl:input message="tns:GetWindowsReleaseTicketIdHttpGetIn" />
+      <wsdl:output message="tns:GetWindowsReleaseTicketIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKBNumber">
+      <wsdl:input message="tns:GetKBNumberHttpGetIn" />
+      <wsdl:output message="tns:GetKBNumberHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCheckinInfo">
+      <wsdl:input message="tns:GetCheckinInfoHttpGetIn" />
+      <wsdl:output message="tns:GetCheckinInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBugChangelistCount">
+      <wsdl:input message="tns:GetBugChangelistCountHttpGetIn" />
+      <wsdl:output message="tns:GetBugChangelistCountHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReleaseTicketId">
+      <wsdl:input message="tns:GetReleaseTicketIdHttpGetIn" />
+      <wsdl:output message="tns:GetReleaseTicketIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReleaseBranches">
+      <wsdl:input message="tns:GetReleaseBranchesHttpGetIn" />
+      <wsdl:output message="tns:GetReleaseBranchesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBuildStampForReleaseTicket">
+      <wsdl:input message="tns:GetBuildStampForReleaseTicketHttpGetIn" />
+      <wsdl:output message="tns:GetBuildStampForReleaseTicketHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBuildInfoForReleaseTicket">
+      <wsdl:input message="tns:GetBuildInfoForReleaseTicketHttpGetIn" />
+      <wsdl:output message="tns:GetBuildInfoForReleaseTicketHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageRequestStateByBugId">
+      <wsdl:input message="tns:GetPackageRequestStateByBugIdHttpGetIn" />
+      <wsdl:output message="tns:GetPackageRequestStateByBugIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageRequestStateByKBNumber">
+      <wsdl:input message="tns:GetPackageRequestStateByKBNumberHttpGetIn" />
+      <wsdl:output message="tns:GetPackageRequestStateByKBNumberHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchForReleaseTicket">
+      <wsdl:input message="tns:GetBranchForReleaseTicketHttpGetIn" />
+      <wsdl:output message="tns:GetBranchForReleaseTicketHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTitleFromWI">
+      <wsdl:input message="tns:GetTitleFromWIHttpGetIn" />
+      <wsdl:output message="tns:GetTitleFromWIHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkItemType">
+      <wsdl:input message="tns:GetWorkItemTypeHttpGetIn" />
+      <wsdl:output message="tns:GetWorkItemTypeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParametersFromWI">
+      <wsdl:input message="tns:GetParametersFromWIHttpGetIn" />
+      <wsdl:output message="tns:GetParametersFromWIHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListFieldsFromWI">
+      <wsdl:input message="tns:ListFieldsFromWIHttpGetIn" />
+      <wsdl:output message="tns:ListFieldsFromWIHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WorkItemExists">
+      <wsdl:input message="tns:WorkItemExistsHttpGetIn" />
+      <wsdl:output message="tns:WorkItemExistsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParameterFromWI">
+      <wsdl:input message="tns:GetParameterFromWIHttpGetIn" />
+      <wsdl:output message="tns:GetParameterFromWIHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetParameterOnWI">
+      <wsdl:input message="tns:SetParameterOnWIHttpGetIn" />
+      <wsdl:output message="tns:SetParameterOnWIHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAttachmentToWI">
+      <wsdl:input message="tns:AddAttachmentToWIHttpGetIn" />
+      <wsdl:output message="tns:AddAttachmentToWIHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddHyperlinkToWI">
+      <wsdl:input message="tns:AddHyperlinkToWIHttpGetIn" />
+      <wsdl:output message="tns:AddHyperlinkToWIHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachmentUrlFromWI">
+      <wsdl:input message="tns:GetAttachmentUrlFromWIHttpGetIn" />
+      <wsdl:output message="tns:GetAttachmentUrlFromWIHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetParametersOnWI">
+      <wsdl:input message="tns:SetParametersOnWIHttpGetIn" />
+      <wsdl:output message="tns:SetParametersOnWIHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateVSOWorkItem">
+      <wsdl:input message="tns:CreateVSOWorkItemHttpGetIn" />
+      <wsdl:output message="tns:CreateVSOWorkItemHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFunctionalTestingTaskIds">
+      <wsdl:input message="tns:GetFunctionalTestingTaskIdsHttpGetIn" />
+      <wsdl:output message="tns:GetFunctionalTestingTaskIdsHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="GoFxServiceHttpPost">
+    <wsdl:operation name="TestEmail">
+      <wsdl:input message="tns:TestEmailHttpPostIn" />
+      <wsdl:output message="tns:TestEmailHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateBuildRequest">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GoFxServices v2.0 - Published on 5/19/2023 2:35 PM</wsdl:documentation>
+      <wsdl:input message="tns:CreateBuildRequestHttpPostIn" />
+      <wsdl:output message="tns:CreateBuildRequestHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageInfoByKbNumber">
+      <wsdl:input message="tns:GetPackageInfoByKbNumberHttpPostIn" />
+      <wsdl:output message="tns:GetPackageInfoByKbNumberHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageInfo">
+      <wsdl:input message="tns:GetPackageInfoHttpPostIn" />
+      <wsdl:output message="tns:GetPackageInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWindowsReleaseTicketId">
+      <wsdl:input message="tns:GetWindowsReleaseTicketIdHttpPostIn" />
+      <wsdl:output message="tns:GetWindowsReleaseTicketIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKBNumber">
+      <wsdl:input message="tns:GetKBNumberHttpPostIn" />
+      <wsdl:output message="tns:GetKBNumberHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCheckinInfo">
+      <wsdl:input message="tns:GetCheckinInfoHttpPostIn" />
+      <wsdl:output message="tns:GetCheckinInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBugChangelistCount">
+      <wsdl:input message="tns:GetBugChangelistCountHttpPostIn" />
+      <wsdl:output message="tns:GetBugChangelistCountHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReleaseTicketId">
+      <wsdl:input message="tns:GetReleaseTicketIdHttpPostIn" />
+      <wsdl:output message="tns:GetReleaseTicketIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReleaseBranches">
+      <wsdl:input message="tns:GetReleaseBranchesHttpPostIn" />
+      <wsdl:output message="tns:GetReleaseBranchesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBuildStampForReleaseTicket">
+      <wsdl:input message="tns:GetBuildStampForReleaseTicketHttpPostIn" />
+      <wsdl:output message="tns:GetBuildStampForReleaseTicketHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBuildInfoForReleaseTicket">
+      <wsdl:input message="tns:GetBuildInfoForReleaseTicketHttpPostIn" />
+      <wsdl:output message="tns:GetBuildInfoForReleaseTicketHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageRequestStateByBugId">
+      <wsdl:input message="tns:GetPackageRequestStateByBugIdHttpPostIn" />
+      <wsdl:output message="tns:GetPackageRequestStateByBugIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageRequestStateByKBNumber">
+      <wsdl:input message="tns:GetPackageRequestStateByKBNumberHttpPostIn" />
+      <wsdl:output message="tns:GetPackageRequestStateByKBNumberHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchForReleaseTicket">
+      <wsdl:input message="tns:GetBranchForReleaseTicketHttpPostIn" />
+      <wsdl:output message="tns:GetBranchForReleaseTicketHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTitleFromWI">
+      <wsdl:input message="tns:GetTitleFromWIHttpPostIn" />
+      <wsdl:output message="tns:GetTitleFromWIHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkItemType">
+      <wsdl:input message="tns:GetWorkItemTypeHttpPostIn" />
+      <wsdl:output message="tns:GetWorkItemTypeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParametersFromWI">
+      <wsdl:input message="tns:GetParametersFromWIHttpPostIn" />
+      <wsdl:output message="tns:GetParametersFromWIHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListFieldsFromWI">
+      <wsdl:input message="tns:ListFieldsFromWIHttpPostIn" />
+      <wsdl:output message="tns:ListFieldsFromWIHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WorkItemExists">
+      <wsdl:input message="tns:WorkItemExistsHttpPostIn" />
+      <wsdl:output message="tns:WorkItemExistsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParameterFromWI">
+      <wsdl:input message="tns:GetParameterFromWIHttpPostIn" />
+      <wsdl:output message="tns:GetParameterFromWIHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetParameterOnWI">
+      <wsdl:input message="tns:SetParameterOnWIHttpPostIn" />
+      <wsdl:output message="tns:SetParameterOnWIHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAttachmentToWI">
+      <wsdl:input message="tns:AddAttachmentToWIHttpPostIn" />
+      <wsdl:output message="tns:AddAttachmentToWIHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddHyperlinkToWI">
+      <wsdl:input message="tns:AddHyperlinkToWIHttpPostIn" />
+      <wsdl:output message="tns:AddHyperlinkToWIHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachmentUrlFromWI">
+      <wsdl:input message="tns:GetAttachmentUrlFromWIHttpPostIn" />
+      <wsdl:output message="tns:GetAttachmentUrlFromWIHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetParametersOnWI">
+      <wsdl:input message="tns:SetParametersOnWIHttpPostIn" />
+      <wsdl:output message="tns:SetParametersOnWIHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateVSOWorkItem">
+      <wsdl:input message="tns:CreateVSOWorkItemHttpPostIn" />
+      <wsdl:output message="tns:CreateVSOWorkItemHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFunctionalTestingTaskIds">
+      <wsdl:input message="tns:GetFunctionalTestingTaskIdsHttpPostIn" />
+      <wsdl:output message="tns:GetFunctionalTestingTaskIdsHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GoFxServiceSoap" type="tns:GoFxServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TestEmail">
+      <soap:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/TestEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateBuildRequest">
+      <soap:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/CreateBuildRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageInfoByKbNumber">
+      <soap:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetPackageInfoByKbNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageInfo">
+      <soap:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetPackageInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWindowsReleaseTicketId">
+      <soap:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetWindowsReleaseTicketId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKBNumber">
+      <soap:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetKBNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCheckinInfo">
+      <soap:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetCheckinInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBugChangelistCount">
+      <soap:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetBugChangelistCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReleaseTicketId">
+      <soap:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetReleaseTicketId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReleaseBranches">
+      <soap:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetReleaseBranches" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBuildStampForReleaseTicket">
+      <soap:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetBuildStampForReleaseTicket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBuildInfoForReleaseTicket">
+      <soap:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetBuildInfoForReleaseTicket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageRequestStateByBugId">
+      <soap:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetPackageRequestStateByBugId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageRequestStateByKBNumber">
+      <soap:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetPackageRequestStateByKBNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchForReleaseTicket">
+      <soap:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetBranchForReleaseTicket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTitleFromWI">
+      <soap:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetTitleFromWI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkItemType">
+      <soap:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetWorkItemType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParametersFromWI">
+      <soap:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetParametersFromWI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListFieldsFromWI">
+      <soap:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/ListFieldsFromWI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WorkItemExists">
+      <soap:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/WorkItemExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParameterFromWI">
+      <soap:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetParameterFromWI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetParameterOnWI">
+      <soap:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/SetParameterOnWI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAttachmentToWI">
+      <soap:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/AddAttachmentToWI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddHyperlinkToWI">
+      <soap:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/AddHyperlinkToWI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachmentUrlFromWI">
+      <soap:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetAttachmentUrlFromWI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetParametersOnWI">
+      <soap:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/SetParametersOnWI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateVSOWorkItem">
+      <soap:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/CreateVSOWorkItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFunctionalTestingTaskIds">
+      <soap:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetFunctionalTestingTaskIds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GoFxServiceSoap12" type="tns:GoFxServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TestEmail">
+      <soap12:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/TestEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateBuildRequest">
+      <soap12:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/CreateBuildRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageInfoByKbNumber">
+      <soap12:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetPackageInfoByKbNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageInfo">
+      <soap12:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetPackageInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWindowsReleaseTicketId">
+      <soap12:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetWindowsReleaseTicketId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKBNumber">
+      <soap12:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetKBNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCheckinInfo">
+      <soap12:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetCheckinInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBugChangelistCount">
+      <soap12:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetBugChangelistCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReleaseTicketId">
+      <soap12:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetReleaseTicketId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReleaseBranches">
+      <soap12:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetReleaseBranches" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBuildStampForReleaseTicket">
+      <soap12:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetBuildStampForReleaseTicket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBuildInfoForReleaseTicket">
+      <soap12:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetBuildInfoForReleaseTicket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageRequestStateByBugId">
+      <soap12:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetPackageRequestStateByBugId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageRequestStateByKBNumber">
+      <soap12:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetPackageRequestStateByKBNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchForReleaseTicket">
+      <soap12:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetBranchForReleaseTicket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTitleFromWI">
+      <soap12:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetTitleFromWI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkItemType">
+      <soap12:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetWorkItemType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParametersFromWI">
+      <soap12:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetParametersFromWI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListFieldsFromWI">
+      <soap12:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/ListFieldsFromWI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WorkItemExists">
+      <soap12:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/WorkItemExists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParameterFromWI">
+      <soap12:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetParameterFromWI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetParameterOnWI">
+      <soap12:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/SetParameterOnWI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAttachmentToWI">
+      <soap12:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/AddAttachmentToWI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddHyperlinkToWI">
+      <soap12:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/AddHyperlinkToWI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachmentUrlFromWI">
+      <soap12:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetAttachmentUrlFromWI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetParametersOnWI">
+      <soap12:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/SetParametersOnWI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateVSOWorkItem">
+      <soap12:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/CreateVSOWorkItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFunctionalTestingTaskIds">
+      <soap12:operation soapAction="https://ddse.redmond.corp.microsoft.com/GoFxServicing/GetFunctionalTestingTaskIds" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GoFxServiceHttpGet" type="tns:GoFxServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="TestEmail">
+      <http:operation location="/TestEmail" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateBuildRequest">
+      <http:operation location="/CreateBuildRequest" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageInfoByKbNumber">
+      <http:operation location="/GetPackageInfoByKbNumber" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageInfo">
+      <http:operation location="/GetPackageInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWindowsReleaseTicketId">
+      <http:operation location="/GetWindowsReleaseTicketId" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKBNumber">
+      <http:operation location="/GetKBNumber" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCheckinInfo">
+      <http:operation location="/GetCheckinInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBugChangelistCount">
+      <http:operation location="/GetBugChangelistCount" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReleaseTicketId">
+      <http:operation location="/GetReleaseTicketId" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReleaseBranches">
+      <http:operation location="/GetReleaseBranches" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBuildStampForReleaseTicket">
+      <http:operation location="/GetBuildStampForReleaseTicket" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBuildInfoForReleaseTicket">
+      <http:operation location="/GetBuildInfoForReleaseTicket" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageRequestStateByBugId">
+      <http:operation location="/GetPackageRequestStateByBugId" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageRequestStateByKBNumber">
+      <http:operation location="/GetPackageRequestStateByKBNumber" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchForReleaseTicket">
+      <http:operation location="/GetBranchForReleaseTicket" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTitleFromWI">
+      <http:operation location="/GetTitleFromWI" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkItemType">
+      <http:operation location="/GetWorkItemType" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParametersFromWI">
+      <http:operation location="/GetParametersFromWI" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListFieldsFromWI">
+      <http:operation location="/ListFieldsFromWI" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WorkItemExists">
+      <http:operation location="/WorkItemExists" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParameterFromWI">
+      <http:operation location="/GetParameterFromWI" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetParameterOnWI">
+      <http:operation location="/SetParameterOnWI" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAttachmentToWI">
+      <http:operation location="/AddAttachmentToWI" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddHyperlinkToWI">
+      <http:operation location="/AddHyperlinkToWI" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachmentUrlFromWI">
+      <http:operation location="/GetAttachmentUrlFromWI" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetParametersOnWI">
+      <http:operation location="/SetParametersOnWI" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateVSOWorkItem">
+      <http:operation location="/CreateVSOWorkItem" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFunctionalTestingTaskIds">
+      <http:operation location="/GetFunctionalTestingTaskIds" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GoFxServiceHttpPost" type="tns:GoFxServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="TestEmail">
+      <http:operation location="/TestEmail" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateBuildRequest">
+      <http:operation location="/CreateBuildRequest" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageInfoByKbNumber">
+      <http:operation location="/GetPackageInfoByKbNumber" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageInfo">
+      <http:operation location="/GetPackageInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWindowsReleaseTicketId">
+      <http:operation location="/GetWindowsReleaseTicketId" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKBNumber">
+      <http:operation location="/GetKBNumber" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCheckinInfo">
+      <http:operation location="/GetCheckinInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBugChangelistCount">
+      <http:operation location="/GetBugChangelistCount" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReleaseTicketId">
+      <http:operation location="/GetReleaseTicketId" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReleaseBranches">
+      <http:operation location="/GetReleaseBranches" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBuildStampForReleaseTicket">
+      <http:operation location="/GetBuildStampForReleaseTicket" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBuildInfoForReleaseTicket">
+      <http:operation location="/GetBuildInfoForReleaseTicket" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageRequestStateByBugId">
+      <http:operation location="/GetPackageRequestStateByBugId" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageRequestStateByKBNumber">
+      <http:operation location="/GetPackageRequestStateByKBNumber" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchForReleaseTicket">
+      <http:operation location="/GetBranchForReleaseTicket" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTitleFromWI">
+      <http:operation location="/GetTitleFromWI" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkItemType">
+      <http:operation location="/GetWorkItemType" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParametersFromWI">
+      <http:operation location="/GetParametersFromWI" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListFieldsFromWI">
+      <http:operation location="/ListFieldsFromWI" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WorkItemExists">
+      <http:operation location="/WorkItemExists" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParameterFromWI">
+      <http:operation location="/GetParameterFromWI" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetParameterOnWI">
+      <http:operation location="/SetParameterOnWI" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAttachmentToWI">
+      <http:operation location="/AddAttachmentToWI" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddHyperlinkToWI">
+      <http:operation location="/AddHyperlinkToWI" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachmentUrlFromWI">
+      <http:operation location="/GetAttachmentUrlFromWI" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetParametersOnWI">
+      <http:operation location="/SetParametersOnWI" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateVSOWorkItem">
+      <http:operation location="/CreateVSOWorkItem" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFunctionalTestingTaskIds">
+      <http:operation location="/GetFunctionalTestingTaskIds" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GoFxService">
+    <wsdl:port name="GoFxServiceSoap" binding="tns:GoFxServiceSoap">
+      <soap:address location="https://ddse.redmond.corp.microsoft.com/gofxservices/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GoFxServiceSoap12" binding="tns:GoFxServiceSoap12">
+      <soap12:address location="https://ddse.redmond.corp.microsoft.com/gofxservices/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GoFxServiceHttpGet" binding="tns:GoFxServiceHttpGet">
+      <http:address location="https://ddse.redmond.corp.microsoft.com/gofxservices/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GoFxServiceHttpPost" binding="tns:GoFxServiceHttpPost">
+      <http:address location="https://ddse.redmond.corp.microsoft.com/gofxservices/service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

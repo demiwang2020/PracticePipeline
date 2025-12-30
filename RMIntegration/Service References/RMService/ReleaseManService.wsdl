@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="ReleaseManService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="CustomBinding_IReleaseData_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NtlmAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IConfiguration_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NtlmAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IReleaseManTask_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NtlmAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://ddse.redmond.corp.microsoft.com/ReleaseManService/ReleaseManService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://ddse.redmond.corp.microsoft.com/ReleaseManService/ReleaseManService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://ddse.redmond.corp.microsoft.com/ReleaseManService/ReleaseManService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="https://ddse.redmond.corp.microsoft.com/ReleaseManService/ReleaseManService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/ReleaseManService.Model" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IReleaseData_GetActiveReleaseIds_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActiveReleaseIds" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseData_GetActiveReleaseIds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActiveReleaseIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseData_GetActiveReleases_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActiveReleases" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseData_GetActiveReleases_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActiveReleasesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseData_GetRelease_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelease" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseData_GetRelease_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReleaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseData_GetWorkItemIdsById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkItemIdsById" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseData_GetWorkItemIdsById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkItemIdsByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseData_GetPatchById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatchById" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseData_GetPatchById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatchByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseData_GetPatchFilesById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatchFilesById" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseData_GetPatchFilesById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatchFilesByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseData_GetReleaseIdsForPreMTP_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReleaseIdsForPreMTP" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseData_GetReleaseIdsForPreMTP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReleaseIdsForPreMTPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseData_GetReleasesForPreMTP_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReleasesForPreMTP" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseData_GetReleasesForPreMTP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReleasesForPreMTPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseData_GetReleaseIdsForMTP_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReleaseIdsForMTP" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseData_GetReleaseIdsForMTP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReleaseIdsForMTPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseData_GetReleasesForMTP_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReleasesForMTP" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseData_GetReleasesForMTP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReleasesForMTPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseData_GetBranchesForPatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBranchesForPatch" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseData_GetBranchesForPatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBranchesForPatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseData_GetBaseBuildNumberById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBaseBuildNumberById" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseData_GetBaseBuildNumberById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBaseBuildNumberByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseData_GetComponentVersionById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetComponentVersionById" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseData_GetComponentVersionById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetComponentVersionByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseData_GetCustom1DataById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustom1DataById" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseData_GetCustom1DataById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustom1DataByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseData_GetLCUKBNumberById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLCUKBNumberById" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseData_GetLCUKBNumberById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLCUKBNumberByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseData_GetFixInfoByBugId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFixInfoByBugId" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseData_GetFixInfoByBugId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFixInfoByBugIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseData_GetPatchesByBugId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatchesByBugId" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseData_GetPatchesByBugId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatchesByBugIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseData_UpdateSymbolValidationResults_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSymbolValidationResults" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseData_UpdateSymbolValidationResults_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSymbolValidationResultsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConfiguration_GetAllBranches_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBranches" />
+  </wsdl:message>
+  <wsdl:message name="IConfiguration_GetAllBranches_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBranchesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConfiguration_GetAllReleaseTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllReleaseTypes" />
+  </wsdl:message>
+  <wsdl:message name="IConfiguration_GetAllReleaseTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllReleaseTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConfiguration_GetAllProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProducts" />
+  </wsdl:message>
+  <wsdl:message name="IConfiguration_GetAllProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConfiguration_GetAllOS_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOS" />
+  </wsdl:message>
+  <wsdl:message name="IConfiguration_GetAllOS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConfiguration_GetBranches_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBranches" />
+  </wsdl:message>
+  <wsdl:message name="IConfiguration_GetBranches_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBranchesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseManTask_RefreshPackageInformationFromTFS_InputMessage">
+    <wsdl:part name="parameters" element="tns:RefreshPackageInformationFromTFS" />
+  </wsdl:message>
+  <wsdl:message name="IReleaseManTask_RefreshPackageInformationFromTFS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RefreshPackageInformationFromTFSResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IReleaseData">
+    <wsdl:operation name="GetActiveReleaseIds">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReleaseData/GetActiveReleaseIds" message="tns:IReleaseData_GetActiveReleaseIds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReleaseData/GetActiveReleaseIdsResponse" message="tns:IReleaseData_GetActiveReleaseIds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveReleases">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReleaseData/GetActiveReleases" message="tns:IReleaseData_GetActiveReleases_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReleaseData/GetActiveReleasesResponse" message="tns:IReleaseData_GetActiveReleases_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRelease">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReleaseData/GetRelease" message="tns:IReleaseData_GetRelease_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReleaseData/GetReleaseResponse" message="tns:IReleaseData_GetRelease_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkItemIdsById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReleaseData/GetWorkItemIdsById" message="tns:IReleaseData_GetWorkItemIdsById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReleaseData/GetWorkItemIdsByIdResponse" message="tns:IReleaseData_GetWorkItemIdsById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatchById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReleaseData/GetPatchById" message="tns:IReleaseData_GetPatchById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReleaseData/GetPatchByIdResponse" message="tns:IReleaseData_GetPatchById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatchFilesById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReleaseData/GetPatchFilesById" message="tns:IReleaseData_GetPatchFilesById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReleaseData/GetPatchFilesByIdResponse" message="tns:IReleaseData_GetPatchFilesById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReleaseIdsForPreMTP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReleaseData/GetReleaseIdsForPreMTP" message="tns:IReleaseData_GetReleaseIdsForPreMTP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReleaseData/GetReleaseIdsForPreMTPResponse" message="tns:IReleaseData_GetReleaseIdsForPreMTP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReleasesForPreMTP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReleaseData/GetReleasesForPreMTP" message="tns:IReleaseData_GetReleasesForPreMTP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReleaseData/GetReleasesForPreMTPResponse" message="tns:IReleaseData_GetReleasesForPreMTP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReleaseIdsForMTP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReleaseData/GetReleaseIdsForMTP" message="tns:IReleaseData_GetReleaseIdsForMTP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReleaseData/GetReleaseIdsForMTPResponse" message="tns:IReleaseData_GetReleaseIdsForMTP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReleasesForMTP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReleaseData/GetReleasesForMTP" message="tns:IReleaseData_GetReleasesForMTP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReleaseData/GetReleasesForMTPResponse" message="tns:IReleaseData_GetReleasesForMTP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchesForPatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReleaseData/GetBranchesForPatch" message="tns:IReleaseData_GetBranchesForPatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReleaseData/GetBranchesForPatchResponse" message="tns:IReleaseData_GetBranchesForPatch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBaseBuildNumberById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReleaseData/GetBaseBuildNumberById" message="tns:IReleaseData_GetBaseBuildNumberById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReleaseData/GetBaseBuildNumberByIdResponse" message="tns:IReleaseData_GetBaseBuildNumberById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComponentVersionById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReleaseData/GetComponentVersionById" message="tns:IReleaseData_GetComponentVersionById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReleaseData/GetComponentVersionByIdResponse" message="tns:IReleaseData_GetComponentVersionById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustom1DataById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReleaseData/GetCustom1DataById" message="tns:IReleaseData_GetCustom1DataById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReleaseData/GetCustom1DataByIdResponse" message="tns:IReleaseData_GetCustom1DataById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLCUKBNumberById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReleaseData/GetLCUKBNumberById" message="tns:IReleaseData_GetLCUKBNumberById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReleaseData/GetLCUKBNumberByIdResponse" message="tns:IReleaseData_GetLCUKBNumberById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFixInfoByBugId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReleaseData/GetFixInfoByBugId" message="tns:IReleaseData_GetFixInfoByBugId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReleaseData/GetFixInfoByBugIdResponse" message="tns:IReleaseData_GetFixInfoByBugId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatchesByBugId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReleaseData/GetPatchesByBugId" message="tns:IReleaseData_GetPatchesByBugId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReleaseData/GetPatchesByBugIdResponse" message="tns:IReleaseData_GetPatchesByBugId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSymbolValidationResults">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReleaseData/UpdateSymbolValidationResults" message="tns:IReleaseData_UpdateSymbolValidationResults_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReleaseData/UpdateSymbolValidationResultsResponse" message="tns:IReleaseData_UpdateSymbolValidationResults_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IConfiguration">
+    <wsdl:operation name="GetAllBranches">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConfiguration/GetAllBranches" message="tns:IConfiguration_GetAllBranches_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConfiguration/GetAllBranchesResponse" message="tns:IConfiguration_GetAllBranches_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllReleaseTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConfiguration/GetAllReleaseTypes" message="tns:IConfiguration_GetAllReleaseTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConfiguration/GetAllReleaseTypesResponse" message="tns:IConfiguration_GetAllReleaseTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConfiguration/GetAllProducts" message="tns:IConfiguration_GetAllProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConfiguration/GetAllProductsResponse" message="tns:IConfiguration_GetAllProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConfiguration/GetAllOS" message="tns:IConfiguration_GetAllOS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConfiguration/GetAllOSResponse" message="tns:IConfiguration_GetAllOS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBranches">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConfiguration/GetBranches" message="tns:IConfiguration_GetBranches_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConfiguration/GetBranchesResponse" message="tns:IConfiguration_GetBranches_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IReleaseManTask">
+    <wsdl:operation name="RefreshPackageInformationFromTFS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReleaseManTask/RefreshPackageInformationFromTFS" message="tns:IReleaseManTask_RefreshPackageInformationFromTFS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReleaseManTask/RefreshPackageInformationFromTFSResponse" message="tns:IReleaseManTask_RefreshPackageInformationFromTFS_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CustomBinding_IReleaseData" type="tns:IReleaseData">
+    <wsp:PolicyReference URI="#CustomBinding_IReleaseData_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetActiveReleaseIds">
+      <soap12:operation soapAction="http://tempuri.org/IReleaseData/GetActiveReleaseIds" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveReleases">
+      <soap12:operation soapAction="http://tempuri.org/IReleaseData/GetActiveReleases" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRelease">
+      <soap12:operation soapAction="http://tempuri.org/IReleaseData/GetRelease" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkItemIdsById">
+      <soap12:operation soapAction="http://tempuri.org/IReleaseData/GetWorkItemIdsById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatchById">
+      <soap12:operation soapAction="http://tempuri.org/IReleaseData/GetPatchById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatchFilesById">
+      <soap12:operation soapAction="http://tempuri.org/IReleaseData/GetPatchFilesById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReleaseIdsForPreMTP">
+      <soap12:operation soapAction="http://tempuri.org/IReleaseData/GetReleaseIdsForPreMTP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReleasesForPreMTP">
+      <soap12:operation soapAction="http://tempuri.org/IReleaseData/GetReleasesForPreMTP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReleaseIdsForMTP">
+      <soap12:operation soapAction="http://tempuri.org/IReleaseData/GetReleaseIdsForMTP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReleasesForMTP">
+      <soap12:operation soapAction="http://tempuri.org/IReleaseData/GetReleasesForMTP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchesForPatch">
+      <soap12:operation soapAction="http://tempuri.org/IReleaseData/GetBranchesForPatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBaseBuildNumberById">
+      <soap12:operation soapAction="http://tempuri.org/IReleaseData/GetBaseBuildNumberById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComponentVersionById">
+      <soap12:operation soapAction="http://tempuri.org/IReleaseData/GetComponentVersionById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustom1DataById">
+      <soap12:operation soapAction="http://tempuri.org/IReleaseData/GetCustom1DataById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLCUKBNumberById">
+      <soap12:operation soapAction="http://tempuri.org/IReleaseData/GetLCUKBNumberById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFixInfoByBugId">
+      <soap12:operation soapAction="http://tempuri.org/IReleaseData/GetFixInfoByBugId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatchesByBugId">
+      <soap12:operation soapAction="http://tempuri.org/IReleaseData/GetPatchesByBugId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSymbolValidationResults">
+      <soap12:operation soapAction="http://tempuri.org/IReleaseData/UpdateSymbolValidationResults" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CustomBinding_IConfiguration" type="tns:IConfiguration">
+    <wsp:PolicyReference URI="#CustomBinding_IConfiguration_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllBranches">
+      <soap12:operation soapAction="http://tempuri.org/IConfiguration/GetAllBranches" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllReleaseTypes">
+      <soap12:operation soapAction="http://tempuri.org/IConfiguration/GetAllReleaseTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProducts">
+      <soap12:operation soapAction="http://tempuri.org/IConfiguration/GetAllProducts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOS">
+      <soap12:operation soapAction="http://tempuri.org/IConfiguration/GetAllOS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranches">
+      <soap12:operation soapAction="http://tempuri.org/IConfiguration/GetBranches" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CustomBinding_IReleaseManTask" type="tns:IReleaseManTask">
+    <wsp:PolicyReference URI="#CustomBinding_IReleaseManTask_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RefreshPackageInformationFromTFS">
+      <soap12:operation soapAction="http://tempuri.org/IReleaseManTask/RefreshPackageInformationFromTFS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ReleaseManService">
+    <wsdl:port name="CustomBinding_IReleaseData" binding="tns:CustomBinding_IReleaseData">
+      <soap12:address location="https://ddse.redmond.corp.microsoft.com/ReleaseManService/ReleaseManService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://ddse.redmond.corp.microsoft.com/ReleaseManService/ReleaseManService.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>vsulab@redmond.corp.microsoft.com</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="CustomBinding_IConfiguration" binding="tns:CustomBinding_IConfiguration">
+      <soap12:address location="https://ddse.redmond.corp.microsoft.com/ReleaseManService/ReleaseManService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://ddse.redmond.corp.microsoft.com/ReleaseManService/ReleaseManService.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>vsulab@redmond.corp.microsoft.com</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="CustomBinding_IReleaseManTask" binding="tns:CustomBinding_IReleaseManTask">
+      <soap12:address location="https://ddse.redmond.corp.microsoft.com/ReleaseManService/ReleaseManService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://ddse.redmond.corp.microsoft.com/ReleaseManService/ReleaseManService.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>vsulab@redmond.corp.microsoft.com</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,1656 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 32.375, 71.375" name="PatchTestDataClass">
+  <DataContextMoniker Name="/PatchTestDataClassDataContext" />
+  <nestedChildShapes>
+    <classShape Id="c3bcde5a-763e-462f-88dc-8510e26e1116" absoluteBounds="0.5, 6.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TCPU" />
+      <nestedChildShapes>
+        <elementListCompartment Id="53aa533c-520c-42e0-a3da-33b48ba0c93e" absoluteBounds="0.51500000000000012, 6.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="add724ab-4d58-4bd0-9c79-ff2727baf5e6" absoluteBounds="4.25, 7.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TLanguage" />
+      <nestedChildShapes>
+        <elementListCompartment Id="da8e36c9-bf7b-4f9a-a633-fc7d9ebf01a3" absoluteBounds="4.265, 7.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8656d9da-3a02-4716-9aec-22f82e5520f3" absoluteBounds="9.25, 7.875, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TProductFamily" />
+      <nestedChildShapes>
+        <elementListCompartment Id="be35f8f0-953c-43b2-a0a8-e63aee869ec2" absoluteBounds="9.265, 8.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dd601638-7cca-4e11-8895-4492a43e5cbd" absoluteBounds="8.875, 5, 2, 1.1939925130208326">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TVariable" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1b0620f9-d4db-482d-86bb-95997a1ef72b" absoluteBounds="8.89, 5.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="873c357f-3178-4af2-a158-62c6342f826a" absoluteBounds="11.25, 5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TVariableProductMapping" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c49b0053-e44e-41ef-b8a5-ebbee4fe5aa4" absoluteBounds="11.265, 5.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(10.875 : 5.59699625651042); (11.25 : 5.59699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TVariable/TVariable_TVariableProductMapping" />
+      <nodes>
+        <classShapeMoniker Id="dd601638-7cca-4e11-8895-4492a43e5cbd" />
+        <classShapeMoniker Id="873c357f-3178-4af2-a158-62c6342f826a" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="4ab33449-43ca-4209-98f6-3ea9a6a9f40d" absoluteBounds="11.875, 6.875, 2, 1.7708968098958326">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TProduct" />
+      <nestedChildShapes>
+        <elementListCompartment Id="43115d3c-4061-45dc-8fd3-5bc578d7639c" absoluteBounds="11.89, 7.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(12.5625 : 6.875); (12.5625 : 6.57859537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TProduct/TProduct_TVariableProductMapping" />
+      <nodes>
+        <classShapeMoniker Id="4ab33449-43ca-4209-98f6-3ea9a6a9f40d" />
+        <classShapeMoniker Id="873c357f-3178-4af2-a158-62c6342f826a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 8.26044840494792); (11.6666666666667 : 8.26044840494792 : JumpStart); (11.8333333333333 : 8.26044840494792 : JumpEnd); (11.875 : 8.26044840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TProductFamily/TProductFamily_TProduct" />
+      <nodes>
+        <classShapeMoniker Id="8656d9da-3a02-4716-9aec-22f82e5520f3" />
+        <classShapeMoniker Id="4ab33449-43ca-4209-98f6-3ea9a6a9f40d" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="17b7e687-ae44-4904-b34d-3efa146aa9a2" absoluteBounds="26.25, 10.5, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TRunResult" />
+      <nestedChildShapes>
+        <elementListCompartment Id="83a8e16c-86a9-4d0e-ac13-26569bb61f77" absoluteBounds="26.265, 10.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cc92e0b2-3373-4b57-aded-ecbaa876911c" absoluteBounds="26.375, 12.375, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TRunStatus" />
+      <nestedChildShapes>
+        <elementListCompartment Id="41cff155-5f86-4941-8463-0027defe46c8" absoluteBounds="26.39, 12.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fd4b40fa-dfad-4381-99fc-aa069f59856a" absoluteBounds="10.875, 10.25, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TPatchSKU" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4a8e3cb7-59a2-4bf9-ad07-dc65252875d3" absoluteBounds="10.89, 10.71, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 7.23465400265425); (3.29166666666667 : 7.23465400265425 : JumpStart); (3.45833333333333 : 7.23465400265425 : JumpEnd); (3.875 : 7.23465400265425); (3.875 : 9.171875); (3.91666666666667 : 9.171875 : JumpStart); (4.08333333333333 : 9.171875 : JumpEnd); (4.60416491666667 : 9.171875 : JumpStart); (4.77083158333333 : 9.171875 : JumpEnd); (5.10416716666667 : 9.171875 : JumpStart); (5.27083383333333 : 9.171875 : JumpEnd); (5.60416666666667 : 9.171875 : JumpStart); (5.77083333333333 : 9.171875 : JumpEnd); (6.41666666666667 : 9.171875 : JumpStart); (6.64583333333333 : 9.171875 : JumpEnd); (8.04166666666667 : 9.171875 : JumpStart); (8.20833333333333 : 9.171875 : JumpEnd); (8.72916666666667 : 9.171875 : JumpStart); (8.92708333333333 : 9.171875 : JumpEnd); (9 : 9.171875); (9 : 9.7612939453125); (10.1041666666667 : 9.7612939453125 : JumpStart); (10.2708333333333 : 9.7612939453125 : JumpEnd); (11.6249995 : 9.7612939453125); (11.6249995 : 10.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TCPU/TCPU_TPatchSKU" />
+      <nodes>
+        <classShapeMoniker Id="c3bcde5a-763e-462f-88dc-8510e26e1116" />
+        <classShapeMoniker Id="fd4b40fa-dfad-4381-99fc-aa069f59856a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.6875 : 8.95359537760417); (5.6875 : 12.7276025390625); (6.04166666666667 : 12.7276025390625 : JumpStart); (6.33333333333333 : 12.7276025390625 : JumpEnd); (6.35416666666667 : 12.7276025390625 : JumpStart); (6.52083333333333 : 12.7276025390625 : JumpEnd); (6.60416666666667 : 12.7276025390625 : JumpStart); (6.77083333333333 : 12.7276025390625 : JumpEnd); (8.01041466666667 : 12.7276025390625 : JumpStart); (8.17708133333333 : 12.7276025390625 : JumpEnd); (10.1041666666667 : 12.7276025390625 : JumpStart); (10.2708333333333 : 12.7276025390625 : JumpEnd); (10.3541666666667 : 12.7276025390625 : JumpStart); (10.6333333333333 : 12.7276025390625 : JumpEnd); (10.875 : 12.7276025390625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TLanguage/TLanguage_TPatchSKU" />
+      <nodes>
+        <classShapeMoniker Id="add724ab-4d58-4bd0-9c79-ff2727baf5e6" />
+        <classShapeMoniker Id="fd4b40fa-dfad-4381-99fc-aa069f59856a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(12.375 : 8.64589680989583); (12.375 : 10.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TProduct/TProduct_TPatchSKU" />
+      <nodes>
+        <classShapeMoniker Id="4ab33449-43ca-4209-98f6-3ea9a6a9f40d" />
+        <classShapeMoniker Id="fd4b40fa-dfad-4381-99fc-aa069f59856a" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="f42e8f05-f4dd-43e3-9309-654b2acc797e" absoluteBounds="14.875, 16.375, 2, 2.73240397135417">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TLog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bab3a967-c7b3-4593-875f-a292f988468c" absoluteBounds="14.89, 16.835, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="da6685be-f1ff-4b99-83c6-eaca97a9d08a" absoluteBounds="0.5, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TOSType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0f642c6f-2445-4955-923f-2689428a7236" absoluteBounds="0.515, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dd5ce9b2-624d-47c3-b451-667a514df8c7" absoluteBounds="19.25, 4.625, 2, 2.3478011067708326">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TContextAttribute" />
+      <nestedChildShapes>
+        <elementListCompartment Id="de4f44f0-4c37-4fa6-81fa-9b628d4a67ac" absoluteBounds="19.265, 5.085, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="48b1d69d-7744-4085-873e-03ceb498f72e" absoluteBounds="19, 1.375, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TTestCaseContextAttributeMapping" />
+      <nestedChildShapes>
+        <elementListCompartment Id="060ca179-6980-4616-a022-811dc9cd14c3" absoluteBounds="19.015, 1.835, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(20.59375 : 4.625); (20.59375 : 3.72280110677083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TContextAttribute/TContextAttribute_TTestCaseContextAttributeMapping" />
+      <nodes>
+        <classShapeMoniker Id="dd5ce9b2-624d-47c3-b451-667a514df8c7" />
+        <classShapeMoniker Id="48b1d69d-7744-4085-873e-03ceb498f72e" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="4b40e91c-afed-4b50-840d-d3eea0f5d890" absoluteBounds="16.375, 4.625, 2, 2.5401025390624996">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TContextAttributeProductSpecificValue" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fee9d55e-3dd8-431e-8ed1-b32c0f7176fc" absoluteBounds="16.39, 5.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(19.25 : 5.79890055338542); (18.375 : 5.79890055338542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TContextAttribute/TContextAttribute_TContextAttributeProductSpecificValue" />
+      <nodes>
+        <classShapeMoniker Id="dd5ce9b2-624d-47c3-b451-667a514df8c7" />
+        <classShapeMoniker Id="4b40e91c-afed-4b50-840d-d3eea0f5d890" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.875 : 7.55092335677083); (14.0104166666667 : 7.55092335677083 : JumpStart); (14.1770833333333 : 7.55092335677083 : JumpEnd); (14.2916666666667 : 7.55092335677083 : JumpStart); (14.4583333333333 : 7.55092335677083 : JumpEnd); (14.5 : 7.55092335677083); (14.5 : 7.4375); (14.5427504721195 : 7.37539269301748 : JumpStart); (14.6372495278805 : 7.23810574448251 : JumpEnd); (14.6875 : 7.1651025390625); (15.5729940954153 : 7.12740137824297 : JumpStart); (15.7395099045847 : 7.12031173266205 : JumpEnd); (16.1667420954153 : 7.10212171918011 : JumpStart); (16.3332579045847 : 7.09503207359919 : JumpEnd); (16.375 : 7.09325484497582)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TProduct/TProduct_TContextAttributeProductSpecificValue" />
+      <nodes>
+        <classShapeMoniker Id="4ab33449-43ca-4209-98f6-3ea9a6a9f40d" />
+        <classShapeMoniker Id="4b40e91c-afed-4b50-840d-d3eea0f5d890" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="603a2f59-f795-4e86-b898-066d73561b90" absoluteBounds="6.75, 9.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TSKU" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3242256d-4d1f-4e69-bcc1-3219cbcf90fb" absoluteBounds="6.765, 9.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.75 : 10.9527498372396); (8.91666666666667 : 10.9527498372396 : JumpStart); (9.08333333333333 : 10.9527498372396 : JumpEnd); (10.1041666666667 : 10.9527498372396 : JumpStart); (10.2708333333333 : 10.9527498372396 : JumpEnd); (10.3541666666667 : 10.9527498372396 : JumpStart); (10.6333333333333 : 10.9527498372396 : JumpEnd); (10.875 : 10.9527498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TSKU/TSKU_TPatchSKU" />
+      <nodes>
+        <classShapeMoniker Id="603a2f59-f795-4e86-b898-066d73561b90" />
+        <classShapeMoniker Id="fd4b40fa-dfad-4381-99fc-aa069f59856a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.875 : 8.13333737408447); (11.75 : 8.13333737408447); (11.75 : 9.6362939453125); (11.6583333333333 : 9.6362939453125 : JumpStart); (11.4916666666667 : 9.6362939453125 : JumpEnd); (10.2708333333333 : 9.6362939453125 : JumpStart); (10.1041666666667 : 9.6362939453125 : JumpEnd); (9.1875 : 9.6362939453125); (9.1875 : 9.35976399739583); (9.12707536427545 : 9.35976399739583 : JumpStart); (8.76041666666667 : 9.35976399739583 : JumpEnd); (8.20833333333333 : 9.35976399739583 : JumpStart); (8.04166666666667 : 9.35976399739583 : JumpEnd); (7.75 : 9.35976399739583); (7.75 : 9.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TProduct/TProduct_TSKU" />
+      <nodes>
+        <classShapeMoniker Id="4ab33449-43ca-4209-98f6-3ea9a6a9f40d" />
+        <classShapeMoniker Id="603a2f59-f795-4e86-b898-066d73561b90" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.25 : 9.2612939453125); (9.07520267808166 : 9.34474430348263 : JumpStart); (8.92479732191834 : 9.41654964182987 : JumpEnd); (8.75 : 9.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TProductFamily/TProductFamily_TSKU" />
+      <nodes>
+        <classShapeMoniker Id="8656d9da-3a02-4716-9aec-22f82e5520f3" />
+        <classShapeMoniker Id="603a2f59-f795-4e86-b898-066d73561b90" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="707c1395-8569-4426-b21b-549cce53aa65" absoluteBounds="14.75, 7.5, 2, 1.7708968098958326">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TExecutionSystem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="80215391-1bb9-450b-a28b-d9ae79194536" absoluteBounds="14.765, 7.9600000000000009, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="24bb0f72-d17d-46cf-a58f-df1353d4615b" absoluteBounds="17, 7.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TRunTemplate" />
+      <nestedChildShapes>
+        <elementListCompartment Id="736fa545-67d4-48df-ba45-164b9f495f43" absoluteBounds="17.015, 7.9600000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1005943c-37bc-4db7-9d35-c14549343577" absoluteBounds="20.125, 7.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TTestCaseQuery" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3a092539-25b7-47d6-bd0c-b05773e961cd" absoluteBounds="20.14, 8.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1b07d1e5-6d50-45b2-8efa-c6ec0ed1d537" absoluteBounds="14.125, 0.5, 2, 4.6554182942708326">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TTestMatrix" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4a19989e-638e-4b58-8a09-bcc2ee0d89c2" absoluteBounds="14.14, 0.96, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 7.22375); (3.29166666666667 : 7.22375 : JumpStart); (3.45833333333333 : 7.22375 : JumpEnd); (3.91666666666667 : 7.22375 : JumpStart); (4.20833333333333 : 7.22375 : JumpEnd); (4.60416666666667 : 7.22375 : JumpStart); (4.77083333333333 : 7.22375 : JumpEnd); (6.5625 : 7.22375); (6.5625 : 4.9375); (8.72916666666667 : 4.9375 : JumpStart); (8.89583333333333 : 4.9375 : JumpEnd); (13.5066666666667 : 4.9375 : JumpStart); (13.6733333333333 : 4.9375 : JumpEnd); (13.7291666666667 : 4.9375 : JumpStart); (13.8958333333333 : 4.9375 : JumpEnd); (14.0625 : 4.9375); (14.0625 : 5.21791829427083); (15.125 : 5.21791829427083); (15.125 : 5.15541829427083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TCPU/TCPU_TTestMatrix" />
+      <nodes>
+        <classShapeMoniker Id="c3bcde5a-763e-462f-88dc-8510e26e1116" />
+        <classShapeMoniker Id="1b07d1e5-6d50-45b2-8efa-c6ec0ed1d537" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.25 : 7.73839684440104); (6.5 : 7.73839684440104); (6.5 : 4.9375); (8.72916666666667 : 4.9375 : JumpStart); (8.89583333333333 : 4.9375 : JumpEnd); (13.5066666666667 : 4.9375 : JumpStart); (13.6733333333333 : 4.9375 : JumpEnd); (13.7291666666667 : 4.9375 : JumpStart); (13.8958333333333 : 4.9375 : JumpEnd); (14 : 4.9375); (14 : 5.28041829427083); (14.0104166666667 : 5.28041829427083 : JumpStart); (14.1770833333333 : 5.28041829427083 : JumpEnd); (14.2916666666667 : 5.28041829427083 : JumpStart); (14.4583333333333 : 5.28041829427083 : JumpEnd); (14.593748 : 5.28041829427083); (14.593748 : 5.15541829427083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TLanguage/TLanguage_TTestMatrix" />
+      <nodes>
+        <classShapeMoniker Id="add724ab-4d58-4bd0-9c79-ff2727baf5e6" />
+        <classShapeMoniker Id="1b07d1e5-6d50-45b2-8efa-c6ec0ed1d537" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.8125 : 6.875); (13.8125 : 4.35); (14.125 : 4.35)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TProduct/TProduct_TTestMatrix" />
+      <nodes>
+        <classShapeMoniker Id="4ab33449-43ca-4209-98f6-3ea9a6a9f40d" />
+        <classShapeMoniker Id="1b07d1e5-6d50-45b2-8efa-c6ec0ed1d537" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.75 : 9.84314697265625); (10.1041666666667 : 9.84314697265625 : JumpStart); (10.2708333333333 : 9.84314697265625 : JumpEnd); (11.4916666666667 : 9.84314697265625 : JumpStart); (11.6583333333333 : 9.84314697265625 : JumpEnd); (12.2916666666667 : 9.84314697265625 : JumpStart); (12.4583333333333 : 9.84314697265625 : JumpEnd); (12.6666666666667 : 9.84314697265625 : JumpStart); (12.8333333333333 : 9.84314697265625 : JumpEnd); (13.2291666666667 : 9.84314697265625 : JumpStart); (13.3958333333333 : 9.84314697265625 : JumpEnd); (13.5104161666667 : 9.84314697265625 : JumpStart); (13.6770828333333 : 9.84314697265625 : JumpEnd); (13.8301224902459 : 9.84314697265625 : JumpStart); (13.9967891569126 : 9.84314697265625 : JumpEnd); (14.0104166666667 : 9.84314697265625 : JumpStart); (14.1770833333333 : 9.84314697265625 : JumpEnd); (14.375 : 9.84314697265625); (14.375 : 5.15541829427083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TSKU/TSKU_TTestMatrix" />
+      <nodes>
+        <classShapeMoniker Id="603a2f59-f795-4e86-b898-066d73561b90" />
+        <classShapeMoniker Id="1b07d1e5-6d50-45b2-8efa-c6ec0ed1d537" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="3fec9a73-b17a-4ccd-931f-f94296e688ca" absoluteBounds="22.875, 10, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TMachineQuery" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bd4d349c-131a-4b53-91d7-36c61f05b9c3" absoluteBounds="22.89, 10.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bca23639-9b3c-4603-a066-5e79c4ee1814" absoluteBounds="18.375, 15.375, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TTPNData" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ccedac0d-cf59-4c64-9078-32e18071b98f" absoluteBounds="18.39, 15.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f84c5e78-5726-4af1-be63-232e3daf0daa" absoluteBounds="3.125, 3.625, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="28a432f7-6aa4-4247-9f1e-daeee3993466" absoluteBounds="3.1399999999999997, 4.085, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.125 : 4.14521921299808); (5.5 : 1); (5.5 : 3.3125); (5.60416666666667 : 3.3125 : JumpStart); (5.77083333333333 : 3.3125 : JumpEnd); (5.79166666666667 : 3.3125 : JumpStart); (5.95833333333333 : 3.3125 : JumpEnd); (8.20572666666667 : 3.3125 : JumpStart); (8.37239333333333 : 3.3125 : JumpEnd); (13.5066666666667 : 3.3125 : JumpStart); (13.6733333333333 : 3.3125 : JumpEnd); (13.75 : 3.3125); (13.75 : 0.125); (14.125 : 0.5)]" manuallyRouted="true" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TO/TO_TTestMatrix" />
+      <nodes>
+        <classShapeMoniker Id="f84c5e78-5726-4af1-be63-232e3daf0daa" />
+        <classShapeMoniker Id="1b07d1e5-6d50-45b2-8efa-c6ec0ed1d537" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 6.71715413411458); (2.57666666666667 : 6.71715413411458 : JumpStart); (2.74333333333333 : 6.71715413411458 : JumpEnd); (3.125 : 6.71715413411458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TCPU/TCPU_TO" />
+      <nodes>
+        <classShapeMoniker Id="c3bcde5a-763e-462f-88dc-8510e26e1116" />
+        <classShapeMoniker Id="f84c5e78-5726-4af1-be63-232e3daf0daa" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.6875 : 7.375); (4.6875 : 6.93430826822917)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TLanguage/TLanguage_TO" />
+      <nodes>
+        <classShapeMoniker Id="add724ab-4d58-4bd0-9c79-ff2727baf5e6" />
+        <classShapeMoniker Id="f84c5e78-5726-4af1-be63-232e3daf0daa" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(0.5 : 1.19314697265625); (0.34 : 1.19314697265625); (0.34 : 6.34); (2.885 : 6.34); (2.885 : 5.78113700921475); (3.125 : 5.78113700921475)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TOSType/TOSType_TO" />
+      <nodes>
+        <classShapeMoniker Id="da6685be-f1ff-4b99-83c6-eaca97a9d08a" />
+        <classShapeMoniker Id="f84c5e78-5726-4af1-be63-232e3daf0daa" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="18b64c21-ac3b-46d2-a760-41398b00bbf3" absoluteBounds="8.625, 0.5, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TOSImage" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d62ec51d-6b4e-4c45-9410-737688e27332" absoluteBounds="8.64, 0.96, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(10.625 : 0.8750025); (13.5066666666667 : 0.875002499999999 : JumpStart); (13.8333333333333 : 0.8750025 : JumpEnd); (14.125 : 0.8750025)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TOSImage/TOSImage_TTestMatrix" />
+      <nodes>
+        <classShapeMoniker Id="18b64c21-ac3b-46d2-a760-41398b00bbf3" />
+        <classShapeMoniker Id="1b07d1e5-6d50-45b2-8efa-c6ec0ed1d537" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.125 : 4.6875); (5.60416666666667 : 4.6875 : JumpStart); (5.77083333333333 : 4.6875 : JumpEnd); (8.20572666666667 : 4.6875 : JumpStart); (8.37239333333333 : 4.6875 : JumpEnd); (8.72916666666667 : 4.6875 : JumpStart); (8.89583333333333 : 4.6875 : JumpEnd); (9.01041466666667 : 4.6875 : JumpStart); (9.17708133333333 : 4.6875 : JumpEnd); (9.625 : 4.6875); (9.625 : 3.80930826822917)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TO/TO_TOSImage" />
+      <nodes>
+        <classShapeMoniker Id="f84c5e78-5726-4af1-be63-232e3daf0daa" />
+        <classShapeMoniker Id="18b64c21-ac3b-46d2-a760-41398b00bbf3" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="ff96e1e3-d1ca-4e30-b554-8ae795bfd8e3" absoluteBounds="18.5, 11.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TPatchTestMatrixMapping" />
+      <nestedChildShapes>
+        <elementListCompartment Id="01a88bc4-572b-4dc7-a3a3-da79b3ff8b70" absoluteBounds="18.515, 12.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(15.656252 : 5.15541829427083); (15.656252 : 7.4375); (16.8266666666667 : 7.4375 : JumpStart); (17.0208333333333 : 7.4375 : JumpEnd); (17.25 : 7.4375); (17.25 : 11.8125); (17.5729166666667 : 11.8125 : JumpStart); (17.8433333333333 : 11.8125 : JumpEnd); (17.8541666666667 : 11.8125 : JumpStart); (18.2395833333333 : 11.8125 : JumpEnd); (18.375 : 11.8125); (18.375 : 12.4431469726563); (18.5 : 12.4431469726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TTestMatrix/TTestMatrix_TPatchTestMatrixMapping" />
+      <nodes>
+        <classShapeMoniker Id="1b07d1e5-6d50-45b2-8efa-c6ec0ed1d537" />
+        <classShapeMoniker Id="ff96e1e3-d1ca-4e30-b554-8ae795bfd8e3" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="70b433ae-0211-45e5-8766-2e24673cddb7" absoluteBounds="25.5, 7.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TWorkSpaceLocation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fd5f263a-9550-453c-8df5-1474ad876a5c" absoluteBounds="25.515, 7.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e6f11c93-1566-467c-88ea-3592e94752e9" absoluteBounds="6.625, 5, 2, 4.0785139973958326">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TMatrix" />
+      <nestedChildShapes>
+        <elementListCompartment Id="32988820-e6ca-4fd0-9633-586daef18355" absoluteBounds="6.64, 5.46, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 7.28125); (3.29166666666667 : 7.28125 : JumpStart); (3.45833333333333 : 7.28125 : JumpEnd); (3.91666666666667 : 7.28125 : JumpStart); (4.20833333333333 : 7.28125 : JumpEnd); (4.60416666666667 : 7.28125 : JumpStart); (4.77083333333333 : 7.28125 : JumpEnd); (6.41666666666667 : 7.28125 : JumpStart); (6.58333333333333 : 7.28125 : JumpEnd); (6.625 : 7.28125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TCPU/TCPU_TMatrix" />
+      <nodes>
+        <classShapeMoniker Id="c3bcde5a-763e-462f-88dc-8510e26e1116" />
+        <classShapeMoniker Id="e6f11c93-1566-467c-88ea-3592e94752e9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.25 : 8.16429768880208); (6.625 : 8.16429768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TLanguage/TLanguage_TMatrix" />
+      <nodes>
+        <classShapeMoniker Id="add724ab-4d58-4bd0-9c79-ff2727baf5e6" />
+        <classShapeMoniker Id="e6f11c93-1566-467c-88ea-3592e94752e9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.125 : 5.96715413411458); (6.41666666666667 : 5.96715413411458 : JumpStart); (6.58333333333333 : 5.96715413411458 : JumpEnd); (6.625 : 5.96715413411458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TO/TO_TMatrix" />
+      <nodes>
+        <classShapeMoniker Id="f84c5e78-5726-4af1-be63-232e3daf0daa" />
+        <classShapeMoniker Id="e6f11c93-1566-467c-88ea-3592e94752e9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.625 : 1.9062505); (8.28906 : 1.9062505); (8.28906 : 5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TOSImage/TOSImage_TMatrix" />
+      <nodes>
+        <classShapeMoniker Id="18b64c21-ac3b-46d2-a760-41398b00bbf3" />
+        <classShapeMoniker Id="e6f11c93-1566-467c-88ea-3592e94752e9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.875 : 6.96224205061849); (8.89583333333333 : 6.96224205061849 : JumpStart); (8.72916666666667 : 6.96224205061849 : JumpEnd); (8.625 : 6.96224205061849)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TProduct/TProduct_TMatrix" />
+      <nodes>
+        <classShapeMoniker Id="4ab33449-43ca-4209-98f6-3ea9a6a9f40d" />
+        <classShapeMoniker Id="e6f11c93-1566-467c-88ea-3592e94752e9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.125 : 9.07851399739583); (8.125 : 9.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TSKU/TSKU_TMatrix" />
+      <nodes>
+        <classShapeMoniker Id="603a2f59-f795-4e86-b898-066d73561b90" />
+        <classShapeMoniker Id="e6f11c93-1566-467c-88ea-3592e94752e9" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="490aee3b-a6aa-4df5-88a1-b8ea9e4d543e" absoluteBounds="18.625, 9.875, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TPatchMatrixMapping" />
+      <nestedChildShapes>
+        <elementListCompartment Id="97eeb197-797b-4e08-bb04-66663decbbdf" absoluteBounds="18.64, 10.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.625 : 6.0845458608774); (8.72916666666667 : 6.0845458608774 : JumpStart); (8.92708333333333 : 6.0845458608774 : JumpEnd); (12.1875 : 6.0845458608774); (12.1875 : 9.52089680989583); (12.2916666666667 : 9.52089680989583 : JumpStart); (12.4583333333333 : 9.52089680989583 : JumpEnd); (12.6666666666667 : 9.52089680989583 : JumpStart); (12.8333333333333 : 9.52089680989583 : JumpEnd); (13.2291666666667 : 9.52089680989583 : JumpStart); (13.3958333333333 : 9.52089680989583 : JumpEnd); (13.5104161666667 : 9.52089680989583 : JumpStart); (13.6770828333333 : 9.52089680989583 : JumpEnd); (13.819771775088 : 9.52089680989583 : JumpStart); (13.9864384417547 : 9.52089680989583 : JumpEnd); (14.0104166666667 : 9.52089680989583 : JumpStart); (14.4583333333333 : 9.52089680989583 : JumpEnd); (14.5066666666667 : 9.52089680989583 : JumpStart); (14.6733333333333 : 9.52089680989583 : JumpEnd); (14.9187866666667 : 9.52089680989583 : JumpStart); (15.0854533333333 : 9.52089680989583 : JumpEnd); (15.8541666666667 : 9.52089680989583 : JumpStart); (16.0208333333333 : 9.52089680989583 : JumpEnd); (17.1666666666667 : 9.52089680989583 : JumpStart); (17.3333333333333 : 9.52089680989583 : JumpEnd); (17.5729166666667 : 9.52089680989583 : JumpStart); (17.8433333333333 : 9.52089680989583 : JumpEnd); (17.9791666666667 : 9.52089680989583 : JumpStart); (18.2395833333333 : 9.52089680989583 : JumpEnd); (20.0625 : 9.52089680989583); (20.0625 : 9.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TMatrix/TMatrix_TPatchMatrixMapping" />
+      <nodes>
+        <classShapeMoniker Id="e6f11c93-1566-467c-88ea-3592e94752e9" />
+        <classShapeMoniker Id="490aee3b-a6aa-4df5-88a1-b8ea9e4d543e" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="ed047132-0a32-40e7-abd4-915ca4631685" absoluteBounds="0.5, 2, 2, 4.2708154296875">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TMaddogOSImage" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eb9d2995-0815-4283-9437-ef5351a6a9d9" absoluteBounds="0.515, 2.46, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7e36dc08-2a03-479d-b23c-dec2e6cac296" absoluteBounds="1.5, 14.625, 2, 2.73240397135417">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TMDOSWithPriority" />
+      <nestedChildShapes>
+        <elementListCompartment Id="33163646-5220-485a-a137-27c534321e3d" absoluteBounds="1.5150000000000001, 15.085, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 7.57554518880209); (2.90625 : 7.57554518880209); (2.90625 : 14.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TCPU/TCPU_TMDOSWithPriority" />
+      <nodes>
+        <classShapeMoniker Id="c3bcde5a-763e-462f-88dc-8510e26e1116" />
+        <classShapeMoniker Id="7e36dc08-2a03-479d-b23c-dec2e6cac296" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.25 : 8.5256397360026); (4.20833333333333 : 8.5256397360026 : JumpStart); (3.79166666666667 : 8.5256397360026 : JumpEnd); (3.75141333333333 : 8.5256397360026 : JumpStart); (3.58474666666667 : 8.5256397360026 : JumpEnd); (3.58333333333333 : 8.5256397360026 : JumpStart); (3.29166666666667 : 8.5256397360026 : JumpEnd); (3.125 : 8.5256397360026); (3.125 : 14.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TLanguage/TLanguage_TMDOSWithPriority" />
+      <nodes>
+        <classShapeMoniker Id="add724ab-4d58-4bd0-9c79-ff2727baf5e6" />
+        <classShapeMoniker Id="7e36dc08-2a03-479d-b23c-dec2e6cac296" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.093748 : 3.80930826822917); (9.093748 : 4.875); (8.84375 : 4.875); (8.84375 : 9.46875); (6.6875 : 9.46875); (6.6875 : 15.9479484049479); (3.5 : 15.9479484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TOSImage/TOSImage_TMDOSWithPriority" />
+      <nodes>
+        <classShapeMoniker Id="18b64c21-ac3b-46d2-a760-41398b00bbf3" />
+        <classShapeMoniker Id="7e36dc08-2a03-479d-b23c-dec2e6cac296" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.875 : 7.36865590740967); (9.125 : 7.36865590740967); (9.125 : 9.14101399739583); (8.96208333333333 : 9.14101399739583 : JumpStart); (8.72916666666667 : 9.14101399739583 : JumpEnd); (6.64583333333333 : 9.14101399739583 : JumpStart); (6.47916666666667 : 9.14101399739583 : JumpEnd); (5.77083333333333 : 9.14101399739583 : JumpStart); (5.60416666666667 : 9.14101399739583 : JumpEnd); (5.27083383333333 : 9.14101399739583 : JumpStart); (5.10416716666667 : 9.14101399739583 : JumpEnd); (4.77083158333333 : 9.14101399739583 : JumpStart); (4.60416491666667 : 9.14101399739583 : JumpEnd); (4.08333333333333 : 9.14101399739583 : JumpStart); (3.91666666666667 : 9.14101399739583 : JumpEnd); (3.75141333333333 : 9.14101399739583 : JumpStart); (3.58474666666667 : 9.14101399739583 : JumpEnd); (3.58333333333333 : 9.14101399739583 : JumpStart); (3.29166666666667 : 9.14101399739583 : JumpEnd); (3.20833333333333 : 9.14101399739583 : JumpStart); (3.04166666666667 : 9.14101399739583 : JumpEnd); (2.98958333333333 : 9.14101399739583 : JumpStart); (2.82291666666667 : 9.14101399739583 : JumpEnd); (2.6875 : 9.14101399739583); (2.6875 : 14.53125); (2.070313 : 14.53125); (2.070313 : 14.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TProduct/TProduct_TMDOSWithPriority" />
+      <nodes>
+        <classShapeMoniker Id="4ab33449-43ca-4209-98f6-3ea9a6a9f40d" />
+        <classShapeMoniker Id="7e36dc08-2a03-479d-b23c-dec2e6cac296" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="a6008e19-0d5e-47cc-a0cd-666101ab7e28" absoluteBounds="3.125, 18.625, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TSAFXProject" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1c9eac93-73c3-441b-92aa-be6784b197ee" absoluteBounds="3.14, 19.085, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c71ca9a1-4556-47cf-bdc7-70a193b407ea" absoluteBounds="16.625, 0.875, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TTestCaseWithPriority" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fe3d92fa-3088-4dc0-9612-52d26328a30c" absoluteBounds="16.64, 1.335, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(16.625 : 2.62580485026042); (16.3333333333333 : 2.62580485026042 : JumpStart); (16.1666666666667 : 2.62580485026042 : JumpEnd); (16.125 : 2.62580485026042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TTestCaseWithPriority/TTestCaseWithPriority_TTestMatrix" />
+      <nodes>
+        <classShapeMoniker Id="c71ca9a1-4556-47cf-bdc7-70a193b407ea" />
+        <classShapeMoniker Id="1b07d1e5-6d50-45b2-8efa-c6ec0ed1d537" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(17.3437505 : 4.37660970052083); (17.3437505 : 4.5625); (16.3645833333333 : 4.5625 : JumpStart); (16.1979166666667 : 4.5625 : JumpEnd); (16.1875 : 4.5625); (16.1875 : 6.8125); (15.7395853333333 : 6.8125 : JumpStart); (15.5729186666667 : 6.8125 : JumpEnd); (14.6733333333333 : 6.8125 : JumpStart); (14.5066666666667 : 6.8125 : JumpEnd); (14.4583333333333 : 6.8125 : JumpStart); (14.2916666666667 : 6.8125 : JumpEnd); (14.1770833333333 : 6.8125 : JumpStart); (14.0104166666667 : 6.8125 : JumpEnd); (12.2708333333333 : 6.8125 : JumpStart); (12.1041666666667 : 6.8125 : JumpEnd); (8.92708333333333 : 6.8125 : JumpStart); (8.76041666666667 : 6.8125 : JumpEnd); (8.75 : 6.8125); (8.75 : 6.27913746913655); (8.625 : 6.27913746913655)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TTestCaseWithPriority/TTestCaseWithPriority_TMatrix" />
+      <nodes>
+        <classShapeMoniker Id="c71ca9a1-4556-47cf-bdc7-70a193b407ea" />
+        <classShapeMoniker Id="e6f11c93-1566-467c-88ea-3592e94752e9" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="33df4b3f-d273-464b-81aa-a385dd8c880d" absoluteBounds="8.125, 18.125, 2, 4.0785139973958344">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TSAFXProjectInputData" />
+      <nestedChildShapes>
+        <elementListCompartment Id="27035e74-4963-47e1-b70c-95a0de760ee2" absoluteBounds="8.14, 18.585, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.125 : 20.9559554036458); (8.125 : 20.9559554036458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TSAFXProject/TSAFXProject_TSAFXProjectInputData" />
+      <nodes>
+        <classShapeMoniker Id="a6008e19-0d5e-47cc-a0cd-666101ab7e28" />
+        <classShapeMoniker Id="33df4b3f-d273-464b-81aa-a385dd8c880d" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="96ad0782-65c9-492c-aa80-d2dd768e1c2e" absoluteBounds="12.375, 18.375, 2, 3.6939111328125023">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TProductMSI" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6d55b0cb-a3a6-47a8-822c-0428454555bc" absoluteBounds="12.39, 18.835, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 7.37672758663862); (3.29166666666667 : 7.37672758663862 : JumpStart); (3.45833333333333 : 7.37672758663862 : JumpEnd); (3.5 : 7.37672758663862); (3.5 : 9.32851399739583); (3.91666666666667 : 9.32851399739583 : JumpStart); (4.08333333333333 : 9.32851399739583 : JumpEnd); (4.60416491666667 : 9.32851399739583 : JumpStart); (4.77083158333333 : 9.32851399739583 : JumpEnd); (5.10416716666667 : 9.32851399739583 : JumpStart); (5.27083383333333 : 9.32851399739583 : JumpEnd); (5.60416666666667 : 9.32851399739583 : JumpStart); (5.77083333333333 : 9.32851399739583 : JumpEnd); (6.125 : 9.32851399739583); (6.125 : 13.0136539713542); (6.16666666666667 : 13.0136539713542 : JumpStart); (6.33333333333333 : 13.0136539713542 : JumpEnd); (6.60416666666667 : 13.0136539713542 : JumpStart); (6.77083333333333 : 13.0136539713542 : JumpEnd); (7.13541666666667 : 13.0136539713542 : JumpStart); (7.30208333333333 : 13.0136539713542 : JumpEnd); (8.01041466666667 : 13.0136539713542 : JumpStart); (8.17708133333333 : 13.0136539713542 : JumpEnd); (10.1041666666667 : 13.0136539713542 : JumpStart); (10.2708333333333 : 13.0136539713542 : JumpEnd); (10.3541666666667 : 13.0136539713542 : JumpStart); (10.6333333333333 : 13.0136539713542 : JumpEnd); (12.9166666666667 : 13.0136539713542 : JumpStart); (13.2083333333333 : 13.0136539713542 : JumpEnd); (13.2291666666667 : 13.0136539713542 : JumpStart); (13.3958333333333 : 13.0136539713542 : JumpEnd); (13.4166666666667 : 13.0136539713542 : JumpStart); (13.5833333333333 : 13.0136539713542 : JumpEnd); (13.9374995 : 13.0136539713542); (13.9374995 : 18.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TCPU/TCPU_TProductMSI" />
+      <nodes>
+        <classShapeMoniker Id="c3bcde5a-763e-462f-88dc-8510e26e1116" />
+        <classShapeMoniker Id="96ad0782-65c9-492c-aa80-d2dd768e1c2e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.25 : 8.16429768880208); (6.5625 : 8.16429768880208); (6.5625 : 9.2925439453125); (8.04166666666667 : 9.2925439453125 : JumpStart); (8.20833333333333 : 9.2925439453125 : JumpEnd); (8.76041666666667 : 9.2925439453125 : JumpStart); (9.08333333333333 : 9.2925439453125 : JumpEnd); (11.4916666666667 : 9.2925439453125 : JumpStart); (11.6583333333333 : 9.2925439453125 : JumpEnd); (11.6666666666667 : 9.2925439453125 : JumpStart); (11.8333333333333 : 9.2925439453125 : JumpEnd); (12.1041666666667 : 9.2925439453125 : JumpStart); (12.2708333333333 : 9.2925439453125 : JumpEnd); (12.2916666666667 : 9.2925439453125 : JumpStart); (12.4583333333333 : 9.2925439453125 : JumpEnd); (12.6666666666667 : 9.2925439453125 : JumpStart); (12.8333333333333 : 9.2925439453125 : JumpEnd); (13.3125 : 9.2925439453125); (13.3125 : 18.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TLanguage/TLanguage_TProductMSI" />
+      <nodes>
+        <classShapeMoniker Id="add724ab-4d58-4bd0-9c79-ff2727baf5e6" />
+        <classShapeMoniker Id="96ad0782-65c9-492c-aa80-d2dd768e1c2e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.8734326148031 : 8.59709920247396); (14.1875 : 18.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TProduct/TProduct_TProductMSI" />
+      <nodes>
+        <classShapeMoniker Id="4ab33449-43ca-4209-98f6-3ea9a6a9f40d" />
+        <classShapeMoniker Id="96ad0782-65c9-492c-aa80-d2dd768e1c2e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.1875 : 10.05625); (10.1041666666667 : 10.05625 : JumpStart); (10.2708333333333 : 10.05625 : JumpEnd); (10.3541666666667 : 10.05625 : JumpStart); (10.5208333333333 : 10.05625 : JumpEnd); (11.5416661666667 : 10.05625 : JumpStart); (11.7083328333333 : 10.05625 : JumpEnd); (12.2916666666667 : 10.05625 : JumpStart); (12.4583333333333 : 10.05625 : JumpEnd); (13.2291666666667 : 10.05625 : JumpStart); (13.3958333333333 : 10.05625 : JumpEnd); (13.5104161666667 : 10.05625 : JumpStart); (13.6770828333333 : 10.05625 : JumpEnd); (13.8369673858898 : 10.05625 : JumpStart); (14.0036340525564 : 10.05625 : JumpEnd); (14.0104166666667 : 10.05625 : JumpStart); (14.1770833333333 : 10.05625 : JumpEnd); (14.5312525 : 10.05625); (14.5312525 : 18.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TSKU/TSKU_TProductMSI" />
+      <nodes>
+        <classShapeMoniker Id="603a2f59-f795-4e86-b898-066d73561b90" />
+        <classShapeMoniker Id="96ad0782-65c9-492c-aa80-d2dd768e1c2e" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="51700e5f-2f46-44ed-a328-7735bd3a67ba" absoluteBounds="7.25, 24.125, 2, 3.5016097005208344">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/PIDSetupFile" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b81896cf-49d3-4c19-a527-eb1f0f6fd9f7" absoluteBounds="7.265, 24.585, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 6.78657577624199); (2.57666666666667 : 6.78657577624199 : JumpStart); (2.74333333333333 : 6.78657577624199 : JumpEnd); (4 : 6.78657577624199); (4 : 9.51601399739583); (5.10416716666667 : 9.51601399739583 : JumpStart); (5.27083383333333 : 9.51601399739583 : JumpEnd); (5.60416666666667 : 9.51601399739583 : JumpStart); (5.77083333333333 : 9.51601399739583 : JumpEnd); (6.04166666666667 : 9.51601399739583 : JumpStart); (6.20833333333333 : 9.51601399739583 : JumpEnd); (6.4375 : 9.51601399739583); (6.4375 : 12.9375); (6.60416666666667 : 12.9375 : JumpStart); (6.77083333333333 : 12.9375 : JumpEnd); (7.13541666666667 : 12.9375 : JumpStart); (7.30208333333333 : 12.9375 : JumpEnd); (8.01041466666667 : 12.9375 : JumpStart); (8.17708133333333 : 12.9375 : JumpEnd); (10.1041666666667 : 12.9375 : JumpStart); (10.2708333333333 : 12.9375 : JumpEnd); (10.3125 : 12.9375); (10.3125 : 26.5177038214009); (9.25 : 26.5177038214009)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TCPU/TCPU_PIDSetupFile" />
+      <nodes>
+        <classShapeMoniker Id="c3bcde5a-763e-462f-88dc-8510e26e1116" />
+        <classShapeMoniker Id="51700e5f-2f46-44ed-a328-7735bd3a67ba" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.68749825 : 8.95359537760417); (4.68749825 : 9.57859537760417); (5.10416716666667 : 9.57859537760417 : JumpStart); (5.27083383333333 : 9.57859537760417 : JumpEnd); (5.60416666666667 : 9.57859537760417 : JumpStart); (5.77083333333333 : 9.57859537760417 : JumpEnd); (6.04166666666667 : 9.57859537760417 : JumpStart); (6.20833333333333 : 9.57859537760417 : JumpEnd); (6.25 : 9.57859537760417); (6.25 : 13.625); (6.60416666666667 : 13.625 : JumpStart); (6.77083333333333 : 13.625 : JumpEnd); (6.79166666666667 : 13.625 : JumpStart); (6.95833333333333 : 13.625 : JumpEnd); (7.13541666666667 : 13.625 : JumpStart); (7.30208333333333 : 13.625 : JumpEnd); (8.01041466666667 : 13.625 : JumpStart); (8.17708133333333 : 13.625 : JumpEnd); (8.54166666666667 : 13.625 : JumpStart); (8.70833333333333 : 13.625 : JumpEnd); (9.07291866666667 : 13.625 : JumpStart); (9.23958533333333 : 13.625 : JumpEnd); (10.1041666666667 : 13.625 : JumpStart); (10.2708333333333 : 13.625 : JumpEnd); (10.375 : 13.625); (10.375 : 24.9785383142802); (9.25 : 24.9785383142802)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TLanguage/TLanguage_PIDSetupFile" />
+      <nodes>
+        <classShapeMoniker Id="add724ab-4d58-4bd0-9c79-ff2727baf5e6" />
+        <classShapeMoniker Id="51700e5f-2f46-44ed-a328-7735bd3a67ba" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(12.75 : 8.64589680989583); (12.75 : 9.9375); (12.4583333333333 : 9.9375 : JumpStart); (12.2916666666667 : 9.9375 : JumpEnd); (11.7083328333333 : 9.9375 : JumpStart); (11.5416661666667 : 9.9375 : JumpEnd); (10.4375 : 9.9375); (10.4375 : 26.5177038214009); (9.25 : 26.5177038214009)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TProduct/TProduct_PIDSetupFile" />
+      <nodes>
+        <classShapeMoniker Id="4ab33449-43ca-4209-98f6-3ea9a6a9f40d" />
+        <classShapeMoniker Id="51700e5f-2f46-44ed-a328-7735bd3a67ba" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="d429438d-b1c0-4a3d-af4d-888376ebac43" absoluteBounds="8.75, 28.125, 2, 2.15549967447917">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/PIDSetupFileExtractTask" />
+      <nestedChildShapes>
+        <elementListCompartment Id="63613787-e1f2-4a41-9ccc-16c2c98478e9" absoluteBounds="8.765, 28.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(9 : 27.5102461751302); (9 : 28.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/PIDSetupFile/PIDSetupFile_PIDSetupFileExtractTask" />
+      <nodes>
+        <classShapeMoniker Id="51700e5f-2f46-44ed-a328-7735bd3a67ba" />
+        <classShapeMoniker Id="d429438d-b1c0-4a3d-af4d-888376ebac43" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="afa5b799-8381-4665-a1cd-c9f27350cbed" absoluteBounds="11.875, 26, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/PIDSetupFileExtract" />
+      <nestedChildShapes>
+        <elementListCompartment Id="005c22e7-99f6-46db-b785-24b4be5cb2c0" absoluteBounds="11.89, 26.46, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(12.343748 : 28.3478011067708); (12.343748 : 29.314150890625); (12.0520833333333 : 29.314150890625 : JumpStart); (11.8854166666667 : 29.314150890625 : JumpEnd); (11.2708333333333 : 29.314150890625 : JumpStart); (11.1041666666667 : 29.314150890625 : JumpEnd); (11.0208333333333 : 29.314150890625 : JumpStart); (10.8541666666667 : 29.314150890625 : JumpEnd); (10.75 : 29.314150890625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/PIDSetupFileExtract/PIDSetupFileExtract_PIDSetupFileExtractTask" />
+      <nodes>
+        <classShapeMoniker Id="afa5b799-8381-4665-a1cd-c9f27350cbed" />
+        <classShapeMoniker Id="d429438d-b1c0-4a3d-af4d-888376ebac43" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.25 : 26.4766610071208); (10.4666666666667 : 26.4766610071208 : JumpStart); (10.6333333333333 : 26.4766610071208 : JumpEnd); (10.8541666666667 : 26.4766610071208 : JumpStart); (11.0208333333333 : 26.4766610071208 : JumpEnd); (11.1041666666667 : 26.4766610071208 : JumpStart); (11.2708333333333 : 26.4766610071208 : JumpEnd); (11.875 : 26.4766610071208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/PIDSetupFile/PIDSetupFile_PIDSetupFileExtract" />
+      <nodes>
+        <classShapeMoniker Id="51700e5f-2f46-44ed-a328-7735bd3a67ba" />
+        <classShapeMoniker Id="afa5b799-8381-4665-a1cd-c9f27350cbed" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(12.5842307692308 : 26); (12.5842307692308 : 25.75); (13.1796153846154 : 25.75); (13.1796153846154 : 26)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/PIDSetupFileExtract/PIDSetupFileExtract_PIDSetupFileExtract" />
+      <nodes>
+        <classShapeMoniker Id="afa5b799-8381-4665-a1cd-c9f27350cbed" />
+        <classShapeMoniker Id="afa5b799-8381-4665-a1cd-c9f27350cbed" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="4c516354-2f9b-4294-bfa5-65312f7d7a44" absoluteBounds="9.125, 30.75, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/PIDSetupFileExtractPayload" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e5c8b51f-2261-44d7-95d8-8bc6cb97dcfc" absoluteBounds="9.14, 31.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(9.25 : 25.4365594714203); (10.3541666666667 : 25.4365594714203 : JumpStart); (10.5208333333333 : 25.4365594714203 : JumpEnd); (10.9375 : 25.4365594714203); (10.9375 : 30.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/PIDSetupFile/PIDSetupFile_PIDSetupFileExtractPayload" />
+      <nodes>
+        <classShapeMoniker Id="51700e5f-2f46-44ed-a328-7735bd3a67ba" />
+        <classShapeMoniker Id="4c516354-2f9b-4294-bfa5-65312f7d7a44" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.96875 : 28.3478011067708); (11.96875 : 31.15625); (11.125 : 31.15625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/PIDSetupFileExtract/PIDSetupFileExtract_PIDSetupFileExtractPayload" />
+      <nodes>
+        <classShapeMoniker Id="afa5b799-8381-4665-a1cd-c9f27350cbed" />
+        <classShapeMoniker Id="4c516354-2f9b-4294-bfa5-65312f7d7a44" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="0322e01c-edea-4171-b511-c4a2f02508a6" absoluteBounds="6.375, 28.75, 2, 8.5014469401041666">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/PIDSetupFileExtractProperty" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dd2ad7be-be54-46cc-98e8-1d2716b67197" absoluteBounds="6.39, 29.21, 1.9700000000000002, 7.9414469401041661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.56249975 : 27.5102461751302); (7.56249975 : 28.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/PIDSetupFile/PIDSetupFile_PIDSetupFileExtractProperty" />
+      <nodes>
+        <classShapeMoniker Id="51700e5f-2f46-44ed-a328-7735bd3a67ba" />
+        <classShapeMoniker Id="0322e01c-edea-4171-b511-c4a2f02508a6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.875 : 27.8758073502604); (11.2708333333333 : 27.8758073502604 : JumpStart); (11.1041666666667 : 27.8758073502604 : JumpEnd); (11.0208333333333 : 27.8758073502604 : JumpStart); (10.8541666666667 : 27.8758073502604 : JumpEnd); (8.08333283333333 : 27.8758073502604 : JumpStart); (7.91666616666667 : 27.8758073502604 : JumpEnd); (7.21875 : 27.8758073502604); (7.21875 : 28.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/PIDSetupFileExtract/PIDSetupFileExtract_PIDSetupFileExtractProperty" />
+      <nodes>
+        <classShapeMoniker Id="afa5b799-8381-4665-a1cd-c9f27350cbed" />
+        <classShapeMoniker Id="0322e01c-edea-4171-b511-c4a2f02508a6" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="6a4d7943-770d-47bf-b89d-50bffb3074a7" absoluteBounds="3.625, 30.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/PIDSetupFileExtractTargetProduct" />
+      <nestedChildShapes>
+        <elementListCompartment Id="564256c3-c86c-4fe2-97e9-a6163f927721" absoluteBounds="3.64, 31.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.9999995 : 27.6266097005208); (7.9999995 : 28.25); (6.125 : 28.25); (6.125 : 31.8277498372396); (5.625 : 31.8277498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/PIDSetupFile/PIDSetupFile_PIDSetupFileExtractTargetProduct" />
+      <nodes>
+        <classShapeMoniker Id="51700e5f-2f46-44ed-a328-7735bd3a67ba" />
+        <classShapeMoniker Id="6a4d7943-770d-47bf-b89d-50bffb3074a7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.875 : 27.0783220142415); (11.2708333333333 : 27.0783220142415 : JumpStart); (11.1041666666667 : 27.0783220142415 : JumpEnd); (11.0208333333333 : 27.0783220142415 : JumpStart); (10.8541666666667 : 27.0783220142415 : JumpEnd); (9.5 : 27.0783220142415); (9.5 : 27.6352461751302); (6.25 : 27.6352461751302); (6.25 : 30.3365401204427); (6.20833333333333 : 30.3365401204427 : JumpStart); (6.04166666666667 : 30.3365401204427 : JumpEnd); (6.02083333333333 : 30.3365401204427 : JumpStart); (5.85416666666667 : 30.3365401204427 : JumpEnd); (4.33423076923077 : 30.3365401204427); (4.33423076923077 : 30.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/PIDSetupFileExtract/PIDSetupFileExtract_PIDSetupFileExtractTargetProduct" />
+      <nodes>
+        <classShapeMoniker Id="afa5b799-8381-4665-a1cd-c9f27350cbed" />
+        <classShapeMoniker Id="6a4d7943-770d-47bf-b89d-50bffb3074a7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.7812495 : 22.0689111328125); (13.7812495 : 25.8125); (11.1875 : 25.8125); (11.1875 : 30.6875); (8.4375 : 30.6875); (8.4375 : 28.6875); (6.20833333333333 : 28.6875 : JumpStart); (6.04166666666667 : 28.6875 : JumpEnd); (5.9375 : 28.6875); (5.9375 : 31.8277498372396); (5.625 : 31.8277498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TProductMSI/TProductMSI_PIDSetupFileExtractTargetProduct" />
+      <nodes>
+        <classShapeMoniker Id="96ad0782-65c9-492c-aa80-d2dd768e1c2e" />
+        <classShapeMoniker Id="6a4d7943-770d-47bf-b89d-50bffb3074a7" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="276daeeb-a6ee-4aed-af71-98e622107f2f" absoluteBounds="15, 23.75, 2, 2.5401025390625023">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/PIDSetupFileExtractMSIPatchSequence" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ac0e37a6-620e-4934-a18e-c28c0cf83588" absoluteBounds="15.015, 24.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(9.25 : 25.8945806285604); (10.2291666666667 : 25.8945806285604 : JumpStart); (10.6333333333333 : 25.8945806285604 : JumpEnd); (10.8541666666667 : 25.8945806285604 : JumpStart); (11.0208333333333 : 25.8945806285604 : JumpEnd); (12.5008974358975 : 25.8945806285604 : JumpStart); (12.6675641025641 : 25.8945806285604 : JumpEnd); (13.0962820512821 : 25.8945806285604 : JumpStart); (13.2629487179487 : 25.8945806285604 : JumpEnd); (14.5066666666667 : 25.8945806285604 : JumpStart); (14.8333333333333 : 25.8945806285604 : JumpEnd); (15 : 25.8945806285604)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/PIDSetupFile/PIDSetupFile_PIDSetupFileExtractMSIPatchSequence" />
+      <nodes>
+        <classShapeMoniker Id="51700e5f-2f46-44ed-a328-7735bd3a67ba" />
+        <classShapeMoniker Id="276daeeb-a6ee-4aed-af71-98e622107f2f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.875 : 26.53125); (14.5066666666667 : 26.53125 : JumpStart); (14.8333333333333 : 26.53125 : JumpEnd); (15.15625 : 26.53125); (15.15625 : 25.9965844726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/PIDSetupFileExtract/PIDSetupFileExtract_PIDSetupFileExtractMSIPatchSequence" />
+      <nodes>
+        <classShapeMoniker Id="afa5b799-8381-4665-a1cd-c9f27350cbed" />
+        <classShapeMoniker Id="276daeeb-a6ee-4aed-af71-98e622107f2f" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="7cfbf868-4f41-4f0b-8699-202a9464f30e" absoluteBounds="3.875, 23.375, 2, 6.9630354817708344">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/PIDSetup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3904507a-398f-483c-a57d-b8cd31ae87cf" absoluteBounds="3.8899999999999997, 23.835, 1.9700000000000002, 6.403035481770833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.875 : 26.8137072753906); (7.25 : 26.8137072753906)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/PIDSetup/PIDSetup_PIDSetupFile" />
+      <nodes>
+        <classShapeMoniker Id="7cfbf868-4f41-4f0b-8699-202a9464f30e" />
+        <classShapeMoniker Id="51700e5f-2f46-44ed-a328-7735bd3a67ba" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="1e34ebf2-72f1-43db-9249-3174e56c0f2b" absoluteBounds="4.125, 36.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/SANFileLocation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fbc79eb9-d39c-4e45-97dc-3d996a934e9d" absoluteBounds="4.14, 37.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(0.53125 : 8.07859537760417); (0.53125 : 37.7027498372396); (4.125 : 37.7027498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TCPU/TCPU_SANFileLocation" />
+      <nodes>
+        <classShapeMoniker Id="c3bcde5a-763e-462f-88dc-8510e26e1116" />
+        <classShapeMoniker Id="1e34ebf2-72f1-43db-9249-3174e56c0f2b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.875 : 8.42086909199015); (11.8333333333333 : 8.42086909199015 : JumpStart); (11.6666666666667 : 8.42086909199015 : JumpEnd); (11.575 : 8.42086909199015); (11.575 : 10.01875); (10.55 : 10.01875); (10.55 : 27.9875); (9.08333333333333 : 27.9875 : JumpStart); (8.91666666666667 : 27.9875 : JumpEnd); (8.08333283333333 : 27.9875 : JumpStart); (7.91666616666667 : 27.9875 : JumpEnd); (7.64583308333333 : 27.9875 : JumpStart); (7.47916641666667 : 27.9875 : JumpEnd); (7.30208333333333 : 27.9875 : JumpStart); (7.13541666666667 : 27.9875 : JumpEnd); (6.33333333333333 : 27.9875 : JumpStart); (6.16666666666667 : 27.9875 : JumpEnd); (6.05 : 27.9875); (6.05 : 36.325); (5.125 : 36.325); (5.125 : 36.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TProduct/TProduct_SANFileLocation" />
+      <nodes>
+        <classShapeMoniker Id="4ab33449-43ca-4209-98f6-3ea9a6a9f40d" />
+        <classShapeMoniker Id="1e34ebf2-72f1-43db-9249-3174e56c0f2b" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="e5de5e42-46a6-42b6-84ba-3fd4518591f1" absoluteBounds="5.875, 17.375, 2, 3.5016097005208344">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TSAFXProjectSubmittedData" />
+      <nestedChildShapes>
+        <elementListCompartment Id="206acd13-f475-4867-bf6a-879900b22962" absoluteBounds="5.89, 17.835, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.125 : 20.357358194987); (5.875 : 20.357358194987)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TSAFXProject/TSAFXProject_TSAFXProjectSubmittedData" />
+      <nodes>
+        <classShapeMoniker Id="a6008e19-0d5e-47cc-a0cd-666101ab7e28" />
+        <classShapeMoniker Id="e5de5e42-46a6-42b6-84ba-3fd4518591f1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.125 : 18.65625); (7.875 : 18.65625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TSAFXProjectInputData/TSAFXProjectInputData_TSAFXProjectSubmittedData" />
+      <nodes>
+        <classShapeMoniker Id="33df4b3f-d273-464b-81aa-a385dd8c880d" />
+        <classShapeMoniker Id="e5de5e42-46a6-42b6-84ba-3fd4518591f1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(26.25 : 11.3855276187337); (25.4583333333333 : 11.3855276187337 : JumpStart); (25.2916666666667 : 11.3855276187337 : JumpEnd); (25.125 : 11.3855276187337); (25.125 : 11.875); (25.0208333333333 : 11.875 : JumpStart); (24.8541666666667 : 11.875 : JumpEnd); (24.1145833333333 : 11.875 : JumpStart); (23.9479166666667 : 11.875 : JumpEnd); (23.875 : 11.875); (23.875 : 12.0208968098958); (22.4583333333333 : 12.0208968098958 : JumpStart); (22.2916666666667 : 12.0208968098958 : JumpEnd); (21.9583358333333 : 12.0208968098958 : JumpStart); (21.7916691666667 : 12.0208968098958 : JumpEnd); (21.6458333333333 : 12.0208968098958 : JumpStart); (21.4791666666667 : 12.0208968098958 : JumpEnd); (21.2083333333333 : 12.0208968098958 : JumpStart); (21.0416666666667 : 12.0208968098958 : JumpEnd); (20.875 : 12.0208968098958); (20.875 : 11.1939925130208); (18.2395833333333 : 11.1939925130208 : JumpStart); (17.8541666666667 : 11.1939925130208 : JumpEnd); (17.8433333333333 : 11.1939925130208 : JumpStart); (17.5729166666667 : 11.1939925130208 : JumpEnd); (17.3333333333333 : 11.1939925130208 : JumpStart); (17.1666666666667 : 11.1939925130208 : JumpEnd); (16.9270860833333 : 11.1939925130208 : JumpStart); (16.7604194166667 : 11.1939925130208 : JumpEnd); (16.4583338333333 : 11.1939925130208 : JumpStart); (16.2916671666667 : 11.1939925130208 : JumpEnd); (16.0208333333333 : 11.1939925130208 : JumpStart); (15.8541666666667 : 11.1939925130208 : JumpEnd); (15.0854533333333 : 11.1939925130208 : JumpStart); (14.9187866666667 : 11.1939925130208 : JumpEnd); (14.8333333333333 : 11.1939925130208 : JumpStart); (14.4479191666667 : 11.1939925130208 : JumpEnd); (14.1770833333333 : 11.1939925130208 : JumpStart); (13.8735118163858 : 11.1939925130208 : JumpEnd); (13.3958333333333 : 11.1939925130208 : JumpStart); (13.2291666666667 : 11.1939925130208 : JumpEnd); (13.125 : 11.1939925130208); (13.125 : 13.3574039713542); (10.6333333333333 : 13.3574039713542 : JumpStart); (10.1041666666667 : 13.3574039713542 : JumpEnd); (9.23958533333333 : 13.3574039713542 : JumpStart); (9.07291866666667 : 13.3574039713542 : JumpEnd); (8.17708133333333 : 13.3574039713542 : JumpStart); (8.01041466666667 : 13.3574039713542 : JumpEnd); (7.21875 : 13.3574039713542); (7.21875 : 17.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TRunResult/TRunResult_TSAFXProjectSubmittedData" />
+      <nodes>
+        <classShapeMoniker Id="17b7e687-ae44-4904-b34d-3efa146aa9a2" />
+        <classShapeMoniker Id="e5de5e42-46a6-42b6-84ba-3fd4518591f1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(27.375 : 13.5689925130208); (27.375 : 14.6875); (26.6145833333333 : 14.6875 : JumpStart); (26.4479166666667 : 14.6875 : JumpEnd); (26.3645833333333 : 14.6875 : JumpStart); (26.1979166666667 : 14.6875 : JumpEnd); (25.8125 : 14.6875); (25.8125 : 19.6602197265625); (22.4583333333333 : 19.6602197265625 : JumpStart); (22.2916666666667 : 19.6602197265625 : JumpEnd); (21.9583358333333 : 19.6602197265625 : JumpStart); (21.7916691666667 : 19.6602197265625 : JumpEnd); (20.3645833333333 : 19.6602197265625 : JumpStart); (20.1979166666667 : 19.6602197265625 : JumpEnd); (18.1458333333333 : 19.6602197265625 : JumpStart); (17.8541666666667 : 19.6602197265625 : JumpEnd); (17.8433333333333 : 19.6602197265625 : JumpStart); (17.4791666666667 : 19.6602197265625 : JumpEnd); (14.8958333333333 : 19.6602197265625 : JumpStart); (14.5066666666667 : 19.6602197265625 : JumpEnd); (14.4375 : 19.6602197265625); (14.4375 : 18.0625); (14.2607957946114 : 18.0625 : JumpStart); (14.0941291279448 : 18.0625 : JumpEnd); (14.0208328333333 : 18.0625 : JumpStart); (13.8541661666667 : 18.0625 : JumpEnd); (13.3958333333333 : 18.0625 : JumpStart); (13.2291666666667 : 18.0625 : JumpEnd); (10.6333333333333 : 18.0625 : JumpStart); (10.1041666666667 : 18.0625 : JumpEnd); (7.96875 : 18.0625); (7.96875 : 19.1258048502604); (7.875 : 19.1258048502604)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TRunStatus/TRunStatus_TSAFXProjectSubmittedData" />
+      <nodes>
+        <classShapeMoniker Id="cc92e0b2-3373-4b57-aded-ecbaa876911c" />
+        <classShapeMoniker Id="e5de5e42-46a6-42b6-84ba-3fd4518591f1" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="a42cd205-6fba-4927-8c8b-d8fc2074ea85" absoluteBounds="0.625, 10.375, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TJob" />
+      <nestedChildShapes>
+        <elementListCompartment Id="31993c8a-ec40-46a9-9d04-5130ccfb15d5" absoluteBounds="0.64000000000000012, 10.835, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.625 : 12.7861267903646); (3.04166666666667 : 12.7861267903646 : JumpStart); (3.20833333333333 : 12.7861267903646 : JumpEnd); (5.41666666666667 : 12.7861267903646 : JumpStart); (5.58333333333333 : 12.7861267903646 : JumpEnd); (6.04166666666667 : 12.7861267903646 : JumpStart); (6.33333333333333 : 12.7861267903646 : JumpEnd); (6.35416666666667 : 12.7861267903646 : JumpStart); (6.52083333333333 : 12.7861267903646 : JumpEnd); (6.60416666666667 : 12.7861267903646 : JumpStart); (6.77083333333333 : 12.7861267903646 : JumpEnd); (7.21875 : 12.7861267903646); (7.21875 : 17.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TJob/TJob_TSAFXProjectSubmittedData" />
+      <nodes>
+        <classShapeMoniker Id="a42cd205-6fba-4927-8c8b-d8fc2074ea85" />
+        <classShapeMoniker Id="e5de5e42-46a6-42b6-84ba-3fd4518591f1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(26.25 : 11.0145587244466); (25.4583333333333 : 11.0145587244466 : JumpStart); (25.2916666666667 : 11.0145587244466 : JumpEnd); (24.9375 : 11.0145587244466); (24.9375 : 9.4375); (22.4583333333333 : 9.4375 : JumpStart); (22.2916666666667 : 9.4375 : JumpEnd); (21.9583358333333 : 9.4375 : JumpStart); (21.7916691666667 : 9.4375 : JumpEnd); (21.6458333333333 : 9.4375 : JumpStart); (21.4791666666667 : 9.4375 : JumpEnd); (18.2395833333333 : 9.4375 : JumpStart); (17.9791666666667 : 9.4375 : JumpEnd); (17.8433333333333 : 9.4375 : JumpStart); (17.5729166666667 : 9.4375 : JumpEnd); (17.3333333333333 : 9.4375 : JumpStart); (17.1666666666667 : 9.4375 : JumpEnd); (16.0208333333333 : 9.4375 : JumpStart); (15.8541666666667 : 9.4375 : JumpEnd); (14.6733333333333 : 9.4375 : JumpStart); (14.5066666666667 : 9.4375 : JumpEnd); (14.4583333333333 : 9.4375 : JumpStart); (14.0104166666667 : 9.4375 : JumpEnd); (13.9837597258871 : 9.4375 : JumpStart); (13.8170930592204 : 9.4375 : JumpEnd); (13.6770828333333 : 9.4375 : JumpStart); (13.5104161666667 : 9.4375 : JumpEnd); (13.3958333333333 : 9.4375 : JumpStart); (13.2291666666667 : 9.4375 : JumpEnd); (12.8333333333333 : 9.4375 : JumpStart); (12.6666666666667 : 9.4375 : JumpEnd); (12.4583333333333 : 9.4375 : JumpStart); (12.2916666666667 : 9.4375 : JumpEnd); (12.2708333333333 : 9.4375 : JumpStart); (12.1041666666667 : 9.4375 : JumpEnd); (11.8333333333333 : 9.4375 : JumpStart); (11.6666666666667 : 9.4375 : JumpEnd); (11.6583333333333 : 9.4375 : JumpStart); (11.4916666666667 : 9.4375 : JumpEnd); (10.2708333333333 : 9.4375 : JumpStart); (10.1041666666667 : 9.4375 : JumpEnd); (9.08333333333333 : 9.4375 : JumpStart); (8.79758081562242 : 9.4375 : JumpEnd); (6.58333333333333 : 9.4375 : JumpStart); (6.41666666666667 : 9.4375 : JumpEnd); (6.20833333333333 : 9.4375 : JumpStart); (6.04166666666667 : 9.4375 : JumpEnd); (5.77083333333333 : 9.4375 : JumpStart); (5.60416666666667 : 9.4375 : JumpEnd); (5.27083383333333 : 9.4375 : JumpStart); (5.10416716666667 : 9.4375 : JumpEnd); (4.77083158333333 : 9.4375 : JumpStart); (4.60416491666667 : 9.4375 : JumpEnd); (3.33333333333333 : 9.4375 : JumpStart); (3.04166666666667 : 9.4375 : JumpEnd); (2.98958333333333 : 9.4375 : JumpStart); (2.82291666666667 : 9.4375 : JumpEnd); (2.8125 : 9.4375); (2.8125 : 10.3125); (2.77083333333333 : 10.3125 : JumpStart); (2.60416666666667 : 10.3125 : JumpEnd); (1.625 : 10.3125); (1.625 : 10.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TRunResult/TRunResult_TJob" />
+      <nodes>
+        <classShapeMoniker Id="17b7e687-ae44-4904-b34d-3efa146aa9a2" />
+        <classShapeMoniker Id="a42cd205-6fba-4927-8c8b-d8fc2074ea85" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(27.375 : 12.375); (27.375 : 12.0625); (26.3645833333333 : 12.0625 : JumpStart); (26.1822916666667 : 12.0625 : JumpEnd); (24.1145833333333 : 12.0625 : JumpStart); (23.7916666666667 : 12.0625 : JumpEnd); (22.4583333333333 : 12.0625 : JumpStart); (22.2916666666667 : 12.0625 : JumpEnd); (21.9583358333333 : 12.0625 : JumpStart); (21.7916691666667 : 12.0625 : JumpEnd); (21.6458333333333 : 12.0625 : JumpStart); (21.4791666666667 : 12.0625 : JumpEnd); (21.2083333333333 : 12.0625 : JumpStart); (21.0416666666667 : 12.0625 : JumpEnd); (20.5625 : 12.0625); (20.5625 : 11.6875); (18.2395833333333 : 11.6875 : JumpStart); (17.8541666666667 : 11.6875 : JumpEnd); (17.8433333333333 : 11.6875 : JumpStart); (17.5729166666667 : 11.6875 : JumpEnd); (17.3333333333333 : 11.6875 : JumpStart); (17.1666666666667 : 11.6875 : JumpEnd); (16.9270860833333 : 11.6875 : JumpStart); (16.7604194166667 : 11.6875 : JumpEnd); (16.4583338333333 : 11.6875 : JumpStart); (16.2916671666667 : 11.6875 : JumpEnd); (16.0208333333333 : 11.6875 : JumpStart); (15.8541666666667 : 11.6875 : JumpEnd); (15.0854533333333 : 11.6875 : JumpStart); (14.9187866666667 : 11.6875 : JumpEnd); (14.8333333333333 : 11.6875 : JumpStart); (14.4479191666667 : 11.6875 : JumpEnd); (14.0560300046847 : 11.6875 : JumpStart); (13.8893633380181 : 11.6875 : JumpEnd); (13.5833333333333 : 11.6875 : JumpStart); (13.4166666666667 : 11.6875 : JumpEnd); (13.3958333333333 : 11.6875 : JumpStart); (13.2291666666667 : 11.6875 : JumpEnd); (13.2083333333333 : 11.6875 : JumpStart); (13.0416666666667 : 11.6875 : JumpEnd); (12.9375 : 11.6875); (12.9375 : 13.0449039713542); (10.6333333333333 : 13.0449039713542 : JumpStart); (10.1041666666667 : 13.0449039713542 : JumpEnd); (8.17708133333333 : 13.0449039713542 : JumpStart); (8.01041466666667 : 13.0449039713542 : JumpEnd); (7.30208333333333 : 13.0449039713542 : JumpStart); (7.13541666666667 : 13.0449039713542 : JumpEnd); (6.77083333333333 : 13.0449039713542 : JumpStart); (6.60416666666667 : 13.0449039713542 : JumpEnd); (6.33333333333333 : 13.0449039713542 : JumpStart); (6.16666666666667 : 13.0449039713542 : JumpEnd); (5.58333333333333 : 13.0449039713542 : JumpStart); (5.41666666666667 : 13.0449039713542 : JumpEnd); (3.20833333333333 : 13.0449039713542 : JumpStart); (3.04166666666667 : 13.0449039713542 : JumpEnd); (2.98958333333333 : 13.0449039713542 : JumpStart); (2.82291666666667 : 13.0449039713542 : JumpEnd); (2.78125 : 13.0449039713542); (2.78125 : 12.1258048502604); (2.625 : 12.1258048502604)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TRunStatus/TRunStatus_TJob" />
+      <nodes>
+        <classShapeMoniker Id="cc92e0b2-3373-4b57-aded-ecbaa876911c" />
+        <classShapeMoniker Id="a42cd205-6fba-4927-8c8b-d8fc2074ea85" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="81216990-2d4f-49da-9320-33ac576b950d" absoluteBounds="7.625, 13.75, 2, 3.6939111328125023">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TTestProdAttribute" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d48da836-da8a-4b67-bdc4-495cfecf4e18" absoluteBounds="7.64, 14.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(26.25 : 10.7260273622233); (25.375 : 10.7260273622233); (25.375 : 11.9375); (25.0208333333333 : 11.9375 : JumpStart); (24.8541666666667 : 11.9375 : JumpEnd); (24.1145833333333 : 11.9375 : JumpStart); (23.9479166666667 : 11.9375 : JumpEnd); (23.875 : 11.9375); (23.875 : 12.2708968098958); (22.4583333333333 : 12.2708968098958 : JumpStart); (22.2916666666667 : 12.2708968098958 : JumpEnd); (21.9583358333333 : 12.2708968098958 : JumpStart); (21.7916691666667 : 12.2708968098958 : JumpEnd); (21.6458333333333 : 12.2708968098958 : JumpStart); (21.4791666666667 : 12.2708968098958 : JumpEnd); (21.125 : 12.2708968098958); (21.125 : 11.3189925130208); (20.9583333333333 : 11.3189925130208 : JumpStart); (20.7916666666667 : 11.3189925130208 : JumpEnd); (18.2395833333333 : 11.3189925130208 : JumpStart); (17.8541666666667 : 11.3189925130208 : JumpEnd); (17.8433333333333 : 11.3189925130208 : JumpStart); (17.5729166666667 : 11.3189925130208 : JumpEnd); (17.3333333333333 : 11.3189925130208 : JumpStart); (17.1666666666667 : 11.3189925130208 : JumpEnd); (16.9270860833333 : 11.3189925130208 : JumpStart); (16.7604194166667 : 11.3189925130208 : JumpEnd); (16.4583338333333 : 11.3189925130208 : JumpStart); (16.2916671666667 : 11.3189925130208 : JumpEnd); (16.0208333333333 : 11.3189925130208 : JumpStart); (15.8541666666667 : 11.3189925130208 : JumpEnd); (15.0854533333333 : 11.3189925130208 : JumpStart); (14.9187866666667 : 11.3189925130208 : JumpEnd); (14.8333333333333 : 11.3189925130208 : JumpStart); (14.4479191666667 : 11.3189925130208 : JumpEnd); (14.1770833333333 : 11.3189925130208 : JumpStart); (13.8775268318745 : 11.3189925130208 : JumpEnd); (13.5 : 11.3189925130208); (13.5 : 13.4824039713542); (13.3958333333333 : 13.4824039713542 : JumpStart); (13.2291666666667 : 13.4824039713542 : JumpEnd); (10.6333333333333 : 13.4824039713542 : JumpStart); (10.1041666666667 : 13.4824039713542 : JumpEnd); (9.23958533333333 : 13.4824039713542 : JumpStart); (9.07291866666667 : 13.4824039713542 : JumpEnd); (8.625 : 13.4824039713542); (8.625 : 13.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TRunResult/TRunResult_TTestProdAttribute" />
+      <nodes>
+        <classShapeMoniker Id="17b7e687-ae44-4904-b34d-3efa146aa9a2" />
+        <classShapeMoniker Id="81216990-2d4f-49da-9320-33ac576b950d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(26.375 : 12.9719962565104); (26.3645833333333 : 12.9719962565104 : JumpStart); (26.1979166666667 : 12.9719962565104 : JumpEnd); (26.1875 : 12.9719962565104); (26.1875 : 14.5353011067708); (24.1458333333333 : 14.5353011067708 : JumpStart); (23.9479166666667 : 14.5353011067708 : JumpEnd); (22.4583333333333 : 14.5353011067708 : JumpStart); (22.2916666666667 : 14.5353011067708 : JumpEnd); (21.9583358333333 : 14.5353011067708 : JumpStart); (21.7916691666667 : 14.5353011067708 : JumpEnd); (21.6458333333333 : 14.5353011067708 : JumpStart); (21.4791666666667 : 14.5353011067708 : JumpEnd); (18.2395833333333 : 14.5353011067708 : JumpStart); (17.9479171666667 : 14.5353011067708 : JumpEnd); (17.875 : 14.5353011067708); (17.875 : 11.8125); (17.8433333333333 : 11.8125 : JumpStart); (17.5729166666667 : 11.8125 : JumpEnd); (15.0854533333333 : 11.8125 : JumpStart); (14.9187866666667 : 11.8125 : JumpEnd); (14.8333333333333 : 11.8125 : JumpStart); (14.4479191666667 : 11.8125 : JumpEnd); (14.0600450201735 : 11.8125 : JumpStart); (13.8933783535068 : 11.8125 : JumpEnd); (13.5833333333333 : 11.8125 : JumpStart); (13.4166666666667 : 11.8125 : JumpEnd); (13.3958333333333 : 11.8125 : JumpStart); (13.2291666666667 : 11.8125 : JumpEnd); (13.2083333333333 : 11.8125 : JumpStart); (13.0416666666667 : 11.8125 : JumpEnd); (13 : 11.8125); (13 : 13.2324039713542); (10.6333333333333 : 13.2324039713542 : JumpStart); (10.1041666666667 : 13.2324039713542 : JumpEnd); (9.156252 : 13.2324039713542); (9.156252 : 13.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TRunStatus/TRunStatus_TTestProdAttribute" />
+      <nodes>
+        <classShapeMoniker Id="cc92e0b2-3373-4b57-aded-ecbaa876911c" />
+        <classShapeMoniker Id="81216990-2d4f-49da-9320-33ac576b950d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 6.9832930463742); (2.57666666666667 : 6.9832930463742 : JumpStart); (2.74333333333333 : 6.9832930463742 : JumpEnd); (3.91666666666667 : 6.9832930463742 : JumpStart); (4.08333333333333 : 6.9832930463742 : JumpEnd); (4.125 : 6.9832930463742); (4.125 : 9.07851399739583); (4.60416491666667 : 9.07851399739583 : JumpStart); (4.77083158333333 : 9.07851399739583 : JumpEnd); (5.10416716666667 : 9.07851399739583 : JumpStart); (5.27083383333333 : 9.07851399739583 : JumpEnd); (5.60416666666667 : 9.07851399739583 : JumpStart); (5.77083333333333 : 9.07851399739583 : JumpEnd); (6.5 : 9.07851399739583); (6.5 : 11.9054996744792); (6.60416666666667 : 11.9054996744792 : JumpStart); (6.77083333333333 : 11.9054996744792 : JumpEnd); (8.093748 : 11.9054996744792); (8.093748 : 13.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TCPU/TCPU_TTestProdAttribute" />
+      <nodes>
+        <classShapeMoniker Id="c3bcde5a-763e-462f-88dc-8510e26e1116" />
+        <classShapeMoniker Id="81216990-2d4f-49da-9320-33ac576b950d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.1875005 : 8.95359537760417); (5.1875005 : 9.6875); (5.5 : 9.6875); (5.5 : 13.25); (6.16666666666667 : 13.25 : JumpStart); (6.33333333333333 : 13.25 : JumpEnd); (6.60416666666667 : 13.25 : JumpStart); (6.77083333333333 : 13.25 : JumpEnd); (6.875 : 13.25); (6.875 : 15.1102004453125); (7.13541666666667 : 15.1102004453125 : JumpStart); (7.30208333333333 : 15.1102004453125 : JumpEnd); (7.625 : 15.1102004453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TLanguage/TLanguage_TTestProdAttribute" />
+      <nodes>
+        <classShapeMoniker Id="add724ab-4d58-4bd0-9c79-ff2727baf5e6" />
+        <classShapeMoniker Id="81216990-2d4f-49da-9320-33ac576b950d" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="d7e46a75-5cf9-4ff9-81ca-e59ffd181a6b" absoluteBounds="23.75, 14.75, 2, 4.8477197265625023">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TRun" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b41a4c67-d338-4276-8afd-b64539f839a4" absoluteBounds="23.765, 15.21, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(24.03125 : 11.7708968098958); (24.03125 : 14.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TMachineQuery/TMachineQuery_TRun" />
+      <nodes>
+        <classShapeMoniker Id="3fec9a73-b17a-4ccd-931f-f94296e688ca" />
+        <classShapeMoniker Id="d7e46a75-5cf9-4ff9-81ca-e59ffd181a6b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.625 : 15.5969555664063); (10.1041666666667 : 15.5969555664063 : JumpStart); (10.5208333333333 : 15.5969555664063 : JumpEnd); (10.625 : 15.5969555664063); (10.625 : 17.1170068359375); (13.2291666666667 : 17.1170068359375 : JumpStart); (13.3958333333333 : 17.1170068359375 : JumpEnd); (13.8541661666667 : 17.1170068359375 : JumpStart); (14.0208328333333 : 17.1170068359375 : JumpEnd); (14.063759770359 : 17.1170068359375 : JumpStart); (14.2304264370256 : 17.1170068359375 : JumpEnd); (14.4479191666667 : 17.1170068359375 : JumpStart); (14.7514133333333 : 17.1170068359375 : JumpEnd); (14.8125 : 17.1170068359375); (14.8125 : 19.8477197265625); (17.4791666666667 : 19.8477197265625 : JumpStart); (17.8433333333333 : 19.8477197265625 : JumpEnd); (17.8541666666667 : 19.8477197265625 : JumpStart); (18.1458333333333 : 19.8477197265625 : JumpEnd); (20.1979166666667 : 19.8477197265625 : JumpStart); (20.3645833333333 : 19.8477197265625 : JumpEnd); (21.7916691666667 : 19.8477197265625 : JumpStart); (21.9583358333333 : 19.8477197265625 : JumpEnd); (22.2916666666667 : 19.8477197265625 : JumpStart); (22.4583333333333 : 19.8477197265625 : JumpEnd); (24.75 : 19.8477197265625); (24.75 : 19.5977197265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TTestProdAttribute/TTestProdAttribute_TRun" />
+      <nodes>
+        <classShapeMoniker Id="81216990-2d4f-49da-9320-33ac576b950d" />
+        <classShapeMoniker Id="d7e46a75-5cf9-4ff9-81ca-e59ffd181a6b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(26.28125 : 11.6939925130208); (26.28125 : 19.0520654296875); (25.75 : 19.0520654296875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TRunResult/TRunResult_TRun" />
+      <nodes>
+        <classShapeMoniker Id="17b7e687-ae44-4904-b34d-3efa146aa9a2" />
+        <classShapeMoniker Id="d7e46a75-5cf9-4ff9-81ca-e59ffd181a6b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(26.53125 : 13.5689925130208); (26.53125 : 18.74798578125); (26.3645833333333 : 18.74798578125 : JumpStart); (26.1979166666667 : 18.74798578125 : JumpEnd); (25.75 : 18.74798578125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TRunStatus/TRunStatus_TRun" />
+      <nodes>
+        <classShapeMoniker Id="cc92e0b2-3373-4b57-aded-ecbaa876911c" />
+        <classShapeMoniker Id="d7e46a75-5cf9-4ff9-81ca-e59ffd181a6b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(18.15625 : 9.07859537760417); (18.15625 : 19.3838118489583); (20.1979166666667 : 19.3838118489583 : JumpStart); (20.3645833333333 : 19.3838118489583 : JumpEnd); (21.7916691666667 : 19.3838118489583 : JumpStart); (21.9583358333333 : 19.3838118489583 : JumpEnd); (22.2916666666667 : 19.3838118489583 : JumpStart); (22.4583333333333 : 19.3838118489583 : JumpEnd); (23.75 : 19.3838118489583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TRunTemplate/TRunTemplate_TRun" />
+      <nodes>
+        <classShapeMoniker Id="24bb0f72-d17d-46cf-a58f-df1353d4615b" />
+        <classShapeMoniker Id="d7e46a75-5cf9-4ff9-81ca-e59ffd181a6b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(21.5625 : 9.20359537760417); (21.5625 : 18.2853011067708); (21.7916691666667 : 18.2853011067708 : JumpStart); (21.9583358333333 : 18.2853011067708 : JumpEnd); (22.2916666666667 : 18.2853011067708 : JumpStart); (22.4583333333333 : 18.2853011067708 : JumpEnd); (23.75 : 18.2853011067708)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TTestCaseQuery/TTestCaseQuery_TRun" />
+      <nodes>
+        <classShapeMoniker Id="1005943c-37bc-4db7-9d35-c14549343577" />
+        <classShapeMoniker Id="d7e46a75-5cf9-4ff9-81ca-e59ffd181a6b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(25.5 : 7.82634726660156); (24.9375 : 7.82634726660156); (24.9375 : 12.09375); (24.0625 : 12.09375); (24.0625 : 14.65625); (24.921877 : 14.65625); (24.921877 : 14.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TWorkSpaceLocation/TWorkSpaceLocation_TRun" />
+      <nodes>
+        <classShapeMoniker Id="70b433ae-0211-45e5-8766-2e24673cddb7" />
+        <classShapeMoniker Id="d7e46a75-5cf9-4ff9-81ca-e59ffd181a6b" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="9c6acf04-8035-4c35-a446-1548d527ff75" absoluteBounds="15.5, 11.875, 2, 7.1553369140625023">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TTestProdInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="22db7057-bd26-4e6b-bff4-d3258a5e702a" absoluteBounds="15.515, 12.335, 1.9700000000000002, 6.5953369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(15.5 : 12.4287019856771); (15.0854533333333 : 12.4287019856771 : JumpStart); (14.9187866666667 : 12.4287019856771 : JumpEnd); (14.8333333333333 : 12.4287019856771 : JumpStart); (14.4479191666667 : 12.4287019856771 : JumpEnd); (14.0798375043071 : 12.4287019856771 : JumpStart); (13.9131708376404 : 12.4287019856771 : JumpEnd); (13.5833333333333 : 12.4287019856771 : JumpStart); (13.4166666666667 : 12.4287019856771 : JumpEnd); (13.3958333333333 : 12.4287019856771 : JumpStart); (13.2291666666667 : 12.4287019856771 : JumpEnd); (13.2083333333333 : 12.4287019856771 : JumpStart); (12.9166666666667 : 12.4287019856771 : JumpEnd); (12.875 : 12.4287019856771)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TTestProdInfo/TTestProdInfo_TPatchSKU" />
+      <nodes>
+        <classShapeMoniker Id="9c6acf04-8035-4c35-a446-1548d527ff75" />
+        <classShapeMoniker Id="fd4b40fa-dfad-4381-99fc-aa069f59856a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(17.5 : 12.5056469726563); (17.7916666666667 : 12.5056469726563 : JumpStart); (18.1458333333333 : 12.5056469726563 : JumpEnd); (18.5 : 12.5056469726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TTestProdInfo/TTestProdInfo_TPatchTestMatrixMapping" />
+      <nodes>
+        <classShapeMoniker Id="9c6acf04-8035-4c35-a446-1548d527ff75" />
+        <classShapeMoniker Id="ff96e1e3-d1ca-4e30-b554-8ae795bfd8e3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.84375275 : 11.875); (16.84375275 : 10.4719962565104); (17.1666666666667 : 10.4719962565104 : JumpStart); (17.3333333333333 : 10.4719962565104 : JumpEnd); (17.5729166666667 : 10.4719962565104 : JumpStart); (17.8433333333333 : 10.4719962565104 : JumpEnd); (17.8541666666667 : 10.4719962565104 : JumpStart); (18.2395833333333 : 10.4719962565104 : JumpEnd); (18.625 : 10.4719962565104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TTestProdInfo/TTestProdInfo_TPatchMatrixMapping" />
+      <nodes>
+        <classShapeMoniker Id="9c6acf04-8035-4c35-a446-1548d527ff75" />
+        <classShapeMoniker Id="490aee3b-a6aa-4df5-88a1-b8ea9e4d543e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(15.5 : 13.1386539713542); (15.0854533333333 : 13.1386539713542 : JumpStart); (14.9187866666667 : 13.1386539713542 : JumpEnd); (14.8333333333333 : 13.1386539713542 : JumpStart); (14.4479191666667 : 13.1386539713542 : JumpEnd); (14.1026412500572 : 13.1386539713542 : JumpStart); (13.8541661666667 : 13.1386539713542 : JumpEnd); (13.5833333333333 : 13.1386539713542 : JumpStart); (13.4166666666667 : 13.1386539713542 : JumpEnd); (13.3958333333333 : 13.1386539713542 : JumpStart); (13.2291666666667 : 13.1386539713542 : JumpEnd); (13.2083333333333 : 13.1386539713542 : JumpStart); (12.9166666666667 : 13.1386539713542 : JumpEnd); (10.6333333333333 : 13.1386539713542 : JumpStart); (10.1041666666667 : 13.1386539713542 : JumpEnd); (9.156252 : 13.1386539713542); (9.156252 : 13.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TTestProdInfo/TTestProdInfo_TTestProdAttribute" />
+      <nodes>
+        <classShapeMoniker Id="9c6acf04-8035-4c35-a446-1548d527ff75" />
+        <classShapeMoniker Id="81216990-2d4f-49da-9320-33ac576b950d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.625 : 13.8766097005208); (1.625 : 14.125); (2.60416666666667 : 14.125 : JumpStart); (2.77083333333333 : 14.125 : JumpEnd); (2.82291666666667 : 14.125 : JumpStart); (2.98958333333333 : 14.125 : JumpEnd); (3.04166666666667 : 14.125 : JumpStart); (3.20833333333333 : 14.125 : JumpEnd); (4.125 : 14.125); (4.125 : 13.6875); (6.60416666666667 : 13.6875 : JumpStart); (6.77083333333333 : 13.6875 : JumpEnd); (6.79166666666667 : 13.6875 : JumpStart); (6.95833333333333 : 13.6875 : JumpEnd); (7.13541666666667 : 13.6875 : JumpStart); (7.30208333333333 : 13.6875 : JumpEnd); (10.1041666666667 : 13.6875 : JumpStart); (10.6333333333333 : 13.6875 : JumpEnd); (13.2291666666667 : 13.6875 : JumpStart); (13.3958333333333 : 13.6875 : JumpEnd); (13.8541661666667 : 13.6875 : JumpStart); (14.1202702525049 : 13.6875 : JumpEnd); (14.4479191666667 : 13.6875 : JumpStart); (14.8333333333333 : 13.6875 : JumpEnd); (14.875 : 13.6875); (14.875 : 14.968749); (14.9187866666667 : 14.968749 : JumpStart); (15.0854533333333 : 14.968749 : JumpEnd); (15.5 : 14.968749)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TJob/TJob_TTestProdInfo" />
+      <nodes>
+        <classShapeMoniker Id="a42cd205-6fba-4927-8c8b-d8fc2074ea85" />
+        <classShapeMoniker Id="9c6acf04-8035-4c35-a446-1548d527ff75" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(26.265625 : 11.6939925130208); (26.265625 : 14.5957755533854); (24.1145833333333 : 14.5957755533854 : JumpStart); (23.9479166666667 : 14.5957755533854 : JumpEnd); (22.4583333333333 : 14.5957755533854 : JumpStart); (22.2916666666667 : 14.5957755533854 : JumpEnd); (21.9583358333333 : 14.5957755533854 : JumpStart); (21.7916691666667 : 14.5957755533854 : JumpEnd); (21.6458333333333 : 14.5957755533854 : JumpStart); (21.4791666666667 : 14.5957755533854 : JumpEnd); (18.2395833333333 : 14.5957755533854 : JumpStart); (17.8541666666667 : 14.5957755533854 : JumpEnd); (17.8433333333333 : 14.5957755533854 : JumpStart); (17.5729166666667 : 14.5957755533854 : JumpEnd); (17.5 : 14.5957755533854)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TRunResult/TRunResult_TTestProdInfo" />
+      <nodes>
+        <classShapeMoniker Id="17b7e687-ae44-4904-b34d-3efa146aa9a2" />
+        <classShapeMoniker Id="9c6acf04-8035-4c35-a446-1548d527ff75" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(26.4218725 : 13.5689925130208); (26.4218725 : 14.5655383300781); (24.1458333333333 : 14.5655383300781 : JumpStart); (23.9479166666667 : 14.5655383300781 : JumpEnd); (22.4583333333333 : 14.5655383300781 : JumpStart); (22.2916666666667 : 14.5655383300781 : JumpEnd); (21.9583358333333 : 14.5655383300781 : JumpStart); (21.7916691666667 : 14.5655383300781 : JumpEnd); (18.1458333333333 : 14.5655383300781 : JumpStart); (17.8541666666667 : 14.5655383300781 : JumpEnd); (17.5 : 14.5655383300781)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TRunStatus/TRunStatus_TTestProdInfo" />
+      <nodes>
+        <classShapeMoniker Id="cc92e0b2-3373-4b57-aded-ecbaa876911c" />
+        <classShapeMoniker Id="9c6acf04-8035-4c35-a446-1548d527ff75" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(15.9375 : 9.27089680989583); (15.9375 : 11.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TExecutionSystem/TExecutionSystem_TTestProdInfo" />
+      <nodes>
+        <classShapeMoniker Id="707c1395-8569-4426-b21b-549cce53aa65" />
+        <classShapeMoniker Id="9c6acf04-8035-4c35-a446-1548d527ff75" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.875 : 7.93674917447917); (14.0104166666667 : 7.93674917447917 : JumpStart); (14.1770833333333 : 7.93674917447917 : JumpEnd); (14.25 : 7.93674917447917); (14.25 : 9.70839680989583); (14.2916666666667 : 9.70839680989583 : JumpStart); (14.4583333333333 : 9.70839680989583 : JumpEnd); (14.5066666666667 : 9.70839680989583 : JumpStart); (14.6733333333333 : 9.70839680989583 : JumpEnd); (14.9187866666667 : 9.70839680989583 : JumpStart); (15.0854533333333 : 9.70839680989583 : JumpEnd); (15.8541666666667 : 9.70839680989583 : JumpStart); (16.0208333333333 : 9.70839680989583 : JumpEnd); (16.3750005 : 9.70839680989583); (16.3750005 : 11.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TProduct/TProduct_TTestProdInfo" />
+      <nodes>
+        <classShapeMoniker Id="4ab33449-43ca-4209-98f6-3ea9a6a9f40d" />
+        <classShapeMoniker Id="9c6acf04-8035-4c35-a446-1548d527ff75" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="4fd83605-96c8-4df6-988f-9e77d4f65a86" absoluteBounds="3.375, 9.75, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/MDDBandBranchDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fba58fe4-6544-4e9e-bf5d-3a3d381558b6" absoluteBounds="3.39, 10.21, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="abbf00d6-595a-41f4-8813-28b08db6cc92" absoluteBounds="15.375, 20.125, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TestRunType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3e40e23c-366e-4601-ba83-bfae267f814c" absoluteBounds="15.39, 20.585, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3d3afdb9-70c3-4303-af52-a7697cdfd447" absoluteBounds="15.375, 27.125, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TestType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a9bb3427-c699-4fc2-b148-7d776b9d6aaf" absoluteBounds="15.39, 27.585, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="45585596-4543-4f6d-b712-7edbac6c7ecc" absoluteBounds="18.125, 20, 2, 2.73240397135417">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/ProductRunTemplate" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c81ee192-badc-473d-bf74-f1c63db2fbbe" absoluteBounds="18.14, 20.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(17.375 : 21.1661185709635); (17.4791666666667 : 21.1661185709635 : JumpStart); (17.8433333333333 : 21.1661185709635 : JumpEnd); (17.8541666666667 : 21.1661185709635 : JumpStart); (18.1145838333333 : 21.1661185709635 : JumpEnd); (18.125 : 21.1661185709635)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TestRunType/TestRunType_ProductRunTemplate" />
+      <nodes>
+        <classShapeMoniker Id="abbf00d6-595a-41f4-8813-28b08db6cc92" />
+        <classShapeMoniker Id="45585596-4543-4f6d-b712-7edbac6c7ecc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.375 : 27.125); (16.375 : 26.7901025390625); (17.4791666666667 : 26.7901025390625 : JumpStart); (17.6458333333333 : 26.7901025390625 : JumpEnd); (17.875 : 26.7901025390625); (17.875 : 21.2679664016927); (17.9479171666667 : 21.2679664016927 : JumpStart); (18.1145838333333 : 21.2679664016927 : JumpEnd); (18.125 : 21.2679664016927)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TestType/TestType_ProductRunTemplate" />
+      <nodes>
+        <classShapeMoniker Id="3d3afdb9-70c3-4303-af52-a7697cdfd447" />
+        <classShapeMoniker Id="45585596-4543-4f6d-b712-7edbac6c7ecc" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="e95cf28c-61d3-41cd-b701-767ca2d7126f" absoluteBounds="18, 25, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TMaddogDB" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2c08c973-4b75-447d-836d-dcbe71c2f6b7" absoluteBounds="18.015, 25.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(19.531252 : 25); (19.531252 : 22.7949039713542); (18.6251497996795 : 22.7949039713542 : JumpStart); (18.4584831330129 : 22.7949039713542 : JumpEnd); (18.0625 : 22.7949039713542); (18.0625 : 9.14109537760417); (16.9933333333333 : 9.14109537760417 : JumpStart); (16.8266666666667 : 9.14109537760417 : JumpEnd); (16.8125 : 9.14109537760417); (16.8125 : 8.38544840494792); (16.75 : 8.38544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TMaddogDB/TMaddogDB_TExecutionSystem" />
+      <nodes>
+        <classShapeMoniker Id="e95cf28c-61d3-41cd-b701-767ca2d7126f" />
+        <classShapeMoniker Id="707c1395-8569-4426-b21b-549cce53aa65" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(18 : 25.6931469726563); (17.65625 : 25.6931469726563); (17.65625 : 9.07859537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TMaddogDB/TMaddogDB_TRunTemplate" />
+      <nodes>
+        <classShapeMoniker Id="e95cf28c-61d3-41cd-b701-767ca2d7126f" />
+        <classShapeMoniker Id="24bb0f72-d17d-46cf-a58f-df1353d4615b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(20 : 25.5042339794922); (20.1979166666667 : 25.5042339794922 : JumpStart); (20.3645833333333 : 25.5042339794922 : JumpEnd); (21.8750025 : 25.5042339794922); (21.8750025 : 9.20359537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TMaddogDB/TMaddogDB_TTestCaseQuery" />
+      <nodes>
+        <classShapeMoniker Id="e95cf28c-61d3-41cd-b701-767ca2d7126f" />
+        <classShapeMoniker Id="1005943c-37bc-4db7-9d35-c14549343577" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(18.468748 : 25); (18.468748 : 22.9199039713542); (18.0625 : 22.9199039713542); (18.0625 : 9.14109537760417); (16.9375 : 9.14109537760417); (16.9375 : 7.2588525390625); (16.25 : 7.2588525390625); (16.25 : 2.01623013769531); (16.125 : 2.01623013769531)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TMaddogDB/TMaddogDB_TTestMatrix" />
+      <nodes>
+        <classShapeMoniker Id="e95cf28c-61d3-41cd-b701-767ca2d7126f" />
+        <classShapeMoniker Id="1b07d1e5-6d50-45b2-8efa-c6ec0ed1d537" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(18.0312505 : 25); (18.0312505 : 11.4094962565104); (18.0729166666667 : 11.4094962565104 : JumpStart); (18.2395833333333 : 11.4094962565104 : JumpEnd); (20.7916666666667 : 11.4094962565104 : JumpStart); (20.9583333333333 : 11.4094962565104 : JumpEnd); (21.0416666666667 : 11.4094962565104 : JumpStart); (21.2083333333333 : 11.4094962565104 : JumpEnd); (21.4791666666667 : 11.4094962565104 : JumpStart); (21.6458333333333 : 11.4094962565104 : JumpEnd); (21.7916691666667 : 11.4094962565104 : JumpStart); (21.9583358333333 : 11.4094962565104 : JumpEnd); (22.2916666666667 : 11.4094962565104 : JumpStart); (22.4583333333333 : 11.4094962565104 : JumpEnd); (22.875 : 11.4094962565104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TMaddogDB/TMaddogDB_TMachineQuery" />
+      <nodes>
+        <classShapeMoniker Id="e95cf28c-61d3-41cd-b701-767ca2d7126f" />
+        <classShapeMoniker Id="3fec9a73-b17a-4ccd-931f-f94296e688ca" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(20 : 26.0709729589844); (20.28125 : 26.0709729589844); (20.28125 : 17.3381982421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TMaddogDB/TMaddogDB_TTPNData" />
+      <nodes>
+        <classShapeMoniker Id="e95cf28c-61d3-41cd-b701-767ca2d7126f" />
+        <classShapeMoniker Id="bca23639-9b3c-4603-a066-5e79c4ee1814" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(18 : 26.0709724589844); (17.9583333333333 : 26.0709724589844 : JumpStart); (17.7916666666667 : 26.0709724589844 : JumpEnd); (17.76 : 26.0709724589844); (17.76 : 9.23859537760417); (17.7395833333333 : 9.23859537760417 : JumpStart); (17.5729166666667 : 9.23859537760417 : JumpEnd); (17.3333333333333 : 9.23859537760417 : JumpStart); (17.1666666666667 : 9.23859537760417 : JumpEnd); (16.91 : 9.23859537760417); (16.91 : 7.3251025390625); (15.7395853333333 : 7.3251025390625 : JumpStart); (15.5729186666667 : 7.3251025390625 : JumpEnd); (14.6733333333333 : 7.3251025390625 : JumpStart); (14.494033481516 : 7.3251025390625 : JumpEnd); (14.4583333333333 : 7.3251025390625 : JumpStart); (14.2916666666667 : 7.3251025390625 : JumpEnd); (14.16 : 7.3251025390625); (14.16 : 6.73859537760417); (13.8958333333333 : 6.73859537760417 : JumpStart); (13.7291666666667 : 6.73859537760417 : JumpEnd); (12.6458333333333 : 6.73859537760417 : JumpStart); (12.4791666666667 : 6.73859537760417 : JumpEnd); (12.2708333333333 : 6.73859537760417 : JumpStart); (12.1041666666667 : 6.73859537760417 : JumpEnd); (8.87875 : 6.73859537760417); (8.87875 : 9.23851399739583); (8.20833333333333 : 9.23851399739583 : JumpStart); (8.04166666666667 : 9.23851399739583 : JumpEnd); (6.58333333333333 : 9.23851399739583 : JumpStart); (6.41666666666667 : 9.23851399739583 : JumpEnd); (5.77083333333333 : 9.23851399739583 : JumpStart); (5.60416666666667 : 9.23851399739583 : JumpEnd); (5.27083383333333 : 9.23851399739583 : JumpStart); (5.10416716666667 : 9.23851399739583 : JumpEnd); (4.77083158333333 : 9.23851399739583 : JumpStart); (4.60416491666667 : 9.23851399739583 : JumpEnd); (4.08333333333333 : 9.23851399739583 : JumpStart); (3.91666666666667 : 9.23851399739583 : JumpEnd); (3.75141333333333 : 9.23851399739583 : JumpStart); (3.58474666666667 : 9.23851399739583 : JumpEnd); (3.58333333333333 : 9.23851399739583 : JumpStart); (3.41666666666667 : 9.23851399739583 : JumpEnd); (3.375 : 9.23851399739583); (3.375 : 6.93430826822917)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TMaddogDB/TMaddogDB_TO" />
+      <nodes>
+        <classShapeMoniker Id="e95cf28c-61d3-41cd-b701-767ca2d7126f" />
+        <classShapeMoniker Id="f84c5e78-5726-4af1-be63-232e3daf0daa" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(18 : 25.3153214863281); (17.9583333333333 : 25.3153214863281 : JumpStart); (17.4791666666667 : 25.3153214863281 : JumpEnd); (17.0625 : 25.3153214863281); (17.0625 : 23.6875); (14.8333333333333 : 23.6875 : JumpStart); (14.5066666666667 : 23.6875 : JumpEnd); (13.8645828333333 : 23.6875 : JumpStart); (13.6979161666667 : 23.6875 : JumpEnd); (10.6333333333333 : 23.6875 : JumpStart); (10.2291666666667 : 23.6875 : JumpEnd); (10.1875 : 23.6875); (10.1875 : 9.3237939453125); (9.20241918437758 : 9.3237939453125 : JumpStart); (8.91666666666667 : 9.3237939453125 : JumpEnd); (8.8125 : 9.3237939453125); (8.8125 : 3.96555826822917); (9.01041466666667 : 3.96555826822917 : JumpStart); (9.17708133333333 : 3.96555826822917 : JumpEnd); (9.625 : 3.96555826822917); (9.625 : 3.80930826822917)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TMaddogDB/TMaddogDB_TOSImage" />
+      <nodes>
+        <classShapeMoniker Id="e95cf28c-61d3-41cd-b701-767ca2d7126f" />
+        <classShapeMoniker Id="18b64c21-ac3b-46d2-a760-41398b00bbf3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(19.796878 : 25); (19.796878 : 22.9824039713542); (20.1979166666667 : 22.9824039713542 : JumpStart); (20.3645833333333 : 22.9824039713542 : JumpEnd); (22.375 : 22.9824039713542); (22.375 : 8.46519853320313); (24.8541666666667 : 8.46519853320313 : JumpStart); (25.0208333333333 : 8.46519853320313 : JumpEnd); (25.5 : 8.46519853320313)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TMaddogDB/TMaddogDB_TWorkSpaceLocation" />
+      <nodes>
+        <classShapeMoniker Id="e95cf28c-61d3-41cd-b701-767ca2d7126f" />
+        <classShapeMoniker Id="70b433ae-0211-45e5-8766-2e24673cddb7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(18.734374 : 25); (18.734374 : 23.3574039713542); (18.6251497996795 : 23.3574039713542 : JumpStart); (18.3854146666667 : 23.3574039713542 : JumpEnd); (18.0625 : 23.3574039713542); (18.0625 : 9.14109537760417); (17.3333333333333 : 9.14109537760417 : JumpStart); (17.1666666666667 : 9.14109537760417 : JumpEnd); (16.9375 : 9.14109537760417); (16.9375 : 7.2276025390625); (15.7395853333333 : 7.2276025390625 : JumpStart); (15.5729186666667 : 7.2276025390625 : JumpEnd); (14.6733333333333 : 7.2276025390625 : JumpStart); (14.5066666666667 : 7.2276025390625 : JumpEnd); (14.4583333333333 : 7.2276025390625 : JumpStart); (14.2916666666667 : 7.2276025390625 : JumpEnd); (14.2433333333333 : 7.2276025390625 : JumpStart); (14.0104166666667 : 7.2276025390625 : JumpEnd); (13.9375 : 7.2276025390625); (13.9375 : 6.8125); (12.2708333333333 : 6.8125 : JumpStart); (12.1041666666667 : 6.8125 : JumpEnd); (8.92708333333333 : 6.8125 : JumpStart); (8.72916666666667 : 6.8125 : JumpEnd); (8.71875 : 6.8125); (8.71875 : 6.27913746913655); (8.625 : 6.27913746913655)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TMaddogDB/TMaddogDB_TMatrix" />
+      <nodes>
+        <classShapeMoniker Id="e95cf28c-61d3-41cd-b701-767ca2d7126f" />
+        <classShapeMoniker Id="e6f11c93-1566-467c-88ea-3592e94752e9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(18.5418164663462 : 25); (18.5418164663462 : 22.5984318033854); (18.0625 : 22.5984318033854); (18.0625 : 8.98734781901042); (16.9375 : 8.98734781901042); (16.9375 : 7.05908447265625); (16.28125 : 7.05908447265625); (16.28125 : 2.62580485026042); (16.625 : 2.62580485026042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TMaddogDB/TMaddogDB_TTestCaseWithPriority" />
+      <nodes>
+        <classShapeMoniker Id="e95cf28c-61d3-41cd-b701-767ca2d7126f" />
+        <classShapeMoniker Id="c71ca9a1-4556-47cf-bdc7-70a193b407ea" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(19 : 25); (19 : 23.2324039713542); (18.6251497996795 : 23.2324039713542 : JumpStart); (18.3854146666667 : 23.2324039713542 : JumpEnd); (18.1458333333333 : 23.2324039713542 : JumpStart); (17.9479171666667 : 23.2324039713542 : JumpEnd); (17.9375 : 23.2324039713542); (17.9375 : 10.125); (17.8433333333333 : 10.125 : JumpStart); (17.5729166666667 : 10.125 : JumpEnd); (17.3333333333333 : 10.125 : JumpStart); (17.1666666666667 : 10.125 : JumpEnd); (16.4583338333333 : 10.125 : JumpStart); (16.2916671666667 : 10.125 : JumpEnd); (16.0208333333333 : 10.125 : JumpStart); (15.8541666666667 : 10.125 : JumpEnd); (15.0854533333333 : 10.125 : JumpStart); (14.9187866666667 : 10.125 : JumpEnd); (14.6733333333333 : 10.125 : JumpStart); (14.5066666666667 : 10.125 : JumpEnd); (14.1770833333333 : 10.125 : JumpStart); (14.0104166666667 : 10.125 : JumpEnd); (14.0058423110753 : 10.125 : JumpStart); (13.8391756444086 : 10.125 : JumpEnd); (13.6770828333333 : 10.125 : JumpStart); (13.5104161666667 : 10.125 : JumpEnd); (13.3958333333333 : 10.125 : JumpStart); (13.2291666666667 : 10.125 : JumpEnd); (12.4583333333333 : 10.125 : JumpStart); (12.2916666666667 : 10.125 : JumpEnd); (11.7083328333333 : 10.125 : JumpStart); (11.5416661666667 : 10.125 : JumpEnd); (10.6333333333333 : 10.125 : JumpStart); (10.3541666666667 : 10.125 : JumpEnd); (10.2708333333333 : 10.125 : JumpStart); (10.1041666666667 : 10.125 : JumpEnd); (9 : 10.125); (9 : 12.1554996744792); (8.17708133333333 : 12.1554996744792 : JumpStart); (8.01041466666667 : 12.1554996744792 : JumpEnd); (6.77083333333333 : 12.1554996744792 : JumpStart); (6.60416666666667 : 12.1554996744792 : JumpEnd); (6.52083333333333 : 12.1554996744792 : JumpStart); (6.35416666666667 : 12.1554996744792 : JumpEnd); (6.33333333333333 : 12.1554996744792 : JumpStart); (6.04166666666667 : 12.1554996744792 : JumpEnd); (5.9375 : 12.1554996744792); (5.9375 : 10.9239005533854); (5.77083333333333 : 10.9239005533854 : JumpStart); (5.60416666666667 : 10.9239005533854 : JumpEnd); (5.58333333333333 : 10.9239005533854 : JumpStart); (5.41666666666667 : 10.9239005533854 : JumpEnd); (5.375 : 10.9239005533854)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TMaddogDB/TMaddogDB_MDDBandBranchDetail" />
+      <nodes>
+        <classShapeMoniker Id="e95cf28c-61d3-41cd-b701-767ca2d7126f" />
+        <classShapeMoniker Id="4fd83605-96c8-4df6-988f-9e77d4f65a86" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(19.83984525 : 25); (19.83984525 : 22.7324039713542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TMaddogDB/TMaddogDB_ProductRunTemplate" />
+      <nodes>
+        <classShapeMoniker Id="e95cf28c-61d3-41cd-b701-767ca2d7126f" />
+        <classShapeMoniker Id="45585596-4543-4f6d-b712-7edbac6c7ecc" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="1a004361-e679-447d-ae8b-f3db5b0c1961" absoluteBounds="6, 2.5, 2, 1.7708968098958326">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TMDQueryMapping" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bd3938ee-bc23-4051-83a8-f2456cc9eba3" absoluteBounds="6.015, 2.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3625124e-068c-4a79-84ee-ff0590c187f2" absoluteBounds="6, 0.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TProductConfigMapping" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4ecf995b-a8a2-4956-9e42-83a747c9658a" absoluteBounds="6.015, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="00ce1ae1-9c95-4a6f-be11-4087b1055996" absoluteBounds="10.75, 13.75, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TNetFxSetupPatchInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4ae6e056-130f-4c74-89e2-b3eb1bfa47a6" absoluteBounds="10.765, 14.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e6d8fbe4-d616-4eb4-83fb-e41d0cdb4923" absoluteBounds="0.625, 8.25, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TPatchVerifyRegistry" />
+      <nestedChildShapes>
+        <elementListCompartment Id="55153528-f1f9-42a0-b78d-b15df2b24eeb" absoluteBounds="0.64000000000000012, 8.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11.875 : 7.02701943827311); (8.9375 : 7.02701943827311); (8.9375 : 9.10976399739583); (8.92708333333333 : 9.10976399739583 : JumpStart); (8.72916666666667 : 9.10976399739583 : JumpEnd); (6.64583333333333 : 9.10976399739583 : JumpStart); (6.47916666666667 : 9.10976399739583 : JumpEnd); (5.77083333333333 : 9.10976399739583 : JumpStart); (5.60416666666667 : 9.10976399739583 : JumpEnd); (5.27083383333333 : 9.10976399739583 : JumpStart); (5.10416716666667 : 9.10976399739583 : JumpEnd); (4.77083158333333 : 9.10976399739583 : JumpStart); (4.60416491666667 : 9.10976399739583 : JumpEnd); (4.08333333333333 : 9.10976399739583 : JumpStart); (3.91666666666667 : 9.10976399739583 : JumpEnd); (3.75141333333333 : 9.10976399739583 : JumpStart); (3.58474666666667 : 9.10976399739583 : JumpEnd); (3.58333333333333 : 9.10976399739583 : JumpStart); (3.29166666666667 : 9.10976399739583 : JumpEnd); (3.25 : 9.10976399739583); (3.25 : 10.0833968098958); (3.20833333333333 : 10.0833968098958 : JumpStart); (3.04166666666667 : 10.0833968098958 : JumpEnd); (2.98958333333333 : 10.0833968098958 : JumpStart); (2.60416666666667 : 10.0833968098958 : JumpEnd); (1.625 : 10.0833968098958); (1.625 : 10.0208968098958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TProduct/TProduct_TPatchVerifyRegistry" />
+      <nodes>
+        <classShapeMoniker Id="4ab33449-43ca-4209-98f6-3ea9a6a9f40d" />
+        <classShapeMoniker Id="e6d8fbe4-d616-4eb4-83fb-e41d0cdb4923" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="1b7217bc-84d1-4a44-8795-5132ab74cd0e" absoluteBounds="3.875, 0.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TWUProductInstallMapping" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3b24cb23-108d-4fa2-9b3e-2780c1e3db67" absoluteBounds="3.8899999999999997, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11.875 : 7.55827393827311); (9.20833333333333 : 7.55827393827311 : JumpStart); (9.04166666666667 : 7.55827393827311 : JumpEnd); (9.02083333333333 : 7.55827393827311 : JumpStart); (8.72916666666667 : 7.55827393827311 : JumpEnd); (8.6875 : 7.55827393827311); (8.6875 : 4.9375); (5.6875 : 4.9375); (5.6875 : 2.6875); (5.58333333333333 : 2.6875 : JumpStart); (5.41666666666667 : 2.6875 : JumpEnd); (5.3821351156114 : 2.6875 : JumpStart); (5.21546844894473 : 2.6875 : JumpEnd); (4.6875005 : 2.6875); (4.6875005 : 2.07859537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TProduct/TProduct_TWUProductInstallMapping" />
+      <nodes>
+        <classShapeMoniker Id="4ab33449-43ca-4209-98f6-3ea9a6a9f40d" />
+        <classShapeMoniker Id="1b7217bc-84d1-4a44-8795-5132ab74cd0e" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="7068d73f-f150-4284-aeb5-f7ba4916ef85" absoluteBounds="0.5, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TWUPatchTargetOS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="95d8179c-2fbe-44f3-a07e-49451944e9c3" absoluteBounds="0.515, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(9.625 : 0.5); (9.625 : 0.26); (2.11458533333333 : 0.259999999999999 : JumpStart); (1.94791866666667 : 0.26 : JumpEnd); (1.5 : 0.26); (1.5 : 0.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TOSImage/TOSImage_TWUPatchTargetOS" />
+      <nodes>
+        <classShapeMoniker Id="18b64c21-ac3b-46d2-a760-41398b00bbf3" />
+        <classShapeMoniker Id="7068d73f-f150-4284-aeb5-f7ba4916ef85" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="3109d47b-139c-4412-ba18-63935c17bf8d" absoluteBounds="12.125, 31.625, 2, 2.5401025390625023">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TWUJob" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dd620da0-a02b-42dc-9f6b-1aaf572fd935" absoluteBounds="12.14, 32.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="440c0745-6915-4c8a-82cc-876b17b382e0" absoluteBounds="11.375, 1.25, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TSmokeMatrixFilter" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9a7afc23-a8fa-4c10-8575-21fac26e8b63" absoluteBounds="11.39, 1.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="62db4a20-227d-45a6-aa48-2d5b2d4012be" absoluteBounds="0.5, 0.5, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TWUOS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c759799f-94d3-4398-9354-0e8c21307f90" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.25 : 7.375); (5.25 : 7.135); (4.77083333333333 : 7.135 : JumpStart); (4.60416666666667 : 7.135 : JumpEnd); (4.20833333333333 : 7.135 : JumpStart); (3.91666666666667 : 7.135 : JumpEnd); (3.45833333333333 : 7.135 : JumpStart); (3.29166666666667 : 7.135 : JumpEnd); (2.66 : 7.135); (2.66 : 6.4308154296875); (0.135 : 6.4308154296875); (0.135 : 2.05172603971354); (0.256666666666667 : 2.05172603971354 : JumpStart); (0.423333333333333 : 2.05172603971354 : JumpEnd); (0.5 : 2.05172603971354)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TLanguage/TLanguage_TWUOS" />
+      <nodes>
+        <classShapeMoniker Id="add724ab-4d58-4bd0-9c79-ff2727baf5e6" />
+        <classShapeMoniker Id="62db4a20-227d-45a6-aa48-2d5b2d4012be" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.093748 : 0.5); (9.093748 : 0.4375); (5.9375 : 0.4375); (5.9375 : 2.58339680989583); (5.58333333333333 : 2.58339680989583 : JumpStart); (5.41666666666667 : 2.58339680989583 : JumpEnd); (5.39454719046066 : 2.58339680989583 : JumpStart); (5.22788052379399 : 2.58339680989583 : JumpEnd); (4.77083383333333 : 2.58339680989583 : JumpStart); (4.60416716666667 : 2.58339680989583 : JumpEnd); (2.59375 : 2.58339680989583); (2.59375 : 1.67390055338542); (2.5 : 1.67390055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TOSImage/TOSImage_TWUOS" />
+      <nodes>
+        <classShapeMoniker Id="18b64c21-ac3b-46d2-a760-41398b00bbf3" />
+        <classShapeMoniker Id="62db4a20-227d-45a6-aa48-2d5b2d4012be" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="c4ba85a4-a6a1-4da6-ac8a-823b5227b2d4" absoluteBounds="4.375, 13.75, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TFinishedProductBuild" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3ca58def-5e2f-4381-8d29-bc02ef0c9094" absoluteBounds="4.39, 14.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ca88fcbb-d1ff-4f4e-b201-3d3a8bc8fabf" absoluteBounds="22.375, 0.75, 2, 1.9631982421875">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TPackageLPMapping" />
+      <nestedChildShapes>
+        <elementListCompartment Id="82825889-c85b-409b-9f7e-7a566320b968" absoluteBounds="22.39, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a0842a99-0dd5-4200-9c9d-7adb00f3ff17" absoluteBounds="24.375, 20.75, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TPackagePathFormat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="56b737a2-1b53-4d80-9d46-54dc03280948" absoluteBounds="24.39, 21.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="12d998de-9fee-4170-94b0-083a6b24c06a" absoluteBounds="24.375, 23.75, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TProductAvailableBuild" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a785d353-6b2c-4bb2-b746-0d1a2dcb0cbf" absoluteBounds="24.39, 24.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f05242de-96c2-4ac1-bc05-a6a96c85b8a4" absoluteBounds="25.375, 1, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TInsertionJob" />
+      <nestedChildShapes>
+        <elementListCompartment Id="31539437-605a-43d7-89db-d18e74a8d7f6" absoluteBounds="25.39, 1.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="18b12e18-965b-45a9-b66c-cd3ca867faa7" absoluteBounds="28.125, 0.875, 2, 1.9631982421875">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TInsertionMDRun" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5c5cd3f0-36aa-42cd-b266-109ebec65334" absoluteBounds="28.14, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(27.375 : 1.88544840494792); (28.125 : 1.88544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TInsertionJob/TInsertionJob_TInsertionMDRun" />
+      <nodes>
+        <classShapeMoniker Id="f05242de-96c2-4ac1-bc05-a6a96c85b8a4" />
+        <classShapeMoniker Id="18b12e18-965b-45a9-b66c-cd3ca867faa7" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="a1be1086-1bbb-4ad2-bce7-45013eea4d95" absoluteBounds="0.75, 30.125, 2, 3.501609700520838">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TNetFxSetupProductInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3f96c535-d031-4a07-9173-f4aecdaa0482" absoluteBounds="0.765, 30.585, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b563b071-1f65-4fdf-aefa-35668c4a567d" absoluteBounds="26.75, 14.75, 2, 3.6939111328125023">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TNetFxSetupRunStatus" />
+      <nestedChildShapes>
+        <elementListCompartment Id="73ba1555-48be-46b4-ba05-09d7bf4cac2c" absoluteBounds="26.765, 15.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="32396e15-15a8-4f5f-94d5-b6b9a4c4ba5f" absoluteBounds="0.5, 39.25, 2, 1.770896809895838">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/THFRSmokeConfiguration" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ea09f072-c579-4ebb-b69a-ab837bcae805" absoluteBounds="0.51499999999999968, 39.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1180c54e-5b0a-4b86-b726-61639836cf4e" absoluteBounds="3.875, 40.25, 2, 1.193992513020838">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TVSProductPath" />
+      <nestedChildShapes>
+        <elementListCompartment Id="494241da-73ac-4778-8ad2-f5a4811c1732" absoluteBounds="3.89, 40.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="76c177dd-bd20-4dd3-8d54-20324db5aedd" absoluteBounds="21, 27.25, 2, 2.5401025390625023">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TMultiTargetProduct" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0a041a45-8aff-48f1-9f5d-32374a2733eb" absoluteBounds="21.015, 27.71, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="da4311e3-341b-4a96-93dd-a987966bef0d" absoluteBounds="24.375, 28.875, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TMultiTargetProductMapping" />
+      <nestedChildShapes>
+        <elementListCompartment Id="584f5206-a1d7-4efd-9b64-e5609438b2f8" absoluteBounds="24.39, 29.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(23 : 29.3325512695313); (24.375 : 29.3325512695313)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TMultiTargetProduct/TMultiTargetProduct_TMultiTargetProductMapping" />
+      <nodes>
+        <classShapeMoniker Id="76c177dd-bd20-4dd3-8d54-20324db5aedd" />
+        <classShapeMoniker Id="da4311e3-341b-4a96-93dd-a987966bef0d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.5937495 : 8.64589680989583); (13.5937495 : 10.25); (13.8431906598974 : 10.25 : JumpStart); (14.009857326564 : 10.25 : JumpEnd); (14.0104166666667 : 10.25 : JumpStart); (14.1770833333333 : 10.25 : JumpEnd); (14.4479191666667 : 10.25 : JumpStart); (14.6733333333333 : 10.25 : JumpEnd); (14.75 : 10.25); (14.75 : 30.0401025390625); (17.4791666666667 : 30.0401025390625 : JumpStart); (17.6458333333333 : 30.0401025390625 : JumpEnd); (24 : 30.0401025390625); (24 : 29.4719962565104); (24.375 : 29.4719962565104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TProduct/TProduct_TMultiTargetProductMapping" />
+      <nodes>
+        <classShapeMoniker Id="4ab33449-43ca-4209-98f6-3ea9a6a9f40d" />
+        <classShapeMoniker Id="da4311e3-341b-4a96-93dd-a987966bef0d" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="e2fc9607-af76-403d-a783-d17a055e09c3" absoluteBounds="6.75, 42.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TTHTestException" />
+      <nestedChildShapes>
+        <elementListCompartment Id="80b3c01b-ff67-4011-969c-776cb4d45e54" absoluteBounds="6.765, 43.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="47de26a7-9644-46f7-9ab9-ac6316df1bae" absoluteBounds="10.875, 39.625, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TTHTestRuntimeParameter" />
+      <nestedChildShapes>
+        <elementListCompartment Id="11c52f7d-ac2e-4e5f-8ae8-3a9bd8cb17ce" absoluteBounds="10.89, 40.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="664bef3e-30a7-479f-a135-9d38e22542ed" absoluteBounds="14, 37.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TWUPatchTargetTestcase" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fce16d1f-7c29-4059-81ab-f63715d3e3e3" absoluteBounds="14.015, 37.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c1adcc6d-49a6-4114-8ad3-f2dec167b402" absoluteBounds="16.25, 40, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TWURun" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ef2db282-71cb-453e-9de2-2e414cdaa3ab" absoluteBounds="16.265, 40.46, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(13.4375 : 34.1651025390625); (13.4375 : 41.3181469726563); (16.25 : 41.3181469726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TWUJob/TWUJob_TWURun" />
+      <nodes>
+        <classShapeMoniker Id="3109d47b-139c-4412-ba18-63935c17bf8d" />
+        <classShapeMoniker Id="c1adcc6d-49a6-4114-8ad3-f2dec167b402" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 2.29210283007813); (2.5625 : 2.29210283007813); (2.5625 : 2.58339680989583); (4.60416716666667 : 2.58339680989583 : JumpStart); (4.77083383333333 : 2.58339680989583 : JumpEnd); (5.22788052379399 : 2.58339680989583 : JumpStart); (5.39454719046066 : 2.58339680989583 : JumpEnd); (5.41666666666667 : 2.58339680989583 : JumpStart); (5.58333333333333 : 2.58339680989583 : JumpEnd); (5.875 : 2.58339680989583); (5.875 : 4.33339680989583); (8.20572666666667 : 4.33339680989583 : JumpStart); (8.37239333333333 : 4.33339680989583 : JumpEnd); (8.72916666666667 : 4.33339680989583 : JumpStart); (8.89583333333333 : 4.33339680989583 : JumpEnd); (9.01041466666667 : 4.33339680989583 : JumpStart); (9.17708133333333 : 4.33339680989583 : JumpEnd); (9.54166666666667 : 4.33339680989583 : JumpStart); (9.70833333333333 : 4.33339680989583 : JumpEnd); (13.5066666666667 : 4.33339680989583 : JumpStart); (13.6733333333333 : 4.33339680989583 : JumpEnd); (14.09375 : 4.33339680989583); (14.09375 : 11.75); (14.4479191666667 : 11.75 : JumpStart); (14.8333333333333 : 11.75 : JumpEnd); (14.9187866666667 : 11.75 : JumpStart); (15.0854533333333 : 11.75 : JumpEnd); (15.8541666666667 : 11.75 : JumpStart); (16.0208333333333 : 11.75 : JumpEnd); (16.2916671666667 : 11.75 : JumpStart); (16.4583338333333 : 11.75 : JumpEnd); (16.7604194166667 : 11.75 : JumpStart); (16.9270860833333 : 11.75 : JumpEnd); (17.5625 : 11.75); (17.5625 : 39.90625); (17.25 : 39.90625); (17.25 : 40)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TWUOS/TWUOS_TWURun" />
+      <nodes>
+        <classShapeMoniker Id="62db4a20-227d-45a6-aa48-2d5b2d4012be" />
+        <classShapeMoniker Id="c1adcc6d-49a6-4114-8ad3-f2dec167b402" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="6f2d730f-24e3-458b-b985-20e873a79db5" absoluteBounds="15.25, 34.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TWUSubPatchDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2f22d1d3-1906-449e-add6-dce881659315" absoluteBounds="15.265, 34.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(15.625 : 36.6554996744792); (15.625 : 37.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TWUSubPatchDetail/TWUSubPatchDetail_TWUPatchTargetTestcase" />
+      <nodes>
+        <classShapeMoniker Id="6f2d730f-24e3-458b-b985-20e873a79db5" />
+        <classShapeMoniker Id="664bef3e-30a7-479f-a135-9d38e22542ed" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.6875 : 36.6554996744792); (16.6875 : 40)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TWUSubPatchDetail/TWUSubPatchDetail_TWURun" />
+      <nodes>
+        <classShapeMoniker Id="6f2d730f-24e3-458b-b985-20e873a79db5" />
+        <classShapeMoniker Id="c1adcc6d-49a6-4114-8ad3-f2dec167b402" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="a3522e6d-448a-4ba0-bfa1-425c8019f1da" absoluteBounds="15.125, 31.25, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TWUPatchDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9a4934eb-85d9-4f4f-a759-8e4dcd138a3a" absoluteBounds="15.14, 31.71, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(15.125 : 31.9018489928385); (14.59 : 31.9018489928385); (14.59 : 5.44041829427083); (14.4583333333333 : 5.44041829427083 : JumpStart); (14.2916666666667 : 5.44041829427083 : JumpEnd); (14.1770833333333 : 5.44041829427083 : JumpStart); (14.0104166666667 : 5.44041829427083 : JumpEnd); (13.8958333333333 : 5.44041829427083 : JumpStart); (13.7291666666667 : 5.44041829427083 : JumpEnd); (13.59 : 5.44041829427083); (13.59 : 0.135); (2.031252 : 0.135); (2.031252 : 0.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TWUPatchDetail/TWUPatchDetail_TWUPatchTargetOS" />
+      <nodes>
+        <classShapeMoniker Id="a3522e6d-448a-4ba0-bfa1-425c8019f1da" />
+        <classShapeMoniker Id="7068d73f-f150-4284-aeb5-f7ba4916ef85" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.1875 : 33.9824039713542); (16.1875 : 34.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TWUPatchDetail/TWUPatchDetail_TWUSubPatchDetail" />
+      <nodes>
+        <classShapeMoniker Id="a3522e6d-448a-4ba0-bfa1-425c8019f1da" />
+        <classShapeMoniker Id="6f2d730f-24e3-458b-b985-20e873a79db5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 8.07859537760417); (2.82291666666667 : 8.07859537760417 : JumpStart); (2.98958333333333 : 8.07859537760417 : JumpEnd); (3.29166666666667 : 8.07859537760416 : JumpStart); (3.58333333333333 : 8.07859537760417 : JumpEnd); (3.66808 : 8.07859537760417); (3.66808 : 9.40318098632813); (3.91666666666667 : 9.40318098632813 : JumpStart); (4.08333333333333 : 9.40318098632813 : JumpEnd); (4.60416491666667 : 9.40318098632813 : JumpStart); (4.77083158333333 : 9.40318098632813 : JumpEnd); (5.10416716666667 : 9.40318098632813 : JumpStart); (5.27083383333333 : 9.40318098632813 : JumpEnd); (5.60416666666667 : 9.40318098632813 : JumpStart); (5.77083333333333 : 9.40318098632813 : JumpEnd); (6.41666666666667 : 9.40318098632813 : JumpStart); (6.58333333333333 : 9.40318098632813 : JumpEnd); (8.04166666666667 : 9.40318098632813 : JumpStart); (8.20833333333333 : 9.40318098632813 : JumpEnd); (8.86946632710809 : 9.40318098632813 : JumpStart); (9.08333333333334 : 9.40318098632813 : JumpEnd); (11.4916666666667 : 9.40318098632813 : JumpStart); (11.6583333333333 : 9.40318098632813 : JumpEnd); (11.6666666666667 : 9.40318098632813 : JumpStart); (11.8333333333333 : 9.40318098632813 : JumpEnd); (12.1041666666667 : 9.40318098632813 : JumpStart); (12.2708333333333 : 9.40318098632813 : JumpEnd); (12.2916666666667 : 9.40318098632813 : JumpStart); (12.4583333333333 : 9.40318098632813 : JumpEnd); (12.6666666666667 : 9.40318098632813 : JumpStart); (12.8333333333333 : 9.40318098632813 : JumpEnd); (13.2291666666667 : 9.40318098632813 : JumpStart); (13.3958333333333 : 9.40318098632813 : JumpEnd); (13.5104161666667 : 9.40318098632813 : JumpStart); (13.6770828333333 : 9.40318098632813 : JumpEnd); (13.8159907282488 : 9.40318098632813 : JumpStart); (13.9826573949155 : 9.40318098632813 : JumpEnd); (14.0104166666667 : 9.40318098632813 : JumpStart); (14.4583333333333 : 9.40318098632813 : JumpEnd); (14.5066666666667 : 9.40318098632813 : JumpStart); (14.6733333333333 : 9.40318098632813 : JumpEnd); (15.00212 : 9.40318098632813); (15.00212 : 16.29308); (14.66808 : 16.29308); (14.66808 : 32.6162019856771); (15.125 : 32.6162019856771)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TCPU/TCPU_TWUPatchDetail" />
+      <nodes>
+        <classShapeMoniker Id="c3bcde5a-763e-462f-88dc-8510e26e1116" />
+        <classShapeMoniker Id="a3522e6d-448a-4ba0-bfa1-425c8019f1da" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.125 : 33.3618029785156); (15.125 : 33.3618029785156)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TWUJob/TWUJob_TWUPatchDetail" />
+      <nodes>
+        <classShapeMoniker Id="3109d47b-139c-4412-ba18-63935c17bf8d" />
+        <classShapeMoniker Id="a3522e6d-448a-4ba0-bfa1-425c8019f1da" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="b295a085-f84c-4fe9-995f-1ab306ec5157" absoluteBounds="20.75, 35.75, 2, 1.193992513020838">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TWUAdditionalCase" />
+      <nestedChildShapes>
+        <elementListCompartment Id="16c7d452-d7e8-41e6-8476-8c9d3acd250a" absoluteBounds="20.765, 36.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6fb10919-4974-431c-b6e2-a17f2fd71852" absoluteBounds="18.125, 35.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TWUAdditionalTestFilter" />
+      <nestedChildShapes>
+        <elementListCompartment Id="14a42a88-0203-42f3-b84e-65a8dc0ab0dc" absoluteBounds="18.14, 36.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="601845ad-6050-4ab3-b944-bff56290585e" absoluteBounds="18.5, 37.625, 2, 2.347801106770838">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TWUAdditonalTestScenario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="43c64a46-ee5f-4e65-adf7-6adf410e35a2" absoluteBounds="18.515, 38.085, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="eec33c3b-ff02-40cf-8178-aa36e74ed926" absoluteBounds="21.625, 38, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TWUAdditionalTestMatrix" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e1fa393d-6950-41a1-9535-85d28bdb8bea" absoluteBounds="21.64, 38.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(20.125 : 37.1050439453125); (23.21875 : 37.1050439453125); (23.21875 : 38)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TWUAdditionalTestFilter/TWUAdditionalTestFilter_TWUAdditionalTestMatrix" />
+      <nodes>
+        <classShapeMoniker Id="6fb10919-4974-431c-b6e2-a17f2fd71852" />
+        <classShapeMoniker Id="eec33c3b-ff02-40cf-8178-aa36e74ed926" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(20.5 : 38.7892976888021); (21.625 : 38.7892976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TWUAdditonalTestScenario/TWUAdditonalTestScenario_TWUAdditionalTestMatrix" />
+      <nodes>
+        <classShapeMoniker Id="601845ad-6050-4ab3-b944-bff56290585e" />
+        <classShapeMoniker Id="eec33c3b-ff02-40cf-8178-aa36e74ed926" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="9c586f04-3e3a-49cb-8517-49faf565c782" absoluteBounds="18.75, 40.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TWUPatchTargetAdditionalScenario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ff6db257-6eaa-445e-867e-fbf37bac83fb" absoluteBounds="18.765, 41.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(19.625 : 39.9728011067708); (19.625 : 40.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TWUAdditonalTestScenario/TWUAdditonalTestScenario_TWUPatchTargetAdditionalScenario" />
+      <nodes>
+        <classShapeMoniker Id="601845ad-6050-4ab3-b944-bff56290585e" />
+        <classShapeMoniker Id="9c586f04-3e3a-49cb-8517-49faf565c782" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(17.25 : 35.03125); (17.4791666666667 : 35.03125 : JumpStart); (17.6458333333333 : 35.03125 : JumpEnd); (20.625 : 35.03125); (20.625 : 40.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TWUSubPatchDetail/TWUSubPatchDetail_TWUPatchTargetAdditionalScenario" />
+      <nodes>
+        <classShapeMoniker Id="6f2d730f-24e3-458b-b985-20e873a79db5" />
+        <classShapeMoniker Id="9c586f04-3e3a-49cb-8517-49faf565c782" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="45736fa6-1bfa-446d-b42e-840371395314" absoluteBounds="3.875, 44.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TPUMachineSubmit" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eda68eb7-0113-404c-9eda-8adb9119db22" absoluteBounds="3.89, 44.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9af48ef6-b04a-4cba-aa72-2d80885f047f" absoluteBounds="1, 42.25, 2, 2.924705403645838">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TPUMachineRunInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6eba806b-f86a-45cb-a591-6fb8ce462552" absoluteBounds="1.0149999999999997, 42.71, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f9efa49c-ac42-4a94-9e3d-74b3053aaee2" absoluteBounds="12.875, 42.375, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TTHTestConfig" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d08e01e4-f06e-410d-96d8-1ea39c9fd053" absoluteBounds="12.89, 42.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d9db50f7-7108-418c-ae35-8ae8bcd59113" absoluteBounds="9.25, 47.375, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TTHTestRunInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3d3d9f02-d05c-4682-a551-f3cf75468468" absoluteBounds="9.265, 47.835, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(12.4375 : 41.0112939453125); (12.4375 : 48.9335034179688); (11.25 : 48.9335034179688)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TTHTestRuntimeParameter/TTHTestRuntimeParameter_TTHTestRunInfo" />
+      <nodes>
+        <classShapeMoniker Id="47de26a7-9644-46f7-9ab9-ac6316df1bae" />
+        <classShapeMoniker Id="d9db50f7-7108-418c-ae35-8ae8bcd59113" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="321d3631-2f50-41b0-94e1-8983c20b4285" absoluteBounds="12.875, 47.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TTHTestResultAnalysis" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f2d812cb-7a39-4f46-8b5c-c72212ca0c61" absoluteBounds="12.89, 47.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a019537c-d9f7-49d7-890a-c6f21f122d3f" absoluteBounds="22.25, 30.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TAlias2Name" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e8a04f14-1740-4ce6-a70d-356793b4bf1f" absoluteBounds="22.265, 31.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9cdd9aa0-9b25-485d-8f97-ae17beb6ee19" absoluteBounds="7, 48, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TTHTestMatrix" />
+      <nestedChildShapes>
+        <elementListCompartment Id="77808bd5-9672-4cb2-aa9d-e1eb6e1e8eec" absoluteBounds="7.015, 48.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0e41071f-d03a-4bc9-a748-5feecb728b2f" absoluteBounds="10, 43.625, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TTHTestRecord" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1742b1e9-9a7d-4a08-b3bb-6f1184026de6" absoluteBounds="10.015, 44.085, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11.4375 : 43.625); (11.4375 : 41.0112939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TTHTestRecord/TTHTestRecord_TTHTestRuntimeParameter" />
+      <nodes>
+        <classShapeMoniker Id="0e41071f-d03a-4bc9-a748-5feecb728b2f" />
+        <classShapeMoniker Id="47de26a7-9644-46f7-9ab9-ac6316df1bae" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.625 : 46.7420068359375); (10.625 : 47.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/TTHTestRecord/TTHTestRecord_TTHTestRunInfo" />
+      <nodes>
+        <classShapeMoniker Id="0e41071f-d03a-4bc9-a748-5feecb728b2f" />
+        <classShapeMoniker Id="d9db50f7-7108-418c-ae35-8ae8bcd59113" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="11699512-d9c1-4833-a358-e6510a888863" absoluteBounds="4.875, 48.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TDotNetUpdate" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1f082b01-c492-4c1f-9ad1-5f96ec413276" absoluteBounds="4.89, 49.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9c202ae6-2265-4946-a5b7-0ea0cc8ef05a" absoluteBounds="1.75, 46.625, 2, 2.347801106770838">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/CBSBaseline" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b2490b81-3f76-4169-bce1-312496820da6" absoluteBounds="1.7649999999999997, 47.085, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="85ba8c9e-f99e-4d75-96e7-7492b8ec90cf" absoluteBounds="13.125, 50.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TTHTestRuntimeInherit" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4df39aef-be18-477d-b48d-04394a5be4b1" absoluteBounds="13.14, 51.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7a2bbc3a-cf76-4834-9e2e-d6af19d346b6" absoluteBounds="4.25, 51.875, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TNWUStaticTestCase" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a8326ae3-0dcf-4f11-b287-a465e6a4a55e" absoluteBounds="4.265, 52.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d35b7b80-f008-4ce7-b1c8-7f30092a9778" absoluteBounds="1.25, 52, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TNWURunInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2a65c9aa-274b-489f-a487-274cf56dd67a" absoluteBounds="1.2650000000000001, 52.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="589b7e32-0564-4304-9814-edafcf9866f5" absoluteBounds="4.625, 54.5, 2, 2.347801106770838">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TNWUTestRecord" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0affc80d-b642-4e97-b345-57a8eb2646a2" absoluteBounds="4.64, 54.96, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c49a5572-f918-40c9-bcee-8cec2ddac2ab" absoluteBounds="0.875, 58.25, 2, 3.501609700520838">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TNWUUpdateRecord" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7b0b5094-b3fc-4f50-92de-b003bde59566" absoluteBounds="0.89000000000000012, 58.71, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c12c4bc1-d505-40f4-b976-49df5e97baa5" absoluteBounds="3.875, 58.25, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TNWUPatchInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0e07a6ac-3b2e-4ce9-9d84-412b1ff62bb3" absoluteBounds="3.89, 58.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="95a58da3-e612-44de-aceb-dbc6f791c675" absoluteBounds="4, 60.875, 2, 1.770896809895838">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TNWUTfsOSMapping" />
+      <nestedChildShapes>
+        <elementListCompartment Id="486a7d0f-c5c3-4cb4-9d66-37cad01c6f47" absoluteBounds="4.015, 61.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="471646d8-d350-46c5-8064-ddce8b9a92ab" absoluteBounds="1.5, 55.5, 2, 2.347801106770838">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TNWUStaticTestLog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="baf5711e-452a-4790-a1ac-3139e138afba" absoluteBounds="1.5150000000000001, 55.96, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="369ebf77-3590-4444-bb23-e4ea7e4a11a1" absoluteBounds="6.75, 45.25, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TTHTestLog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3ca3c064-9b86-468f-8596-941a9ee9aac8" absoluteBounds="6.765, 45.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bbd44867-55f8-4523-a3f0-4a6a0ef7095f" absoluteBounds="0.875, 62.625, 2, 2.5401025390625023">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TNWURuntimeMatrix" />
+      <nestedChildShapes>
+        <elementListCompartment Id="86f6cac3-4163-48e4-9893-388da567648c" absoluteBounds="0.89, 63.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a621eb72-1fb6-4426-b8f6-da89455475f2" absoluteBounds="1, 66, 2, 1.9631982421874881">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TVSMatrix" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ebe3dfe9-616a-4af0-a3fd-e766a8ac1df2" absoluteBounds="1.0150000000000001, 66.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c78293cd-5d2c-49fb-a9db-f11b406ecd67" absoluteBounds="18.875, 44.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TNETCoreMU_MSI" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0c3d8415-201c-43bd-8f52-4a71605d83a3" absoluteBounds="18.89, 44.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="42627baa-96c6-4224-ad83-7945a34fc452" absoluteBounds="21.25, 44.5, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TNETCoreMU_Matrix" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f537cdb8-1dba-435a-87b8-b2215fcb3f03" absoluteBounds="21.265, 44.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="03b18dfa-3def-4801-bbfe-e38eda347820" absoluteBounds="1, 21.125, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TNetCoreCaseInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="48a4a922-71e6-4ea6-b48f-f077d8b5598d" absoluteBounds="1.0150000000000001, 21.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="18ab0c2f-9fb7-423f-845f-ee23c47754ec" absoluteBounds="0.875, 26.125, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TNetCoreStaticResultDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ccbb6f23-e557-4b38-b96e-8c0df201d5e5" absoluteBounds="0.89, 26.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2aec17e3-c06d-4394-ad00-2916ae6cafab" absoluteBounds="16.125, 44.5, 2, 2.924705403645838">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TNETCoreMU_Bundle" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e48facbe-fdf2-45df-8bdb-3b46a81e1741" absoluteBounds="16.14, 44.96, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e0614715-5d71-47e5-bcf9-a8132f3ddf69" absoluteBounds="0.875, 17.5, 2, 1.5785953776041701">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TNETCoreUpdate" />
+      <nestedChildShapes>
+        <elementListCompartment Id="776752fe-221f-4e9d-b3aa-481033a0e32c" absoluteBounds="0.89, 17.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5422a46b-4b48-4ed3-be38-c98d92ebfc21" absoluteBounds="1, 18.5, 2, 2.15549967447917">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TNetCoreStaticTest" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ea75318f-4f99-4b87-9054-bb10e75148ef" absoluteBounds="1.0150000000000001, 18.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4ca994f4-b62a-44d0-b73c-8b98adfb0476" absoluteBounds="1.125, 23.5, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TNetCoreRuntimeTest" />
+      <nestedChildShapes>
+        <elementListCompartment Id="279cdc37-0ee3-4702-b9d5-af18a7eb64c8" absoluteBounds="1.1400000000000001, 23.96, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f4e0ffe3-50c9-4062-b27d-144cc31612e8" absoluteBounds="3, 22.625, 2, 2.5401025390625023">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TPubsuiteStaticTest" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3c66961f-9e3d-4598-a110-23f3b4390d08" absoluteBounds="3.015, 23.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2ff011a5-8703-498a-85c1-13c647037520" absoluteBounds="6.125, 21.25, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TPubsuiteStaticResultDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6e97a5f4-843b-40a5-b9c4-9850d510934d" absoluteBounds="6.14, 21.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4a97e0b6-7b33-4702-9e31-72c32ca3945d" absoluteBounds="11.125, 23.875, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TPubsuiteTestCaseInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e5d8ad37-42de-49de-a7f7-8150f8ec2a99" absoluteBounds="11.14, 24.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bdb0818e-dcf6-4dee-a46f-f4d387b5bff2" absoluteBounds="3, 2.75, 2, 1.9631982421875">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/THWinseHotfix" />
+      <nestedChildShapes>
+        <elementListCompartment Id="45549066-809b-454d-9198-9b56c327650e" absoluteBounds="3.015, 3.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3060c8cb-ac1f-400e-a200-e6f7cd437d5d" absoluteBounds="1.625, 68.625, 2, 2.5401025390625">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/Win81WSDTest" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b3a30f1a-cf25-4895-8413-2f5b8568de2b" absoluteBounds="1.6400000000000001, 69.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e7862169-30fd-4cb3-8be4-171ffcbd89eb" absoluteBounds="3.625, 17.375, 2, 2.5401025390625">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TPubsuiteProductRefreshStaticTest" />
+      <nestedChildShapes>
+        <elementListCompartment Id="af0a8986-26ce-4c98-9c4a-742a86bf88c6" absoluteBounds="3.64, 17.835, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="36c91fae-6b99-4f77-bb73-24ddfa340526" absoluteBounds="4.125, 16.375, 2, 1.9631982421875">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TPubsuiteProductRefreshStaticResultDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="337548f4-59c0-4006-9256-2cd000f8f8c4" absoluteBounds="4.14, 16.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="09553c40-3a2b-4ce7-913b-e83fdcdf8f89" absoluteBounds="2.5, 17.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TPubsuiteProductRefreshTestCaseInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7d3f685a-ebd6-4043-a6fc-0b5b62a75842" absoluteBounds="2.515, 17.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="135e2049-e2af-405b-8fa2-011b77fcc81d" absoluteBounds="0.875, 16.375, 2, 1.3862939453125">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TPubsuiteProductRefreshUpdate" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fbf6b747-1131-4cbf-992c-24d073c59ecd" absoluteBounds="0.89, 16.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dba7e28c-62da-4950-a01f-c0c5aa862ef9" absoluteBounds="3.875, 21.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TPubsuiteUpdate" />
+      <nestedChildShapes>
+        <elementListCompartment Id="36ade10e-cb21-45df-9c2c-d47a0d63fb75" absoluteBounds="3.8899999999999997, 21.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cbacd601-d8c2-4d95-9842-c4ea2eac407b" absoluteBounds="2.625, 0.75, 1.25, 1.7708968098958331">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/TSmokeRuntimeUpgrade" />
+      <nestedChildShapes>
+        <elementListCompartment Id="17a5df49-4f69-4625-b980-1c334f008bdd" absoluteBounds="2.64, 1.21, 1.2200000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4f05f0cb-2184-42d5-b311-1a9b3cf2370c" isExpanded="false" absoluteBounds="28, 3.875, 2, 0.45">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/FXBVTBlockedRun" />
+      <nestedChildShapes>
+        <elementListCompartment Id="364185bb-cd30-4422-829e-a6381b98c777" absoluteBounds="28.015, 4.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dee32e4b-162f-47f3-a980-65a6dd03f884" absoluteBounds="24.125, 12.125, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/FXBVTFailedCase" />
+      <nestedChildShapes>
+        <elementListCompartment Id="97a1f4e6-f7ee-4e6e-b33d-08e8a197943f" absoluteBounds="24.14, 12.585, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="67c9db9f-5e52-434f-9937-e2b55479bab0" absoluteBounds="30.125, 20, 2, 2.3478011067708309">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/FXBVTSchedule" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5585f861-0da0-44e2-91e6-7f7bbc134ff9" absoluteBounds="30.14, 20.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cb5d01c6-5f76-40ed-bfec-cd61f9775dfe" absoluteBounds="27.375, 20.125, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/PatchTestDataClassDataContext/FXBVTTeam" />
+      <nestedChildShapes>
+        <elementListCompartment Id="642fa93e-d2b5-459a-8549-7981deb8b381" absoluteBounds="27.39, 20.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(29.375 : 21.1065991210938); (30.125 : 21.1065991210938)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PatchTestDataClassDataContext/FXBVTTeam/FXBVTTeam_FXBVTSchedule" />
+      <nodes>
+        <classShapeMoniker Id="cb5d01c6-5f76-40ed-bfec-cd61f9775dfe" />
+        <classShapeMoniker Id="67c9db9f-5e52-434f-9937-e2b55479bab0" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

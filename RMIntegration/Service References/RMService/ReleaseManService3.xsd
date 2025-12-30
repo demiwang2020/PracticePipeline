@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ReleaseManService.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ReleaseManService.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfRelease">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Release" nillable="true" type="tns:Release" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRelease" nillable="true" type="tns:ArrayOfRelease" />
+  <xs:complexType name="Release">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsDualBranch" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MTP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Owner" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Patches" nillable="true" type="tns:ArrayOfPatch" />
+      <xs:element minOccurs="0" name="PreMTP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReleaseId" type="xs:int" />
+      <xs:element minOccurs="0" name="ReleaseType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecurityVulnerabilityType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShipDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Release" nillable="true" type="tns:Release" />
+  <xs:complexType name="ArrayOfPatch">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Patch" nillable="true" type="tns:Patch" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPatch" nillable="true" type="tns:ArrayOfPatch" />
+  <xs:complexType name="Patch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Changes" nillable="true" type="tns:ArrayOfChange" />
+      <xs:element minOccurs="0" name="ExpectedFiles" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Files" nillable="true" type="tns:ArrayOfFile" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsDualBranch" type="xs:boolean" />
+      <xs:element minOccurs="0" name="KBNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MetaData" nillable="true" type="tns:PatchMetaData" />
+      <xs:element minOccurs="0" name="PatchBuildGDR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatchBuildLDR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatchLocationARM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatchLocationARM64" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatchLocationIA64" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatchLocationx64" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatchLocationx86" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatchNameARM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatchNameARM64" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatchNameIA64" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatchNamex64" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatchNamex86" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReleaseId" type="xs:int" />
+      <xs:element minOccurs="0" name="ReleaseType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Shipping" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SourceBuildGDR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SourceBuildLDR" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Patch" nillable="true" type="tns:Patch" />
+  <xs:complexType name="ArrayOfChange">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Change" nillable="true" type="tns:Change" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChange" nillable="true" type="tns:ArrayOfChange" />
+  <xs:complexType name="Change">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Binaries" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BugNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="Team" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Change" nillable="true" type="tns:Change" />
+  <xs:complexType name="ArrayOfFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="File" nillable="true" type="tns:File" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFile" nillable="true" type="tns:ArrayOfFile" />
+  <xs:complexType name="File">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FileDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FileId" type="xs:int" />
+      <xs:element minOccurs="0" name="FileLocale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileSize" type="xs:long" />
+      <xs:element minOccurs="0" name="FileTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FileVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsLDRPayload" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSymbolUploaded" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PatchArchitecture" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="File" nillable="true" type="tns:File" />
+  <xs:complexType name="PatchMetaData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsNetLCU" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsNetOnly" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsParent" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsWSDLCU" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PatchDetectionRegKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatchTechnology" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Release" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetLanguages" nillable="true" type="tns:ArrayOfLanguage" />
+      <xs:element minOccurs="0" name="TargetOS" nillable="true" type="tns:ArrayOfOS" />
+      <xs:element minOccurs="0" name="TargetProduct" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkitemId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatchMetaData" nillable="true" type="tns:PatchMetaData" />
+  <xs:complexType name="ArrayOfLanguage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Language" nillable="true" type="tns:Language" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLanguage" nillable="true" type="tns:ArrayOfLanguage" />
+  <xs:complexType name="Language">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryLocaleString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="LCID" type="xs:int" />
+      <xs:element minOccurs="0" name="LanguageShortString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Language" nillable="true" type="tns:Language" />
+  <xs:complexType name="ArrayOfOS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OS" nillable="true" type="tns:OS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOS" nillable="true" type="tns:ArrayOfOS" />
+  <xs:complexType name="OS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExternalName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="OSName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OSShortName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OS" nillable="true" type="tns:OS" />
+  <xs:complexType name="ArrayOfBranch">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Branch" nillable="true" type="tns:Branch" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBranch" nillable="true" type="tns:ArrayOfBranch" />
+  <xs:complexType name="Branch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BranchId" type="xs:int" />
+      <xs:element minOccurs="0" name="DepotPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Lab" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Properties" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TFSSourceControl" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Branch" nillable="true" type="tns:Branch" />
+  <xs:complexType name="ArrayOfReleaseType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReleaseType" nillable="true" type="tns:ReleaseType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReleaseType" nillable="true" type="tns:ArrayOfReleaseType" />
+  <xs:complexType name="ReleaseType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsDualBranch" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReleaseTypeId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReleaseType" nillable="true" type="tns:ReleaseType" />
+  <xs:complexType name="ArrayOfProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Product" nillable="true" type="tns:Product" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProduct" nillable="true" type="tns:ArrayOfProduct" />
+  <xs:complexType name="Product">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExternalName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductId" type="xs:int" />
+      <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Product" nillable="true" type="tns:Product" />
+</xs:schema>

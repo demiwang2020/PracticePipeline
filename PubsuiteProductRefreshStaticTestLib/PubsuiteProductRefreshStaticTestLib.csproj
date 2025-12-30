@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\..\ReleaseDetails\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\..\..\ReleaseDetails\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{233357D8-2932-4479-B471-06FC27C43A80}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PubsuiteProductRefreshStaticTestLib</RootNamespace>
+    <AssemblyName>PubsuiteProductRefreshStaticTestLib</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\ReleaseDetails\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\ReleaseDetails\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="KeyVaultManagementLib">
+      <HintPath>..\packages\NetFxServicing.KeyVaultManagementLib.1.1.2405.48\lib\net472\KeyVaultManagementLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.WorkItemTracking.Client, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\TFS-14\Microsoft.TeamFoundation.WorkItemTracking.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Test.DevDiv.SAFX.Utilities">
+      <HintPath>..\..\..\StaticAnalysis\SAFX\CommonLibraries\Utilities\bin\Debug\Microsoft.Test.DevDiv.SAFX.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="OCMAnalyzerLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\StaticAnalysis\SAFX\CommonLibraries\OCMAnalyzerLib\bin\Debug\OCMAnalyzerLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\..\ServicingAPI\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\..\ServicingAPI\packages\System.Diagnostics.DiagnosticSource.5.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\..\ServicingAPI\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\ServicingAPI\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\ServicingAPI\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArchDetector.cs" />
+    <Compile Include="CommonHelper.cs" />
+    <Compile Include="DbClassContext\DtgpatchtestContext.cs" />
+    <Compile Include="DetectoidTranslator.cs" />
+    <Compile Include="Model\SANFileLocation.cs" />
+    <Compile Include="Model\TAdditionalChildUpdate.cs" />
+    <Compile Include="Model\TApplicabilityRules.cs" />
+    <Compile Include="Model\TCsidl.cs" />
+    <Compile Include="Model\TDetectoid.cs" />
+    <Compile Include="Model\TFixedUpdate.cs" />
+    <Compile Include="Model\TLocalizedProperty.cs" />
+    <Compile Include="Model\TMSI.cs" />
+    <Compile Include="Model\TProductRefreshPrerequisitesMapping.cs" />
+    <Compile Include="Model\TReleaseType.cs" />
+    <Compile Include="Model\TTestCaseInfo.cs" />
+    <Compile Include="Testcases\TestcasePrerequistes.cs" />
+    <Compile Include="Testcases\TestcaseCategories.cs" />
+    <Compile Include="Testcases\TestcaseVerifyApplicabilityRules.cs" />
+    <Compile Include="Testcases\TestcaseVerifyBasicProperties.cs" />
+    <Compile Include="Testcases\TestcaseVerifyDuplicatedPackage.cs" />
+    <Compile Include="Testcases\TestcaseVerifyEnLocalizedPropertiesCollection.cs" />
+    <Compile Include="Testcases\TestcaseVerifyHandlerSpecificData.cs" />
+    <Compile Include="Testcases\TestcaseVerifyLocalizedPropertiesCollection.cs" />
+    <Compile Include="Testcases\TestcaseVerifyPackage.cs" />
+    <Compile Include="Testcases\TestcaseVerifyRoqData.cs" />
+    <Compile Include="Testcases\TestcaseVerifySupersedence.cs" />
+    <Compile Include="Testcases\TestcaseVerifyTitleFormat.cs" />
+    <Compile Include="Testcases\TestcaseVerifyKBArticle.cs" />
+    <Compile Include="TFSHelper.cs" />
+    <Compile Include="DbClassContext\WUSAFXDbContext.cs" />
+    <Compile Include="InputData.cs" />
+    <Compile Include="Model\TCategoriesMapping.cs" />
+    <Compile Include="Model\TCPU.cs" />
+    <Compile Include="Model\TNETSKU.cs" />
+    <Compile Include="Model\TOperatingSystem.cs" />
+    <Compile Include="Model\TPrerequisitesMapping.cs" />
+    <Compile Include="Model\TPropertyMapping.cs" />
+    <Compile Include="OSDetector.cs" />
+    <Compile Include="ReleaseTypeDetector.cs" />
+    <Compile Include="UpdateHelper\ApplicabilityRulesBuilder.cs" />
+    <Compile Include="UpdateHelper\ApplicabilityRulesBuilderCBS.cs" />
+    <Compile Include="UpdateHelper\MUACWorker.cs" />
+    <Compile Include="Testcases\TestcaseBase.cs" />
+    <Compile Include="Testcases\TestcaseFactory.cs" />
+    <Compile Include="Testcases\TestResult.cs" />
+    <Compile Include="PubsuiteProductRefreshStaticTestLib.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UpdateHelper\ApplicabilityRulesBuilderRedist.cs" />
+    <Compile Include="UpdateHelper\Update.cs" />
+    <Compile Include="UpdateHelper\UpdateBuilder.cs" />
+    <Compile Include="UpdateHelper\UpdateLocalizedProperties.cs" />
+    <Compile Include="UpdateHelper\UpdateProperty.cs" />
+    <Compile Include="UpdateHelper\UpdateRoqData.cs" />
+    <Compile Include="XmlHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\CPTools\PubUtilManager\PubUtilManager\PubUtilManager.csproj">
+      <Project>{c182fd19-23e2-4667-8656-298ab3d23b82}</Project>
+      <Name>PubUtilManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\StaticAnalysis\SAFX\CommonLibraries\MSIAnalyzerLib\MSIAnalyzerLib.csproj">
+      <Project>{8a54bdc6-1875-4aa6-9458-b6b93217cbb0}</Project>
+      <Name>MSIAnalyzerLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Connect2TFS\Connect2TFS.csproj">
+      <Project>{a7e0ffb0-f789-4ee2-83dd-d7a944368a96}</Project>
+      <Name>Connect2TFS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RMIntegration\RMIntegration.csproj">
+      <Project>{40007be4-25dd-416e-b938-cc6a90107ea9}</Project>
+      <Name>RMIntegration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ScorpionDAL\ScorpionDAL.csproj">
+      <Project>{37E30F6D-8FDF-430E-B0E6-09E2052BE89F}</Project>
+      <Name>ScorpionDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilityHelper\Helper.csproj">
+      <Project>{4b125963-7a0e-45aa-9c56-8a13a328dd91}</Project>
+      <Name>Helper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\..\ReleaseDetails\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\ReleaseDetails\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\..\..\ReleaseDetails\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\ReleaseDetails\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\..\..\ReleaseDetails\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\..\..\ReleaseDetails\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

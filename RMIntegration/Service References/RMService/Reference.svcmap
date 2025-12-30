@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="32192528-ddac-45f6-b25e-d11797572ae7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://ddse.redmond.corp.microsoft.com/ReleaseManService/ReleaseManService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ReleaseManService.disco" MetadataType="Disco" ID="d8c13f7c-284e-4a3e-8575-54830bd122f6" SourceId="1" SourceUrl="https://ddse.redmond.corp.microsoft.com/ReleaseManService/ReleaseManService.svc?disco" />
+    <MetadataFile FileName="ReleaseManService.xsd" MetadataType="Schema" ID="e7838733-6744-4122-8923-10a476caf286" SourceId="1" SourceUrl="https://ddse.redmond.corp.microsoft.com/ReleaseManService/ReleaseManService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ReleaseManService2.xsd" MetadataType="Schema" ID="e6a76caf-0114-44a8-9d0a-2eefca8bdac8" SourceId="1" SourceUrl="https://ddse.redmond.corp.microsoft.com/ReleaseManService/ReleaseManService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ReleaseManService3.xsd" MetadataType="Schema" ID="5a6862a2-79ce-4d29-82ed-1454266e3550" SourceId="1" SourceUrl="https://ddse.redmond.corp.microsoft.com/ReleaseManService/ReleaseManService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ReleaseManService.wsdl" MetadataType="Wsdl" ID="23b9f41d-407c-4a45-80fa-c7037df498e4" SourceId="1" SourceUrl="https://ddse.redmond.corp.microsoft.com/ReleaseManService/ReleaseManService.svc?wsdl" />
+    <MetadataFile FileName="ReleaseManService1.xsd" MetadataType="Schema" ID="43cc374a-bbd7-4f69-8922-3c180721c2ec" SourceId="1" SourceUrl="https://ddse.redmond.corp.microsoft.com/ReleaseManService/ReleaseManService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

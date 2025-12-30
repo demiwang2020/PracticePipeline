@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SUSDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbKBArticleForRevision">
+          <Key>
+            <PropertyRef Name="RevisionID" />
+            <PropertyRef Name="KBArticleID" />
+          </Key>
+          <Property Name="RevisionID" Type="int" Nullable="false" />
+          <Property Name="KBArticleID" Type="nvarchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbRevisionSupersedesUpdate">
+          <Key>
+            <PropertyRef Name="RevisionID" />
+            <PropertyRef Name="SupersededUpdateID" />
+          </Key>
+          <Property Name="RevisionID" Type="int" Nullable="false" />
+          <Property Name="SupersededUpdateID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbUpdateMetaData">
+          <Key>
+            <PropertyRef Name="PackageId" />
+            <PropertyRef Name="RevisionNumber" />
+          </Key>
+          <Property Name="PackageId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RevisionNumber" Type="int" Nullable="false" />
+          <Property Name="PackageTitle" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="PublisherId" Type="uniqueidentifier" />
+          <Property Name="RequiresReboot" Type="bit" />
+          <Property Name="IsBeta" Type="bit" />
+          <Property Name="IsExpired" Type="bit" />
+          <Property Name="IsDriver" Type="bit" />
+          <Property Name="IsAssigned" Type="bit" />
+          <Property Name="MarkedAsASOWS" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SUSDB.dbo.ivwApiUpdateRevision' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ivwApiUpdateRevision">
+          <Key>
+            <PropertyRef Name="UpdateID" />
+            <PropertyRef Name="RevisionNumber" />
+            <PropertyRef Name="LocalUpdateID" />
+            <PropertyRef Name="RevisionID" />
+            <PropertyRef Name="IsLatestRevision" />
+            <PropertyRef Name="IsHidden" />
+            <PropertyRef Name="UpdateType" />
+            <PropertyRef Name="IsLocallyPublished" />
+            <PropertyRef Name="IsMandatory" />
+            <PropertyRef Name="EffectiveArrivalTime" />
+          </Key>
+          <Property Name="UpdateID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RevisionNumber" Type="int" Nullable="false" />
+          <Property Name="LocalUpdateID" Type="int" Nullable="false" />
+          <Property Name="RevisionID" Type="int" Nullable="false" />
+          <Property Name="IsLatestRevision" Type="bit" Nullable="false" />
+          <Property Name="IsHidden" Type="bit" Nullable="false" />
+          <Property Name="UpdateType" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="IsLocallyPublished" Type="bit" Nullable="false" />
+          <Property Name="DefaultPropertiesLanguageID" Type="int" />
+          <Property Name="IsMandatory" Type="bit" Nullable="false" />
+          <Property Name="EffectiveArrivalTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="SUSDBModelStoreContainer">
+          <EntitySet Name="tbKBArticleForRevision" EntityType="Self.tbKBArticleForRevision" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbRevisionSupersedesUpdate" EntityType="Self.tbRevisionSupersedesUpdate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbUpdateMetaData" EntityType="Self.tbUpdateMetaData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ivwApiUpdateRevision" EntityType="Self.ivwApiUpdateRevision" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ivwApiUpdateRevision].[UpdateID] AS [UpdateID], 
+    [ivwApiUpdateRevision].[RevisionNumber] AS [RevisionNumber], 
+    [ivwApiUpdateRevision].[LocalUpdateID] AS [LocalUpdateID], 
+    [ivwApiUpdateRevision].[RevisionID] AS [RevisionID], 
+    [ivwApiUpdateRevision].[IsLatestRevision] AS [IsLatestRevision], 
+    [ivwApiUpdateRevision].[IsHidden] AS [IsHidden], 
+    [ivwApiUpdateRevision].[UpdateType] AS [UpdateType], 
+    [ivwApiUpdateRevision].[IsLocallyPublished] AS [IsLocallyPublished], 
+    [ivwApiUpdateRevision].[DefaultPropertiesLanguageID] AS [DefaultPropertiesLanguageID], 
+    [ivwApiUpdateRevision].[IsMandatory] AS [IsMandatory], 
+    [ivwApiUpdateRevision].[EffectiveArrivalTime] AS [EffectiveArrivalTime]
+    FROM [dbo].[ivwApiUpdateRevision] AS [ivwApiUpdateRevision]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SUSDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tbKBArticleForRevision">
+          <Key>
+            <PropertyRef Name="RevisionID" />
+            <PropertyRef Name="KBArticleID" />
+          </Key>
+          <Property Name="RevisionID" Type="Int32" Nullable="false" />
+          <Property Name="KBArticleID" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbRevisionSupersedesUpdate">
+          <Key>
+            <PropertyRef Name="RevisionID" />
+            <PropertyRef Name="SupersededUpdateID" />
+          </Key>
+          <Property Name="RevisionID" Type="Int32" Nullable="false" />
+          <Property Name="SupersededUpdateID" Type="Guid" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="SUSDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbKBArticleForRevisions" EntityType="Self.tbKBArticleForRevision" />
+          <EntitySet Name="tbRevisionSupersedesUpdates" EntityType="Self.tbRevisionSupersedesUpdate" />
+          <EntitySet Name="tbUpdateMetaDatas" EntityType="SUSDBModel.tbUpdateMetaData" />
+          <EntitySet Name="ivwApiUpdateRevisions" EntityType="SUSDBModel.ivwApiUpdateRevision" />
+        </EntityContainer>
+        <EntityType Name="tbUpdateMetaData">
+          <Key>
+            <PropertyRef Name="PackageId" />
+            <PropertyRef Name="RevisionNumber" />
+          </Key>
+          <Property Name="PackageId" Type="Guid" Nullable="false" />
+          <Property Name="RevisionNumber" Type="Int32" Nullable="false" />
+          <Property Name="PackageTitle" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PublisherId" Type="Guid" />
+          <Property Name="RequiresReboot" Type="Boolean" />
+          <Property Name="IsBeta" Type="Boolean" />
+          <Property Name="IsExpired" Type="Boolean" />
+          <Property Name="IsDriver" Type="Boolean" />
+          <Property Name="IsAssigned" Type="Boolean" />
+          <Property Name="MarkedAsASOWS" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="ivwApiUpdateRevision">
+          <Key>
+            <PropertyRef Name="UpdateID" />
+            <PropertyRef Name="RevisionNumber" />
+            <PropertyRef Name="LocalUpdateID" />
+            <PropertyRef Name="RevisionID" />
+            <PropertyRef Name="IsLatestRevision" />
+            <PropertyRef Name="IsHidden" />
+            <PropertyRef Name="UpdateType" />
+            <PropertyRef Name="IsLocallyPublished" />
+            <PropertyRef Name="IsMandatory" />
+            <PropertyRef Name="EffectiveArrivalTime" />
+          </Key>
+          <Property Name="UpdateID" Type="Guid" Nullable="false" />
+          <Property Name="RevisionNumber" Type="Int32" Nullable="false" />
+          <Property Name="LocalUpdateID" Type="Int32" Nullable="false" />
+          <Property Name="RevisionID" Type="Int32" Nullable="false" />
+          <Property Name="IsLatestRevision" Type="Boolean" Nullable="false" />
+          <Property Name="IsHidden" Type="Boolean" Nullable="false" />
+          <Property Name="UpdateType" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="IsLocallyPublished" Type="Boolean" Nullable="false" />
+          <Property Name="DefaultPropertiesLanguageID" Type="Int32" />
+          <Property Name="IsMandatory" Type="Boolean" Nullable="false" />
+          <Property Name="EffectiveArrivalTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SUSDBModelStoreContainer" CdmEntityContainer="SUSDBEntities">
+          <EntitySetMapping Name="tbKBArticleForRevisions">
+            <EntityTypeMapping TypeName="SUSDBModel.tbKBArticleForRevision">
+              <MappingFragment StoreEntitySet="tbKBArticleForRevision">
+                <ScalarProperty Name="RevisionID" ColumnName="RevisionID" />
+                <ScalarProperty Name="KBArticleID" ColumnName="KBArticleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbRevisionSupersedesUpdates">
+            <EntityTypeMapping TypeName="SUSDBModel.tbRevisionSupersedesUpdate">
+              <MappingFragment StoreEntitySet="tbRevisionSupersedesUpdate">
+                <ScalarProperty Name="RevisionID" ColumnName="RevisionID" />
+                <ScalarProperty Name="SupersededUpdateID" ColumnName="SupersededUpdateID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbUpdateMetaDatas">
+            <EntityTypeMapping TypeName="SUSDBModel.tbUpdateMetaData">
+              <MappingFragment StoreEntitySet="tbUpdateMetaData">
+                <ScalarProperty Name="MarkedAsASOWS" ColumnName="MarkedAsASOWS" />
+                <ScalarProperty Name="IsAssigned" ColumnName="IsAssigned" />
+                <ScalarProperty Name="IsDriver" ColumnName="IsDriver" />
+                <ScalarProperty Name="IsExpired" ColumnName="IsExpired" />
+                <ScalarProperty Name="IsBeta" ColumnName="IsBeta" />
+                <ScalarProperty Name="RequiresReboot" ColumnName="RequiresReboot" />
+                <ScalarProperty Name="PublisherId" ColumnName="PublisherId" />
+                <ScalarProperty Name="PackageTitle" ColumnName="PackageTitle" />
+                <ScalarProperty Name="RevisionNumber" ColumnName="RevisionNumber" />
+                <ScalarProperty Name="PackageId" ColumnName="PackageId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ivwApiUpdateRevisions">
+            <EntityTypeMapping TypeName="SUSDBModel.ivwApiUpdateRevision">
+              <MappingFragment StoreEntitySet="ivwApiUpdateRevision">
+                <ScalarProperty Name="EffectiveArrivalTime" ColumnName="EffectiveArrivalTime" />
+                <ScalarProperty Name="IsMandatory" ColumnName="IsMandatory" />
+                <ScalarProperty Name="DefaultPropertiesLanguageID" ColumnName="DefaultPropertiesLanguageID" />
+                <ScalarProperty Name="IsLocallyPublished" ColumnName="IsLocallyPublished" />
+                <ScalarProperty Name="UpdateType" ColumnName="UpdateType" />
+                <ScalarProperty Name="IsHidden" ColumnName="IsHidden" />
+                <ScalarProperty Name="IsLatestRevision" ColumnName="IsLatestRevision" />
+                <ScalarProperty Name="RevisionID" ColumnName="RevisionID" />
+                <ScalarProperty Name="LocalUpdateID" ColumnName="LocalUpdateID" />
+                <ScalarProperty Name="RevisionNumber" ColumnName="RevisionNumber" />
+                <ScalarProperty Name="UpdateID" ColumnName="UpdateID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

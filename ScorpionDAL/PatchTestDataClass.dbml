@@ -1,0 +1,1800 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PatchTestDatabase" Class="PatchTestDataClassDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.TCPU" Member="TCPUs">
+    <Type Name="TCPU">
+      <Column Name="CPUID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DecaturCPU" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="BriqsCPU" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="CPUFriendlyName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="TCPU_TPatchSKU" Member="TPatchSKUs" ThisKey="CPUID" OtherKey="CPUID" Type="TPatchSKU" />
+      <Association Name="TCPU_TTestMatrix" Member="TTestMatrixes" ThisKey="CPUID" OtherKey="ProductCPUID" Type="TTestMatrix" />
+      <Association Name="TCPU_TO" Member="TOs" ThisKey="CPUID" OtherKey="OSCPUID" Type="TO" />
+      <Association Name="TCPU_TMatrix" Member="TMatrixes" ThisKey="CPUID" OtherKey="CPUID" Type="TMatrix" />
+      <Association Name="TCPU_TMDOSWithPriority" Member="TMDOSWithPriorities" ThisKey="CPUID" OtherKey="CPUID" Type="TMDOSWithPriority" />
+      <Association Name="TCPU_TProductMSI" Member="TProductMSIs" ThisKey="CPUID" OtherKey="CPUID" Type="TProductMSI" />
+      <Association Name="TCPU_PIDSetupFile" Member="PIDSetupFiles" ThisKey="CPUID" OtherKey="TargetCPUID" Type="PIDSetupFile" />
+      <Association Name="TCPU_SANFileLocation" Member="SANFileLocations" ThisKey="CPUID" OtherKey="CPUID" Type="SANFileLocation" />
+      <Association Name="TCPU_TTestProdAttribute" Member="TTestProdAttributes" ThisKey="CPUID" OtherKey="CPUID" Type="TTestProdAttribute" />
+      <Association Name="TCPU_TWUPatchDetail" Member="TWUPatchDetails" ThisKey="CPUID" OtherKey="CPUID" Type="TWUPatchDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TLanguage" Member="TLanguages">
+    <Type Name="TLanguage">
+      <Column Name="LanguageID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DecaturLanguage" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="BriqsLanguage" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="LanguageFriendlyName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="TLanguage_TPatchSKU" Member="TPatchSKUs" ThisKey="LanguageID" OtherKey="LanguageID" Type="TPatchSKU" />
+      <Association Name="TLanguage_TTestMatrix" Member="TTestMatrixes" ThisKey="LanguageID" OtherKey="ProductLanguageID" Type="TTestMatrix" />
+      <Association Name="TLanguage_TO" Member="TOs" ThisKey="LanguageID" OtherKey="OSLanguageID" Type="TO" />
+      <Association Name="TLanguage_TMatrix" Member="TMatrixes" ThisKey="LanguageID" OtherKey="LanguageID" Type="TMatrix" />
+      <Association Name="TLanguage_TMDOSWithPriority" Member="TMDOSWithPriorities" ThisKey="LanguageID" OtherKey="LanguageID" Type="TMDOSWithPriority" />
+      <Association Name="TLanguage_TProductMSI" Member="TProductMSIs" ThisKey="LanguageID" OtherKey="LanguageID" Type="TProductMSI" />
+      <Association Name="TLanguage_PIDSetupFile" Member="PIDSetupFiles" ThisKey="LanguageID" OtherKey="TargetLanguageID" Type="PIDSetupFile" />
+      <Association Name="TLanguage_TTestProdAttribute" Member="TTestProdAttributes" ThisKey="LanguageID" OtherKey="LanguageID" Type="TTestProdAttribute" />
+      <Association Name="TLanguage_TWUOS" Member="TWUOS" ThisKey="LanguageID" OtherKey="OSLanguageID" Type="TWUOS" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TProductFamily" Member="TProductFamilies">
+    <Type Name="TProductFamily">
+      <Column Name="ProductFamilyID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProductFamilyCode" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductFamilyFriendlyName" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="TProductFamily_TProduct" Member="TProducts" ThisKey="ProductFamilyID" OtherKey="ProductFamilyID" Type="TProduct" />
+      <Association Name="TProductFamily_TSKU" Member="TSKUs" ThisKey="ProductFamilyID" OtherKey="ProductFamilyID" Type="TSKU" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TVariable" Member="TVariables">
+    <Type Name="TVariable">
+      <Column Name="VariableID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="VariableName" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="TVariable_TVariableProductMapping" Member="TVariableProductMappings" ThisKey="VariableID" OtherKey="VariableID" Type="TVariableProductMapping" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TVariableProductMapping" Member="TVariableProductMappings">
+    <Type Name="TVariableProductMapping">
+      <Column Name="ID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProductID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="SPLevel" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="VariableID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Association Name="TVariable_TVariableProductMapping" Member="TVariable" ThisKey="VariableID" OtherKey="VariableID" Type="TVariable" IsForeignKey="true" />
+      <Association Name="TProduct_TVariableProductMapping" Member="TProduct" ThisKey="ProductID" OtherKey="ProductID" Type="TProduct" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TProduct" Member="TProducts">
+    <Type Name="TProduct">
+      <Column Name="ProductID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProductFamilyID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="DecaturProduct" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="BriqsProduct" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductFriendlyName" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="TProduct_TVariableProductMapping" Member="TVariableProductMappings" ThisKey="ProductID" OtherKey="ProductID" Type="TVariableProductMapping" />
+      <Association Name="TProduct_TPatchSKU" Member="TPatchSKUs" ThisKey="ProductID" OtherKey="ProductID" Type="TPatchSKU" />
+      <Association Name="TProduct_TContextAttributeProductSpecificValue" Member="TContextAttributeProductSpecificValues" ThisKey="ProductID" OtherKey="ProductID" Type="TContextAttributeProductSpecificValue" />
+      <Association Name="TProduct_TSKU" Member="TSKUs" ThisKey="ProductID" OtherKey="ProductID" Type="TSKU" />
+      <Association Name="TProduct_TTestMatrix" Member="TTestMatrixes" ThisKey="ProductID" OtherKey="ProductID" Type="TTestMatrix" />
+      <Association Name="TProduct_TMatrix" Member="TMatrixes" ThisKey="ProductID" OtherKey="ProductID" Type="TMatrix" />
+      <Association Name="TProduct_TMDOSWithPriority" Member="TMDOSWithPriorities" ThisKey="ProductID" OtherKey="ProductID" Type="TMDOSWithPriority" />
+      <Association Name="TProduct_TProductMSI" Member="TProductMSIs" ThisKey="ProductID" OtherKey="ProductID" Type="TProductMSI" />
+      <Association Name="TProduct_PIDSetupFile" Member="PIDSetupFiles" ThisKey="ProductID" OtherKey="TargetProductID" Type="PIDSetupFile" />
+      <Association Name="TProduct_SANFileLocation" Member="SANFileLocations" ThisKey="ProductID" OtherKey="ProductID" Type="SANFileLocation" />
+      <Association Name="TProduct_TTestProdInfo" Member="TTestProdInfos" ThisKey="ProductID" OtherKey="ProductID" Type="TTestProdInfo" />
+      <Association Name="TProduct_TPatchVerifyRegistry" Member="TPatchVerifyRegistries" ThisKey="ProductID" OtherKey="ProductID" Type="TPatchVerifyRegistry" />
+      <Association Name="TProduct_TWUProductInstallMapping" Member="TWUProductInstallMappings" ThisKey="ProductID" OtherKey="ProductID" Type="TWUProductInstallMapping" />
+      <Association Name="TProduct_TMultiTargetProductMapping" Member="TMultiTargetProductMappings" ThisKey="ProductID" OtherKey="ProductID" Type="TMultiTargetProductMapping" />
+      <Association Name="TProductFamily_TProduct" Member="TProductFamily" ThisKey="ProductFamilyID" OtherKey="ProductFamilyID" Type="TProductFamily" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRunResult" Member="TRunResults">
+    <Type Name="TRunResult">
+      <Column Name="RunResultID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RunResult" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="TRunResult_TSAFXProjectSubmittedData" Member="TSAFXProjectSubmittedDatas" ThisKey="RunResultID" OtherKey="ResultID" Type="TSAFXProjectSubmittedData" />
+      <Association Name="TRunResult_TJob" Member="TJobs" ThisKey="RunResultID" OtherKey="ResultID" Type="TJob" />
+      <Association Name="TRunResult_TTestProdAttribute" Member="TTestProdAttributes" ThisKey="RunResultID" OtherKey="ResultID" Type="TTestProdAttribute" />
+      <Association Name="TRunResult_TRun" Member="TRuns" ThisKey="RunResultID" OtherKey="RunResultID" Type="TRun" />
+      <Association Name="TRunResult_TTestProdInfo" Member="TTestProdInfos" ThisKey="RunResultID" OtherKey="ResultID" Type="TTestProdInfo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRunStatus" Member="TRunStatus">
+    <Type Name="TRunStatus">
+      <Column Name="RunStatusID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RunStatus" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="TRunStatus_TSAFXProjectSubmittedData" Member="TSAFXProjectSubmittedDatas" ThisKey="RunStatusID" OtherKey="StatusID" Type="TSAFXProjectSubmittedData" />
+      <Association Name="TRunStatus_TJob" Member="TJobs" ThisKey="RunStatusID" OtherKey="StatusID" Type="TJob" />
+      <Association Name="TRunStatus_TTestProdAttribute" Member="TTestProdAttributes" ThisKey="RunStatusID" OtherKey="StatusID" Type="TTestProdAttribute" />
+      <Association Name="TRunStatus_TRun" Member="TRuns" ThisKey="RunStatusID" OtherKey="RunStatusID" Type="TRun" />
+      <Association Name="TRunStatus_TTestProdInfo" Member="TTestProdInfos" ThisKey="RunStatusID" OtherKey="StatusID" Type="TTestProdInfo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TPatchSKU" Member="TPatchSKUs">
+    <Type Name="TPatchSKU">
+      <Column Name="PatchSKUID" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PatchID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="ProductID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="SKUID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="LanguageID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CPUID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedBy" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="TCPU_TPatchSKU" Member="TCPU" ThisKey="CPUID" OtherKey="CPUID" Type="TCPU" IsForeignKey="true" />
+      <Association Name="TLanguage_TPatchSKU" Member="TLanguage" ThisKey="LanguageID" OtherKey="LanguageID" Type="TLanguage" IsForeignKey="true" />
+      <Association Name="TProduct_TPatchSKU" Member="TProduct" ThisKey="ProductID" OtherKey="ProductID" Type="TProduct" IsForeignKey="true" />
+      <Association Name="TSKU_TPatchSKU" Member="TSKU" ThisKey="SKUID" OtherKey="SKUID" Type="TSKU" IsForeignKey="true" />
+      <Association Name="TTestProdInfo_TPatchSKU" Member="TTestProdInfo" ThisKey="PatchID" OtherKey="TTestProdInfoID" Type="TTestProdInfo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TLog" Member="TLogs">
+    <Type Name="TLog">
+      <Column Name="LogID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LogMessage" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="LogLevel" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ErrorMessage" Type="System.String" DbType="VarChar(5000) NOT NULL" CanBeNull="false" />
+      <Column Name="LogDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PatchID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PatchKBNumber" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PatchBuildNumber" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PatchCreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PatchCreatedBy" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TOSType" Member="TOSTypes">
+    <Type Name="TOSType">
+      <Column Name="OSTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OSType" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="OSTypeDescription" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="TOSType_TO" Member="TOs" ThisKey="OSTypeID" OtherKey="OSTypeID" Type="TO" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TContextAttribute" Member="TContextAttributes">
+    <Type Name="TContextAttribute">
+      <Column Name="ContextAttributeID" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NamePart" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ValuePart" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedBy" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TContextAttribute_TTestCaseContextAttributeMapping" Member="TTestCaseContextAttributeMappings" ThisKey="ContextAttributeID" OtherKey="ContextAttributeID" Type="TTestCaseContextAttributeMapping" />
+      <Association Name="TContextAttribute_TContextAttributeProductSpecificValue" Member="TContextAttributeProductSpecificValues" ThisKey="ContextAttributeID" OtherKey="ContextAttributeID" Type="TContextAttributeProductSpecificValue" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TTestCaseContextAttributeMapping" Member="TTestCaseContextAttributeMappings">
+    <Type Name="TTestCaseContextAttributeMapping">
+      <Column Name="ID" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TestCaseID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ContextAttributeID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedBy" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TContextAttribute_TTestCaseContextAttributeMapping" Member="TContextAttribute" ThisKey="ContextAttributeID" OtherKey="ContextAttributeID" Type="TContextAttribute" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TContextAttributeProductSpecificValue" Member="TContextAttributeProductSpecificValues">
+    <Type Name="TContextAttributeProductSpecificValue">
+      <Column Name="ContextAttributeProductSpecificValueID" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ContextAttributeID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="ProductID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="AttributeValue" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedBy" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TContextAttribute_TContextAttributeProductSpecificValue" Member="TContextAttribute" ThisKey="ContextAttributeID" OtherKey="ContextAttributeID" Type="TContextAttribute" IsForeignKey="true" />
+      <Association Name="TProduct_TContextAttributeProductSpecificValue" Member="TProduct" ThisKey="ProductID" OtherKey="ProductID" Type="TProduct" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TSKU" Member="TSKUs">
+    <Type Name="TSKU">
+      <Column Name="SKUID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProductFamilyID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="DecaturSKU" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="BriqsSKU" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="SKUFriendlyName" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TSKU_TPatchSKU" Member="TPatchSKUs" ThisKey="SKUID" OtherKey="SKUID" Type="TPatchSKU" />
+      <Association Name="TSKU_TTestMatrix" Member="TTestMatrixes" ThisKey="SKUID" OtherKey="ProductSKUID" Type="TTestMatrix" />
+      <Association Name="TSKU_TMatrix" Member="TMatrixes" ThisKey="SKUID" OtherKey="SKUID" Type="TMatrix" />
+      <Association Name="TSKU_TProductMSI" Member="TProductMSIs" ThisKey="SKUID" OtherKey="SKUID" Type="TProductMSI" />
+      <Association Name="TProduct_TSKU" Member="TProduct" ThisKey="ProductID" OtherKey="ProductID" Type="TProduct" IsForeignKey="true" />
+      <Association Name="TProductFamily_TSKU" Member="TProductFamily" ThisKey="ProductFamilyID" OtherKey="ProductFamilyID" Type="TProductFamily" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TExecutionSystem" Member="TExecutionSystems">
+    <Type Name="TExecutionSystem">
+      <Column Name="ExecutionSystemID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ExecutionSystemName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ApplicationType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DatabaseName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MaddogDBID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TExecutionSystem_TTestProdInfo" Member="TTestProdInfos" ThisKey="ExecutionSystemID" OtherKey="ExecutionSystemID" Type="TTestProdInfo" />
+      <Association Name="TMaddogDB_TExecutionSystem" Member="TMaddogDB" ThisKey="MaddogDBID" OtherKey="ID" Type="TMaddogDB" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRunTemplate" Member="TRunTemplates">
+    <Type Name="TRunTemplate">
+      <Column Name="RunTemplateID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RunTemplateName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="RunID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaddogDBID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TRunTemplate_TRun" Member="TRuns" ThisKey="RunTemplateID" OtherKey="RunTemplateID" Type="TRun" />
+      <Association Name="TMaddogDB_TRunTemplate" Member="TMaddogDB" ThisKey="MaddogDBID" OtherKey="ID" Type="TMaddogDB" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TTestCaseQuery" Member="TTestCaseQueries">
+    <Type Name="TTestCaseQuery">
+      <Column Name="TestCaseQueryID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TestCaseQueryName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="QueryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaddogDBID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TTestCaseQuery_TRun" Member="TRuns" ThisKey="TestCaseQueryID" OtherKey="TestCaseQueryID" Type="TRun" />
+      <Association Name="TMaddogDB_TTestCaseQuery" Member="TMaddogDB" ThisKey="MaddogDBID" OtherKey="ID" Type="TMaddogDB" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TTestMatrix" Member="TTestMatrixes">
+    <Type Name="TTestMatrix">
+      <Column Name="TestMatrixID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MDOSID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OSImageID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="ProductSKUID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="ProductCPUID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="ProductLanguageID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="ProductSPLevel" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TestCaseID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TestCaseSpecificData" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="TestMatrixPriority" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="KBNumber" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TestMatrixName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedBy" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ApplicationType" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MaddogDBID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TTestMatrix_TPatchTestMatrixMapping" Member="TPatchTestMatrixMappings" ThisKey="TestMatrixID" OtherKey="TestMatrixID" Type="TPatchTestMatrixMapping" />
+      <Association Name="TCPU_TTestMatrix" Member="TCPU" ThisKey="ProductCPUID" OtherKey="CPUID" Type="TCPU" IsForeignKey="true" />
+      <Association Name="TLanguage_TTestMatrix" Member="TLanguage" ThisKey="ProductLanguageID" OtherKey="LanguageID" Type="TLanguage" IsForeignKey="true" />
+      <Association Name="TProduct_TTestMatrix" Member="TProduct" ThisKey="ProductID" OtherKey="ProductID" Type="TProduct" IsForeignKey="true" />
+      <Association Name="TSKU_TTestMatrix" Member="TSKU" ThisKey="ProductSKUID" OtherKey="SKUID" Type="TSKU" IsForeignKey="true" />
+      <Association Name="TO_TTestMatrix" Member="TO" ThisKey="MDOSID" OtherKey="MDOSID" Type="TO" IsForeignKey="true" />
+      <Association Name="TOSImage_TTestMatrix" Member="TOSImage" ThisKey="OSImageID" OtherKey="OSImageID" Type="TOSImage" IsForeignKey="true" />
+      <Association Name="TTestCaseWithPriority_TTestMatrix" Member="TTestCaseWithPriority" ThisKey="TestCaseID" OtherKey="TestCaseID" Type="TTestCaseWithPriority" IsForeignKey="true" />
+      <Association Name="TMaddogDB_TTestMatrix" Member="TMaddogDB" ThisKey="MaddogDBID" OtherKey="ID" Type="TMaddogDB" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TMachineQuery" Member="TMachineQueries">
+    <Type Name="TMachineQuery">
+      <Column Name="MachineQueryID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MachineQueryName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="QueryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PatchType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MaddogDBID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TMachineQuery_TRun" Member="TRuns" ThisKey="MachineQueryID" OtherKey="MachineQueryID" Type="TRun" />
+      <Association Name="TMaddogDB_TMachineQuery" Member="TMaddogDB" ThisKey="MaddogDBID" OtherKey="ID" Type="TMaddogDB" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TTPNData" Member="TTPNDatas">
+    <Type Name="TTPNData">
+      <Column Name="TPNDataID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ApplicationType" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TPNDataName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TPNDataDescription" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TPNDataValue" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MaddogDBID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TMaddogDB_TTPNData" Member="TMaddogDB" ThisKey="MaddogDBID" OtherKey="ID" Type="TMaddogDB" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TOS" Member="TOs">
+    <Type Name="TO">
+      <Column Name="MDOSID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OSName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="OSVersion" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="OSDetails" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="OSCPUID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="OSLanguageID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="OSTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedBy" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MaddogDBID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TO_TTestMatrix" Member="TTestMatrixes" ThisKey="MDOSID" OtherKey="MDOSID" Type="TTestMatrix" />
+      <Association Name="TO_TOSImage" Member="TOSImages" ThisKey="MDOSID" OtherKey="MDOSID" Type="TOSImage" />
+      <Association Name="TO_TMatrix" Member="TMatrixes" ThisKey="MDOSID" OtherKey="MDOSID" Type="TMatrix" />
+      <Association Name="TCPU_TO" Member="TCPU" ThisKey="OSCPUID" OtherKey="CPUID" Type="TCPU" IsForeignKey="true" />
+      <Association Name="TLanguage_TO" Member="TLanguage" ThisKey="OSLanguageID" OtherKey="LanguageID" Type="TLanguage" IsForeignKey="true" />
+      <Association Name="TOSType_TO" Member="TOSType" ThisKey="OSTypeID" OtherKey="OSTypeID" Type="TOSType" IsForeignKey="true" />
+      <Association Name="TMaddogDB_TO" Member="TMaddogDB" ThisKey="MaddogDBID" OtherKey="ID" Type="TMaddogDB" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TOSImage" Member="TOSImages">
+    <Type Name="TOSImage">
+      <Column Name="OSImageID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MDOSID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OSSPLevel" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="OSImage" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedBy" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MaddogDBID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaddogOSImageID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaddogOSImageName" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="LabName" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Association Name="TOSImage_TTestMatrix" Member="TTestMatrixes" ThisKey="OSImageID" OtherKey="OSImageID" Type="TTestMatrix" />
+      <Association Name="TOSImage_TMatrix" Member="TMatrixes" ThisKey="OSImageID" OtherKey="OSImageID" Type="TMatrix" />
+      <Association Name="TOSImage_TMDOSWithPriority" Member="TMDOSWithPriorities" ThisKey="OSImageID" OtherKey="OSImageID" Type="TMDOSWithPriority" />
+      <Association Name="TOSImage_TWUPatchTargetOS" Member="TWUPatchTargetOSes" ThisKey="OSImageID" OtherKey="OSImageID" Type="TWUPatchTargetOS" />
+      <Association Name="TOSImage_TWUOS" Member="TWUOS" ThisKey="OSImageID" OtherKey="OSImageID" Type="TWUOS" />
+      <Association Name="TO_TOSImage" Member="TO" ThisKey="MDOSID" OtherKey="MDOSID" Type="TO" IsForeignKey="true" />
+      <Association Name="TMaddogDB_TOSImage" Member="TMaddogDB" ThisKey="MaddogDBID" OtherKey="ID" Type="TMaddogDB" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TPatchTestMatrixMapping" Member="TPatchTestMatrixMappings">
+    <Type Name="TPatchTestMatrixMapping">
+      <Column Name="PatchID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TestMatrixID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TestMatrixName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="TTestMatrix_TPatchTestMatrixMapping" Member="TTestMatrix" ThisKey="TestMatrixID" OtherKey="TestMatrixID" Type="TTestMatrix" IsForeignKey="true" />
+      <Association Name="TTestProdInfo_TPatchTestMatrixMapping" Member="TTestProdInfo" ThisKey="PatchID" OtherKey="TTestProdInfoID" Type="TTestProdInfo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TWorkSpaceLocation" Member="TWorkSpaceLocations">
+    <Type Name="TWorkSpaceLocation">
+      <Column Name="WorkSpaceLocationID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="WorkSpaceName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="WorkSpaceLocation" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="MaddogDBID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TWorkSpaceLocation_TRun" Member="TRuns" ThisKey="WorkSpaceLocationID" OtherKey="WorkSpaceLocationID" Type="TRun" />
+      <Association Name="TMaddogDB_TWorkSpaceLocation" Member="TMaddogDB" ThisKey="MaddogDBID" OtherKey="ID" Type="TMaddogDB" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TMatrix" Member="TMatrixes">
+    <Type Name="TMatrix">
+      <Column Name="MatrixID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MDOSID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OSSPLevel" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="SKUID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="LanguageID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CPUID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="ProductSPLevel" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TestCaseID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OSDetails" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TestCaseCode" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TestCaseName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PUID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MaddogDBID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OSImageID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MatrixIDOld" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TMatrix_TPatchMatrixMapping" Member="TPatchMatrixMappings" ThisKey="MatrixID" OtherKey="MatrixID" Type="TPatchMatrixMapping" />
+      <Association Name="TCPU_TMatrix" Member="TCPU" ThisKey="CPUID" OtherKey="CPUID" Type="TCPU" IsForeignKey="true" />
+      <Association Name="TLanguage_TMatrix" Member="TLanguage" ThisKey="LanguageID" OtherKey="LanguageID" Type="TLanguage" IsForeignKey="true" />
+      <Association Name="TO_TMatrix" Member="TO" ThisKey="MDOSID" OtherKey="MDOSID" Type="TO" IsForeignKey="true" />
+      <Association Name="TOSImage_TMatrix" Member="TOSImage" ThisKey="OSImageID" OtherKey="OSImageID" Type="TOSImage" IsForeignKey="true" />
+      <Association Name="TProduct_TMatrix" Member="TProduct" ThisKey="ProductID" OtherKey="ProductID" Type="TProduct" IsForeignKey="true" />
+      <Association Name="TSKU_TMatrix" Member="TSKU" ThisKey="SKUID" OtherKey="SKUID" Type="TSKU" IsForeignKey="true" />
+      <Association Name="TTestCaseWithPriority_TMatrix" Member="TTestCaseWithPriority" ThisKey="TestCaseID" OtherKey="TestCaseID" Type="TTestCaseWithPriority" IsForeignKey="true" />
+      <Association Name="TMaddogDB_TMatrix" Member="TMaddogDB" ThisKey="MaddogDBID" OtherKey="ID" Type="TMaddogDB" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TPatchMatrixMapping" Member="TPatchMatrixMappings">
+    <Type Name="TPatchMatrixMapping">
+      <Column Name="PatchID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MatrixID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="TMatrix_TPatchMatrixMapping" Member="TMatrix" ThisKey="MatrixID" OtherKey="MatrixID" Type="TMatrix" IsForeignKey="true" />
+      <Association Name="TTestProdInfo_TPatchMatrixMapping" Member="TTestProdInfo" ThisKey="PatchID" OtherKey="TTestProdInfoID" Type="TTestProdInfo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TMaddogOSImage" Member="TMaddogOSImages">
+    <Type Name="TMaddogOSImage">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OSImageID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OSImageName" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="IsAvailable" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="OSID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OSName" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="OSLanguageLocale" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="PlatformSpecific" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="LabName" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="OSVersion" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="OSDetails" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="OSCPUID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="OSLanguageID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="OSTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OSSPLevel" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="OSImage" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OsImageTypeIDs" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TMDOSWithPriority" Member="TMDOSWithPriorities">
+    <Type Name="TMDOSWithPriority">
+      <Column Name="MDOSID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OSDetails" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="OSSPLevel" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProductID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LanguageID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CPUID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Priority" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PatchType" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OSImageID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TCPU_TMDOSWithPriority" Member="TCPU" ThisKey="CPUID" OtherKey="CPUID" Type="TCPU" IsForeignKey="true" />
+      <Association Name="TLanguage_TMDOSWithPriority" Member="TLanguage" ThisKey="LanguageID" OtherKey="LanguageID" Type="TLanguage" IsForeignKey="true" />
+      <Association Name="TOSImage_TMDOSWithPriority" Member="TOSImage" ThisKey="OSImageID" OtherKey="OSImageID" Type="TOSImage" IsForeignKey="true" />
+      <Association Name="TProduct_TMDOSWithPriority" Member="TProduct" ThisKey="ProductID" OtherKey="ProductID" Type="TProduct" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TSAFXProject" Member="TSAFXProjects">
+    <Type Name="TSAFXProject">
+      <Column Name="SAFXProjectID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SAFXProjectName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="SAFXProjectDescription" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedBy" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TSAFXProject_TSAFXProjectInputData" Member="TSAFXProjectInputDatas" ThisKey="SAFXProjectID" OtherKey="SAFXProjectID" Type="TSAFXProjectInputData" />
+      <Association Name="TSAFXProject_TSAFXProjectSubmittedData" Member="TSAFXProjectSubmittedDatas" ThisKey="SAFXProjectID" OtherKey="SAFXProjectID" Type="TSAFXProjectSubmittedData" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TTestCaseWithPriority" Member="TTestCaseWithPriorities">
+    <Type Name="TTestCaseWithPriority">
+      <Column Name="TestCaseID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TestCaseCode" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Priority" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="PatchType" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TestCaseName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="MaxRun" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TestCaseSpecificDataFormat" Type="System.String" DbType="VarChar(4000)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedBy" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MaddogDBID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TestCaseDescription" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Association Name="TTestCaseWithPriority_TTestMatrix" Member="TTestMatrixes" ThisKey="TestCaseID" OtherKey="TestCaseID" Type="TTestMatrix" />
+      <Association Name="TTestCaseWithPriority_TMatrix" Member="TMatrixes" ThisKey="TestCaseID" OtherKey="TestCaseID" Type="TMatrix" />
+      <Association Name="TMaddogDB_TTestCaseWithPriority" Member="TMaddogDB" ThisKey="MaddogDBID" OtherKey="ID" Type="TMaddogDB" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TSAFXProjectInputData" Member="TSAFXProjectInputDatas">
+    <Type Name="TSAFXProjectInputData">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SAFXProjectID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FieldName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="FieldValue" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="FieldDescription" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
+      <Column Name="FieldType" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="VariableType" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayToFrontEnd" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ReadOnly" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedBy" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FieldDisplayName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Sequence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ToolTip" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Association Name="TSAFXProjectInputData_TSAFXProjectSubmittedData" Member="TSAFXProjectSubmittedDatas" ThisKey="ID" OtherKey="SAFXProjectInputDataID" Type="TSAFXProjectSubmittedData" />
+      <Association Name="TSAFXProject_TSAFXProjectInputData" Member="TSAFXProject" ThisKey="SAFXProjectID" OtherKey="SAFXProjectID" Type="TSAFXProject" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TProductMSI" Member="TProductMSIs">
+    <Type Name="TProductMSI">
+      <Column Name="ProductMSIID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CPUID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="SKUID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="LanguageID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="IsLangpack" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="BuildVersion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MSIProductCode" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="MSIName" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="MSIPath" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedBy" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TProductMSI_PIDSetupFileExtractTargetProduct" Member="PIDSetupFileExtractTargetProducts" ThisKey="ProductMSIID" OtherKey="ProductMSIID" Type="PIDSetupFileExtractTargetProduct" />
+      <Association Name="TCPU_TProductMSI" Member="TCPU" ThisKey="CPUID" OtherKey="CPUID" Type="TCPU" IsForeignKey="true" />
+      <Association Name="TLanguage_TProductMSI" Member="TLanguage" ThisKey="LanguageID" OtherKey="LanguageID" Type="TLanguage" IsForeignKey="true" />
+      <Association Name="TProduct_TProductMSI" Member="TProduct" ThisKey="ProductID" OtherKey="ProductID" Type="TProduct" IsForeignKey="true" />
+      <Association Name="TSKU_TProductMSI" Member="TSKU" ThisKey="SKUID" OtherKey="SKUID" Type="TSKU" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PIDSetupFile" Member="PIDSetupFiles">
+    <Type Name="PIDSetupFile">
+      <Column Name="SetupFileID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SetupID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="FullPathOriginal" Type="System.String" DbType="VarChar(5000) NOT NULL" CanBeNull="false" />
+      <Column Name="FullPathCopied" Type="System.String" DbType="VarChar(5000) NOT NULL" CanBeNull="false" />
+      <Column Name="TargetProductID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="TargetProductSPLevel" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TargetLanguageID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="TargetCPUID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedBy" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="PIDSetupFile_PIDSetupFileExtractTask" Member="PIDSetupFileExtractTasks" ThisKey="SetupFileID" OtherKey="SetupFileID" Type="PIDSetupFileExtractTask" />
+      <Association Name="PIDSetupFile_PIDSetupFileExtract" Member="PIDSetupFileExtracts" ThisKey="SetupFileID" OtherKey="SetupFileID" Type="PIDSetupFileExtract" />
+      <Association Name="PIDSetupFile_PIDSetupFileExtractPayload" Member="PIDSetupFileExtractPayloads" ThisKey="SetupFileID" OtherKey="SetupFileID" Type="PIDSetupFileExtractPayload" />
+      <Association Name="PIDSetupFile_PIDSetupFileExtractProperty" Member="PIDSetupFileExtractProperties" ThisKey="SetupFileID" OtherKey="SetupFileID" Type="PIDSetupFileExtractProperty" />
+      <Association Name="PIDSetupFile_PIDSetupFileExtractTargetProduct" Member="PIDSetupFileExtractTargetProducts" ThisKey="SetupFileID" OtherKey="SetupFileID" Type="PIDSetupFileExtractTargetProduct" />
+      <Association Name="PIDSetupFile_PIDSetupFileExtractMSIPatchSequence" Member="PIDSetupFileExtractMSIPatchSequences" ThisKey="SetupFileID" OtherKey="SetupFileID" Type="PIDSetupFileExtractMSIPatchSequence" />
+      <Association Name="TCPU_PIDSetupFile" Member="TCPU" ThisKey="TargetCPUID" OtherKey="CPUID" Type="TCPU" IsForeignKey="true" />
+      <Association Name="TLanguage_PIDSetupFile" Member="TLanguage" ThisKey="TargetLanguageID" OtherKey="LanguageID" Type="TLanguage" IsForeignKey="true" />
+      <Association Name="TProduct_PIDSetupFile" Member="TProduct" ThisKey="TargetProductID" OtherKey="ProductID" Type="TProduct" IsForeignKey="true" />
+      <Association Name="PIDSetup_PIDSetupFile" Member="PIDSetup" ThisKey="SetupID" OtherKey="SetupID" Type="PIDSetup" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PIDSetupFileExtractTask" Member="PIDSetupFileExtractTasks">
+    <Type Name="PIDSetupFileExtractTask">
+      <Column Name="SetupFileExtractTaskID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SetupFileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SetupFileExtractID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="StartTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EndTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Heartbeat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Association Name="PIDSetupFile_PIDSetupFileExtractTask" Member="PIDSetupFile" ThisKey="SetupFileID" OtherKey="SetupFileID" Type="PIDSetupFile" IsForeignKey="true" />
+      <Association Name="PIDSetupFileExtract_PIDSetupFileExtractTask" Member="PIDSetupFileExtract" ThisKey="SetupFileExtractID" OtherKey="SetupFileExtractID" Type="PIDSetupFileExtract" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PIDSetupFileExtract" Member="PIDSetupFileExtracts">
+    <Type Name="PIDSetupFileExtract">
+      <Column Name="SetupFileExtractID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SetupFileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="ParentSetupFileExtractID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IsDirectory" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="FileExtension" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="FullExtractedFilePath" Type="System.String" DbType="VarChar(5000) NOT NULL" CanBeNull="false" />
+      <Column Name="IsBaseliner" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="PIDSetupFileExtract_PIDSetupFileExtractTask" Member="PIDSetupFileExtractTasks" ThisKey="SetupFileExtractID" OtherKey="SetupFileExtractID" Type="PIDSetupFileExtractTask" />
+      <Association Name="PIDSetupFileExtract_PIDSetupFileExtract" Member="PIDSetupFileExtracts" ThisKey="SetupFileExtractID" OtherKey="ParentSetupFileExtractID" Type="PIDSetupFileExtract" />
+      <Association Name="PIDSetupFileExtract_PIDSetupFileExtractPayload" Member="PIDSetupFileExtractPayloads" ThisKey="SetupFileExtractID" OtherKey="SetupFileExtractID" Type="PIDSetupFileExtractPayload" />
+      <Association Name="PIDSetupFileExtract_PIDSetupFileExtractProperty" Member="PIDSetupFileExtractProperties" ThisKey="SetupFileExtractID" OtherKey="SetupFileExtractID" Type="PIDSetupFileExtractProperty" />
+      <Association Name="PIDSetupFileExtract_PIDSetupFileExtractTargetProduct" Member="PIDSetupFileExtractTargetProducts" ThisKey="SetupFileExtractID" OtherKey="SetupFileExtractID" Type="PIDSetupFileExtractTargetProduct" />
+      <Association Name="PIDSetupFileExtract_PIDSetupFileExtractMSIPatchSequence" Member="PIDSetupFileExtractMSIPatchSequences" ThisKey="SetupFileExtractID" OtherKey="SetupFileExtractID" Type="PIDSetupFileExtractMSIPatchSequence" />
+      <Association Name="PIDSetupFile_PIDSetupFileExtract" Member="PIDSetupFile" ThisKey="SetupFileID" OtherKey="SetupFileID" Type="PIDSetupFile" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="PIDSetupFileExtract_PIDSetupFileExtract" Member="PIDSetupFileExtract1" ThisKey="ParentSetupFileExtractID" OtherKey="SetupFileExtractID" Type="PIDSetupFileExtract" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PIDSetupFileExtractPayload" Member="PIDSetupFileExtractPayloads">
+    <Type Name="PIDSetupFileExtractPayload">
+      <Column Name="SetupFileExtractPayloadID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SetupFileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SetupFileExtractID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="MSPCABName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MSPFileName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="FileName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="OriginalFileName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="FileVersion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Language" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FileSize" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FileArchitecture" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PathToExtracted" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
+      <Column Name="IsBaseliner" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="PIDSetupFile_PIDSetupFileExtractPayload" Member="PIDSetupFile" ThisKey="SetupFileID" OtherKey="SetupFileID" Type="PIDSetupFile" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="PIDSetupFileExtract_PIDSetupFileExtractPayload" Member="PIDSetupFileExtract" ThisKey="SetupFileExtractID" OtherKey="SetupFileExtractID" Type="PIDSetupFileExtract" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PIDSetupFileExtractProperty" Member="PIDSetupFileExtractProperties">
+    <Type Name="PIDSetupFileExtractProperty">
+      <Column Name="SetupFileExtractPropertyID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SetupFileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SetupFileExtractID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="MSPTitle" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="MSPSubject" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="MSPAuthor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MSPKeywords" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="MSPComments" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="MSPTargetProduct" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="MSPPatchCode" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="MSPCreateDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MSPLastSavedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MSPWordCount" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MSPCreatingApplication" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="MSPSecurity" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MSPCodePage" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MSPClassification" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="MSPAllowRemoval" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MSPDisplayName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="MSPDescription" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="MSPCreationTimeUTC" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MSPManufacturerName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MSPMoreInfoURL" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="MSPBranch" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MSPBaseline" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CABApplicabilityInfo" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="CABAppliesTo" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="CABBuildDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CABCompany" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CABFileVersion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CABInstallationType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CABInstallerEngine" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="CABInstallerVersion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CABKBArticleNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CABLanguage" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CABPackageType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CABProcessorArchitecture" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CABProductName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CABSupportLink" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IsBaseliner" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="PIDSetupFile_PIDSetupFileExtractProperty" Member="PIDSetupFile" ThisKey="SetupFileID" OtherKey="SetupFileID" Type="PIDSetupFile" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="PIDSetupFileExtract_PIDSetupFileExtractProperty" Member="PIDSetupFileExtract" ThisKey="SetupFileExtractID" OtherKey="SetupFileExtractID" Type="PIDSetupFileExtract" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PIDSetupFileExtractTargetProduct" Member="PIDSetupFileExtractTargetProducts">
+    <Type Name="PIDSetupFileExtractTargetProduct">
+      <Column Name="SetupFileExtractTargetProductID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SetupFileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SetupFileExtractID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TargetProductCode" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ApplicableOS" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="ProductMSIID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsBaseliner" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="PIDSetupFile_PIDSetupFileExtractTargetProduct" Member="PIDSetupFile" ThisKey="SetupFileID" OtherKey="SetupFileID" Type="PIDSetupFile" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="PIDSetupFileExtract_PIDSetupFileExtractTargetProduct" Member="PIDSetupFileExtract" ThisKey="SetupFileExtractID" OtherKey="SetupFileExtractID" Type="PIDSetupFileExtract" IsForeignKey="true" />
+      <Association Name="TProductMSI_PIDSetupFileExtractTargetProduct" Member="TProductMSI" ThisKey="ProductMSIID" OtherKey="ProductMSIID" Type="TProductMSI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PIDSetupFileExtractMSIPatchSequence" Member="PIDSetupFileExtractMSIPatchSequences">
+    <Type Name="PIDSetupFileExtractMSIPatchSequence">
+      <Column Name="SetupFileExtractMSIPatchSequenceID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SetupFileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SetupFileExtractID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="PatchFamily" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductCode" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Sequence" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Attributes" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsBaseliner" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="PIDSetupFile_PIDSetupFileExtractMSIPatchSequence" Member="PIDSetupFile" ThisKey="SetupFileID" OtherKey="SetupFileID" Type="PIDSetupFile" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="PIDSetupFileExtract_PIDSetupFileExtractMSIPatchSequence" Member="PIDSetupFileExtract" ThisKey="SetupFileExtractID" OtherKey="SetupFileExtractID" Type="PIDSetupFileExtract" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PIDSetup" Member="PIDSetups">
+    <Type Name="PIDSetup">
+      <Column Name="SetupID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TFSID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsPatch" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="KBNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TFSTitle" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="TFSProductName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TFSSKU" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TFSProductLevel" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TFSProductLanguage" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TFSPatchTechnology" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TFSProductUnit" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TFSSecurityUpdateCaseID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TFSBulletinNumber" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TFSCompany" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TFSOSInstalled" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TFSOSSPLevel" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TFSOSArchitecture" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedBy" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TFSReleaseType" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="TFSState" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TFSAreaPath" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="TFSPriority" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TFSOSLanguage" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="TFSBuildNumber" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="TFSBuildNumberRedbits" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Result" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LogFileLocation" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ExceptionMessage" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="SymbolVerifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="PIDSetup_PIDSetupFile" Member="PIDSetupFiles" ThisKey="SetupID" OtherKey="SetupID" Type="PIDSetupFile" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SANFileLocation" Member="SANFileLocations">
+    <Type Name="SANFileLocation">
+      <Column Name="FileLocationID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="ProductSPLevel" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CPUID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="FileName" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="FileLocation" Type="System.String" DbType="VarChar(2000) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="TCPU_SANFileLocation" Member="TCPU" ThisKey="CPUID" OtherKey="CPUID" Type="TCPU" IsForeignKey="true" />
+      <Association Name="TProduct_SANFileLocation" Member="TProduct" ThisKey="ProductID" OtherKey="ProductID" Type="TProduct" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TSAFXProjectSubmittedData" Member="TSAFXProjectSubmittedDatas">
+    <Type Name="TSAFXProjectSubmittedData">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SAFXProjectID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SAFXProjectInputDataID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FieldValue" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedBy" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SubmissionUniqueIdentifier" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="JobID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="RunID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="StatusID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ResultID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PercentCompleted" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TSAFXProject_TSAFXProjectSubmittedData" Member="TSAFXProject" ThisKey="SAFXProjectID" OtherKey="SAFXProjectID" Type="TSAFXProject" IsForeignKey="true" />
+      <Association Name="TSAFXProjectInputData_TSAFXProjectSubmittedData" Member="TSAFXProjectInputData" ThisKey="SAFXProjectInputDataID" OtherKey="ID" Type="TSAFXProjectInputData" IsForeignKey="true" />
+      <Association Name="TRunResult_TSAFXProjectSubmittedData" Member="TRunResult" ThisKey="ResultID" OtherKey="RunResultID" Type="TRunResult" IsForeignKey="true" />
+      <Association Name="TRunStatus_TSAFXProjectSubmittedData" Member="TRunStatus" ThisKey="StatusID" OtherKey="RunStatusID" Type="TRunStatus" IsForeignKey="true" />
+      <Association Name="TJob_TSAFXProjectSubmittedData" Member="TJob" ThisKey="JobID" OtherKey="JobID" Type="TJob" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TJob" Member="TJobs">
+    <Type Name="TJob">
+      <Column Name="JobID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="JobDescription" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
+      <Column Name="PID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="RequestID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="StatusID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="ResultID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="PercentCompleted" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedBy" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SAFXMailSentDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RuntimeMailSentDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TJob_TSAFXProjectSubmittedData" Member="TSAFXProjectSubmittedDatas" ThisKey="JobID" OtherKey="JobID" Type="TSAFXProjectSubmittedData" />
+      <Association Name="TJob_TTestProdInfo" Member="TTestProdInfos" ThisKey="JobID" OtherKey="JobID" Type="TTestProdInfo" />
+      <Association Name="TRunResult_TJob" Member="TRunResult" ThisKey="ResultID" OtherKey="RunResultID" Type="TRunResult" IsForeignKey="true" />
+      <Association Name="TRunStatus_TJob" Member="TRunStatus" ThisKey="StatusID" OtherKey="RunStatusID" Type="TRunStatus" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TTestProdAttributes" Member="TTestProdAttributes">
+    <Type Name="TTestProdAttribute">
+      <Column Name="TestProdAttributesID" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TTestProdInfoID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="TestProdLocation" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="TestProdName" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="VerificationScript" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="CPUID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="LanguageID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedBy" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="StatusID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ResultID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PercentCompleted" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TTestProdAttribute_TRun" Member="TRuns" ThisKey="TestProdAttributesID" OtherKey="TTestProdAttributesID" Type="TRun" />
+      <Association Name="TRunResult_TTestProdAttribute" Member="TRunResult" ThisKey="ResultID" OtherKey="RunResultID" Type="TRunResult" IsForeignKey="true" />
+      <Association Name="TRunStatus_TTestProdAttribute" Member="TRunStatus" ThisKey="StatusID" OtherKey="RunStatusID" Type="TRunStatus" IsForeignKey="true" />
+      <Association Name="TCPU_TTestProdAttribute" Member="TCPU" ThisKey="CPUID" OtherKey="CPUID" Type="TCPU" IsForeignKey="true" />
+      <Association Name="TLanguage_TTestProdAttribute" Member="TLanguage" ThisKey="LanguageID" OtherKey="LanguageID" Type="TLanguage" IsForeignKey="true" />
+      <Association Name="TTestProdInfo_TTestProdAttribute" Member="TTestProdInfo" ThisKey="TTestProdInfoID" OtherKey="TTestProdInfoID" Type="TTestProdInfo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRun" Member="TRuns">
+    <Type Name="TRun">
+      <Column Name="RowID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TTestProdAttributesID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="RunTemplateID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TestCaseQueryID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MachineQueryID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="WorkSpaceLocationID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MDRunID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ContextFilePath" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="ContextBlockName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="RunStatusID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="RunResultID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedBy" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TestCaseCode" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="FileLockName" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="ProductRepairFileName" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="LastNotificationMailSent" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="JobID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TMachineQuery_TRun" Member="TMachineQuery" ThisKey="MachineQueryID" OtherKey="MachineQueryID" Type="TMachineQuery" IsForeignKey="true" />
+      <Association Name="TTestProdAttribute_TRun" Member="TTestProdAttribute" ThisKey="TTestProdAttributesID" OtherKey="TestProdAttributesID" Type="TTestProdAttribute" IsForeignKey="true" />
+      <Association Name="TRunResult_TRun" Member="TRunResult" ThisKey="RunResultID" OtherKey="RunResultID" Type="TRunResult" IsForeignKey="true" />
+      <Association Name="TRunStatus_TRun" Member="TRunStatus" ThisKey="RunStatusID" OtherKey="RunStatusID" Type="TRunStatus" IsForeignKey="true" />
+      <Association Name="TRunTemplate_TRun" Member="TRunTemplate" ThisKey="RunTemplateID" OtherKey="RunTemplateID" Type="TRunTemplate" IsForeignKey="true" />
+      <Association Name="TTestCaseQuery_TRun" Member="TTestCaseQuery" ThisKey="TestCaseQueryID" OtherKey="TestCaseQueryID" Type="TTestCaseQuery" IsForeignKey="true" />
+      <Association Name="TWorkSpaceLocation_TRun" Member="TWorkSpaceLocation" ThisKey="WorkSpaceLocationID" OtherKey="WorkSpaceLocationID" Type="TWorkSpaceLocation" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TTestProdInfo" Member="TTestProdInfos">
+    <Type Name="TTestProdInfo">
+      <Column Name="TTestProdInfoID" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TestIdentifier" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="BuildNumber" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ProdVerificationScript" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="DDSFilePath" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="SKUFilePath" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="TargetProductName" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="BaselineID" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ProdSPLevel" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ExecutionSystemID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedBy" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PU" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ApplicationType" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="WorkItem" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PUID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MSPDDSFilePath" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="TargetArchitecture" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TargetLanguage" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="ExtraRunTokens" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
+      <Column Name="ExtraContextInfo" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
+      <Column Name="JobID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="StatusID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ResultID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PercentCompleted" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TestTypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TestRunTypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MDDBandBranchID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TestTitle" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Association Name="TTestProdInfo_TPatchSKU" Member="TPatchSKUs" ThisKey="TTestProdInfoID" OtherKey="PatchID" Type="TPatchSKU" />
+      <Association Name="TTestProdInfo_TPatchTestMatrixMapping" Member="TPatchTestMatrixMappings" ThisKey="TTestProdInfoID" OtherKey="PatchID" Type="TPatchTestMatrixMapping" />
+      <Association Name="TTestProdInfo_TPatchMatrixMapping" Member="TPatchMatrixMappings" ThisKey="TTestProdInfoID" OtherKey="PatchID" Type="TPatchMatrixMapping" />
+      <Association Name="TTestProdInfo_TTestProdAttribute" Member="TTestProdAttributes" ThisKey="TTestProdInfoID" OtherKey="TTestProdInfoID" Type="TTestProdAttribute" />
+      <Association Name="TJob_TTestProdInfo" Member="TJob" ThisKey="JobID" OtherKey="JobID" Type="TJob" IsForeignKey="true" />
+      <Association Name="TRunResult_TTestProdInfo" Member="TRunResult" ThisKey="ResultID" OtherKey="RunResultID" Type="TRunResult" IsForeignKey="true" />
+      <Association Name="TRunStatus_TTestProdInfo" Member="TRunStatus" ThisKey="StatusID" OtherKey="RunStatusID" Type="TRunStatus" IsForeignKey="true" />
+      <Association Name="TExecutionSystem_TTestProdInfo" Member="TExecutionSystem" ThisKey="ExecutionSystemID" OtherKey="ExecutionSystemID" Type="TExecutionSystem" IsForeignKey="true" />
+      <Association Name="TProduct_TTestProdInfo" Member="TProduct" ThisKey="ProductID" OtherKey="ProductID" Type="TProduct" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MDDBandBranchDetails" Member="MDDBandBranchDetails">
+    <Type Name="MDDBandBranchDetail">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BranchName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TMaddogDBID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedBy" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TMaddogDB_MDDBandBranchDetail" Member="TMaddogDB" ThisKey="TMaddogDBID" OtherKey="ID" Type="TMaddogDB" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TestRunType" Member="TestRunTypes">
+    <Type Name="TestRunType">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedBy" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TestRunType_ProductRunTemplate" Member="ProductRunTemplates" ThisKey="id" OtherKey="TestRunTypeID" Type="ProductRunTemplate" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TestType" Member="TestTypes">
+    <Type Name="TestType">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedBy" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TestType_ProductRunTemplate" Member="ProductRunTemplates" ThisKey="id" OtherKey="TestTypeID" Type="ProductRunTemplate" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProductRunTemplate" Member="ProductRunTemplates">
+    <Type Name="ProductRunTemplate">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TestTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TestRunTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaddogDBID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RunTemplateID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedBy" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TestRunType_ProductRunTemplate" Member="TestRunType" ThisKey="TestRunTypeID" OtherKey="id" Type="TestRunType" IsForeignKey="true" />
+      <Association Name="TestType_ProductRunTemplate" Member="TestType" ThisKey="TestTypeID" OtherKey="id" Type="TestType" IsForeignKey="true" />
+      <Association Name="TMaddogDB_ProductRunTemplate" Member="TMaddogDB" ThisKey="MaddogDBID" OtherKey="ID" Type="TMaddogDB" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TMaddogDB" Member="TMaddogDBs">
+    <Type Name="TMaddogDB">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaddogSystemName" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="MaddogDBName" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="TMaddogDB_TExecutionSystem" Member="TExecutionSystems" ThisKey="ID" OtherKey="MaddogDBID" Type="TExecutionSystem" />
+      <Association Name="TMaddogDB_TRunTemplate" Member="TRunTemplates" ThisKey="ID" OtherKey="MaddogDBID" Type="TRunTemplate" />
+      <Association Name="TMaddogDB_TTestCaseQuery" Member="TTestCaseQueries" ThisKey="ID" OtherKey="MaddogDBID" Type="TTestCaseQuery" />
+      <Association Name="TMaddogDB_TTestMatrix" Member="TTestMatrixes" ThisKey="ID" OtherKey="MaddogDBID" Type="TTestMatrix" />
+      <Association Name="TMaddogDB_TMachineQuery" Member="TMachineQueries" ThisKey="ID" OtherKey="MaddogDBID" Type="TMachineQuery" />
+      <Association Name="TMaddogDB_TTPNData" Member="TTPNDatas" ThisKey="ID" OtherKey="MaddogDBID" Type="TTPNData" />
+      <Association Name="TMaddogDB_TO" Member="TOs" ThisKey="ID" OtherKey="MaddogDBID" Type="TO" />
+      <Association Name="TMaddogDB_TOSImage" Member="TOSImages" ThisKey="ID" OtherKey="MaddogDBID" Type="TOSImage" />
+      <Association Name="TMaddogDB_TWorkSpaceLocation" Member="TWorkSpaceLocations" ThisKey="ID" OtherKey="MaddogDBID" Type="TWorkSpaceLocation" />
+      <Association Name="TMaddogDB_TMatrix" Member="TMatrixes" ThisKey="ID" OtherKey="MaddogDBID" Type="TMatrix" />
+      <Association Name="TMaddogDB_TTestCaseWithPriority" Member="TTestCaseWithPriorities" ThisKey="ID" OtherKey="MaddogDBID" Type="TTestCaseWithPriority" />
+      <Association Name="TMaddogDB_MDDBandBranchDetail" Member="MDDBandBranchDetails" ThisKey="ID" OtherKey="TMaddogDBID" Type="MDDBandBranchDetail" />
+      <Association Name="TMaddogDB_ProductRunTemplate" Member="ProductRunTemplates" ThisKey="ID" OtherKey="MaddogDBID" Type="ProductRunTemplate" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TMDQueryMapping" Member="TMDQueryMappings">
+    <Type Name="TMDQueryMapping">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MatrixTestcaseID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QueryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Technology" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TestcaseDesc" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TProductConfigMapping" Member="TProductConfigMappings">
+    <Type Name="TProductConfigMapping">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductSKU" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Architecture" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductFile" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TargetProduct" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TNetFxSetupPatchInfo" Member="TNetFxSetupPatchInfos">
+    <Type Name="TNetFxSetupPatchInfo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="KBNumber" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="PatchTechnology" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="PatchLocation" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="TargetProduct" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ProductPackage" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CPUID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TestMatrixName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedBy" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TPatchVerifyRegistry" Member="TPatchVerifyRegistries">
+    <Type Name="TPatchVerifyRegistry">
+      <Column Name="ProductID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="ProductSPLevel" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Arch" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="RegistryKey" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="SpecificTrigger" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="TProduct_TPatchVerifyRegistry" Member="TProduct" ThisKey="ProductID" OtherKey="ProductID" Type="TProduct" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TWUProductInstallMapping" Member="TWUProductInstallMappings">
+    <Type Name="TWUProductInstallMapping">
+      <Column Name="ProductID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="MDPackageID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BatchPath" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="ProductName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="TProduct_TWUProductInstallMapping" Member="TProduct" ThisKey="ProductID" OtherKey="ProductID" Type="TProduct" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TWUPatchTargetOS" Member="TWUPatchTargetOSes">
+    <Type Name="TWUPatchTargetOS">
+      <Column Name="PatchID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OSImageID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="TOSImage_TWUPatchTargetOS" Member="TOSImage" ThisKey="OSImageID" OtherKey="OSImageID" Type="TOSImage" IsForeignKey="true" />
+      <Association Name="TWUPatchDetail_TWUPatchTargetOS" Member="TWUPatchDetail" ThisKey="PatchID" OtherKey="ID" Type="TWUPatchDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TWUJob" Member="TWUJobs">
+    <Type Name="TWUJob">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="JobDescription" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="StatusID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ResultID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PercentCompleted" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MailSendDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastNotificationMailSent" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="TWUJob_TWURun" Member="TWURuns" ThisKey="ID" OtherKey="JobID" Type="TWURun" />
+      <Association Name="TWUJob_TWUPatchDetail" Member="TWUPatchDetails" ThisKey="ID" OtherKey="JobID" Type="TWUPatchDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TSmokeMatrixFilter" Member="TSmokeMatrixFilters">
+    <Type Name="TSmokeMatrixFilter">
+      <Column Name="ID" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TestMatrixID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PatchTechnology" Type="System.String" DbType="NChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="TargetOSes" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="TargetProduct" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TWUOS" Member="TWUOS">
+    <Type Name="TWUOS">
+      <Column Name="OSImageID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OSCPUID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="OSLanguageID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="OSVersion" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="OSSPLevel" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="OSName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="OSDetails" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="OSWeight" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Association Name="TWUOS_TWURun" Member="TWURuns" ThisKey="OSImageID" OtherKey="OSImageID" Type="TWURun" />
+      <Association Name="TLanguage_TWUOS" Member="TLanguage" ThisKey="OSLanguageID" OtherKey="LanguageID" Type="TLanguage" IsForeignKey="true" />
+      <Association Name="TOSImage_TWUOS" Member="TOSImage" ThisKey="OSImageID" OtherKey="OSImageID" Type="TOSImage" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TPackageLPMapping" Member="TPackageLPMappings">
+    <Type Name="TPackageLPMapping">
+      <Column Name="Product" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MileStone" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LPType" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Languages" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TFinishedProductBuild" Member="TFinishedProductBuilds">
+    <Type Name="TFinishedProductBuild">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Product" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MileStone" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Build" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="WorkFlow" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TPackagePathFormat" Member="TPackagePathFormats">
+    <Type Name="TPackagePathFormat">
+      <Column Name="Product" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MileStone" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="WorkFlow" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PathFomat" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TProductAvailableBuild" Member="TProductAvailableBuilds">
+    <Type Name="TProductAvailableBuild">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Product" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MileStone" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Build" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="WorkFlow" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FullPath" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="IsContainLP" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsLPAvailable" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsKickedOff" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TInsertionJob" Member="TInsertionJobs">
+    <Type Name="TInsertionJob">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CustomTokes" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreateBy" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="TInsertionJob_TInsertionMDRun" Member="TInsertionMDRuns" ThisKey="ID" OtherKey="JobID" Type="TInsertionMDRun" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TInsertionMDRun" Member="TInsertionMDRuns">
+    <Type Name="TInsertionMDRun">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="JobID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaddogID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RunTitle" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Owner" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="TInsertionJob_TInsertionMDRun" Member="TInsertionJob" ThisKey="JobID" OtherKey="ID" Type="TInsertionJob" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TNetFxSetupProductInfo" Member="TNetFxSetupProductInfos">
+    <Type Name="TNetFxSetupProductInfo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CurrentProduct" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CurrentProduct_File" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="PreviousProduct" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PreviousProduct_File" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Package" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RefreshRedistReleaseTypes" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="PayloadType" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Matrix_Names" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedBy" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BuildNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TNetFxSetupRunStatus" Member="TNetFxSetupRunStatus">
+    <Type Name="TNetFxSetupRunStatus">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MDRunID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RunTitle" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedBy" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastNotificationMailSent" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="JobID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="RunStatusID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="RunResultID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SubmissionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubmissionType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OS" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Architecture" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.THFRSmokeConfiguration" Member="THFRSmokeConfigurations">
+    <Type Name="THFRSmokeConfiguration">
+      <Column Name="ID" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SKU" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Hint" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TVSProductPath" Member="TVSProductPaths">
+    <Type Name="TVSProductPath">
+      <Column Name="VSProd" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="VSProductPath" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TMultiTargetProduct" Member="TMultiTargetProducts">
+    <Type Name="TMultiTargetProduct">
+      <Column Name="ID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TargetProduct" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PatchTechnology" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Architecture" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="OS" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OSNameForWU" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CPUID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="ActiveForSmokeTest" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ActiveForWUTest" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="TMultiTargetProduct_TMultiTargetProductMapping" Member="TMultiTargetProductMappings" ThisKey="ID" OtherKey="MultiTargetProductID" Type="TMultiTargetProductMapping" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TMultiTargetProductMapping" Member="TMultiTargetProductMappings">
+    <Type Name="TMultiTargetProductMapping">
+      <Column Name="MultiTargetProductID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="ProductID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Association Name="TMultiTargetProduct_TMultiTargetProductMapping" Member="TMultiTargetProduct" ThisKey="MultiTargetProductID" OtherKey="ID" Type="TMultiTargetProduct" IsForeignKey="true" />
+      <Association Name="TProduct_TMultiTargetProductMapping" Member="TProduct" ThisKey="ProductID" OtherKey="ProductID" Type="TProduct" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TTHTestException" Member="TTHTestExceptions">
+    <Type Name="TTHTestException">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TFSID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ExceptionMsg" Type="System.String" DbType="NVarChar(1024) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TTHTestRuntimeParameter" Member="TTHTestRuntimeParameters">
+    <Type Name="TTHTestRuntimeParameter">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="THTestID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ParameterPath" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Association Name="TTHTestRuntimeParameter_TTHTestRunInfo" Member="TTHTestRunInfos" ThisKey="ID" OtherKey="ParameterID" Type="TTHTestRunInfo" />
+      <Association Name="TTHTestRecord_TTHTestRuntimeParameter" Member="TTHTestRecord" ThisKey="THTestID" OtherKey="ID" Type="TTHTestRecord" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TWUPatchTargetTestcase" Member="TWUPatchTargetTestcases">
+    <Type Name="TWUPatchTargetTestcase">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PatchID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TestCaseID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsChecked" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TWUSubPatchDetail_TWUPatchTargetTestcase" Member="TWUSubPatchDetail" ThisKey="PatchID" OtherKey="ID" Type="TWUSubPatchDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TWURun" Member="TWURuns">
+    <Type Name="TWURun">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MDRunID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="JobID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PatchDetailID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="OSImageID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ParameterFilePath" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="ActualProductID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TestCaseID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RunStatusID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RunResultID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TWUJob_TWURun" Member="TWUJob" ThisKey="JobID" OtherKey="ID" Type="TWUJob" IsForeignKey="true" />
+      <Association Name="TWUOS_TWURun" Member="TWUOS" ThisKey="OSImageID" OtherKey="OSImageID" Type="TWUOS" IsForeignKey="true" />
+      <Association Name="TWUSubPatchDetail_TWURun" Member="TWUSubPatchDetail" ThisKey="PatchDetailID" OtherKey="ID" Type="TWUSubPatchDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TWUSubPatchDetail" Member="TWUSubPatchDetails">
+    <Type Name="TWUSubPatchDetail">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="KB" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductLayer" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ParameterFileRootPath" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="MultipleSKU" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="TFSID" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="TWUSubPatchDetail_TWUPatchTargetTestcase" Member="TWUPatchTargetTestcases" ThisKey="ID" OtherKey="PatchID" Type="TWUPatchTargetTestcase" />
+      <Association Name="TWUSubPatchDetail_TWURun" Member="TWURuns" ThisKey="ID" OtherKey="PatchDetailID" Type="TWURun" />
+      <Association Name="TWUSubPatchDetail_TWUPatchTargetAdditionalScenario" Member="TWUPatchTargetAdditionalScenarios" ThisKey="ID" OtherKey="PatchID" Type="TWUPatchTargetAdditionalScenario" />
+      <Association Name="TWUPatchDetail_TWUSubPatchDetail" Member="TWUPatchDetail" ThisKey="ParentID" OtherKey="ID" Type="TWUPatchDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TWUPatchDetail" Member="TWUPatchDetails">
+    <Type Name="TWUPatchDetail">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="JobID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="KB" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ProductLayer" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="GUID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SSKBs" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="CPUID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="ParameterFileRootPath" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="OtherProperties" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="TWUPatchDetail_TWUPatchTargetOS" Member="TWUPatchTargetOS" ThisKey="ID" OtherKey="PatchID" Type="TWUPatchTargetOS" />
+      <Association Name="TWUPatchDetail_TWUSubPatchDetail" Member="TWUSubPatchDetails" ThisKey="ID" OtherKey="ParentID" Type="TWUSubPatchDetail" />
+      <Association Name="TCPU_TWUPatchDetail" Member="TCPU" ThisKey="CPUID" OtherKey="CPUID" Type="TCPU" IsForeignKey="true" />
+      <Association Name="TWUJob_TWUPatchDetail" Member="TWUJob" ThisKey="JobID" OtherKey="ID" Type="TWUJob" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TWUAdditionalCase" Member="TWUAdditionalCases">
+    <Type Name="TWUAdditionalCase">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CaseID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TWUAdditionalTestFilter" Member="TWUAdditionalTestFilters">
+    <Type Name="TWUAdditionalTestFilter">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductLayers" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TargetOSes" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="TWUAdditionalTestFilter_TWUAdditionalTestMatrix" Member="TWUAdditionalTestMatrixes" ThisKey="ID" OtherKey="FilterID" Type="TWUAdditionalTestMatrix" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TWUAdditonalTestScenario" Member="TWUAdditonalTestScenarios">
+    <Type Name="TWUAdditonalTestScenario">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="OSImageID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MDCaseID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SpecificProductID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="SpecificOSImageID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SpecificParameterData" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="TWUAdditonalTestScenario_TWUAdditionalTestMatrix" Member="TWUAdditionalTestMatrixes" ThisKey="ID" OtherKey="ScenarioID" Type="TWUAdditionalTestMatrix" />
+      <Association Name="TWUAdditonalTestScenario_TWUPatchTargetAdditionalScenario" Member="TWUPatchTargetAdditionalScenarios" ThisKey="ID" OtherKey="ScenarioID" Type="TWUPatchTargetAdditionalScenario" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TWUAdditionalTestMatrix" Member="TWUAdditionalTestMatrixes">
+    <Type Name="TWUAdditionalTestMatrix">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FilterID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ScenarioID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="TWUAdditionalTestFilter_TWUAdditionalTestMatrix" Member="TWUAdditionalTestFilter" ThisKey="FilterID" OtherKey="ID" Type="TWUAdditionalTestFilter" IsForeignKey="true" />
+      <Association Name="TWUAdditonalTestScenario_TWUAdditionalTestMatrix" Member="TWUAdditonalTestScenario" ThisKey="ScenarioID" OtherKey="ID" Type="TWUAdditonalTestScenario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TWUPatchTargetAdditionalScenario" Member="TWUPatchTargetAdditionalScenarios">
+    <Type Name="TWUPatchTargetAdditionalScenario">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PatchID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ScenarioID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsChecked" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="TWUAdditonalTestScenario_TWUPatchTargetAdditionalScenario" Member="TWUAdditonalTestScenario" ThisKey="ScenarioID" OtherKey="ID" Type="TWUAdditonalTestScenario" IsForeignKey="true" />
+      <Association Name="TWUSubPatchDetail_TWUPatchTargetAdditionalScenario" Member="TWUSubPatchDetail" ThisKey="PatchID" OtherKey="ID" Type="TWUSubPatchDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TPUMachineSubmit" Member="TPUMachineSubmit">
+    <Type Name="TPUMachineSubmit">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Creator" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CreateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TPUMachineRunInfo" Member="TPUMachineRunInfo">
+    <Type Name="TPUMachineRunInfo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SubmitID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RunID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Enable35" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Product" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="KB" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="TFSID" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="SPLevel" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Arch" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MachineCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TTHTestConfig" Member="TTHTestConfigs">
+    <Type Name="TTHTestConfig">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OSName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SPLevel" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SKUName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PECompareSource" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="SKUID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Baseline" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TTHTestRunInfo" Member="TTHTestRunInfos">
+    <Type Name="TTHTestRunInfo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MDRunID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="THTestID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ParameterID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="OSImageID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TestCaseID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RunStatusID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RunResultID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="AutoAnalysis" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="ManualAnalysis" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="TTHTestRuntimeParameter_TTHTestRunInfo" Member="TTHTestRuntimeParameter" ThisKey="ParameterID" OtherKey="ID" Type="TTHTestRuntimeParameter" IsForeignKey="true" />
+      <Association Name="TTHTestRecord_TTHTestRunInfo" Member="TTHTestRecord" ThisKey="THTestID" OtherKey="ID" Type="TTHTestRecord" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TTHTestResultAnalysis" Member="TTHTestResultAnalysis">
+    <Type Name="TTHTestResultAnalysis">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Author" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(1024) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TAlias2Name" Member="TAlias2Name">
+    <Type Name="TAlias2Name">
+      <Column Name="Alias" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TTHTestMatrix" Member="TTHTestMatrixes">
+    <Type Name="TTHTestMatrix">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OSName" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="SPLevel" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="TargetProduct" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="MatrixName" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TTHTestRecord" Member="TTHTestRecords">
+    <Type Name="TTHTestRecord">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TFSID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="X64PatchLocation" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="TestStartDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="RuntimeStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="StaticTestLog" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RuntimeTestLog" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AnalyzedResult" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AnalysisComments" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TFSTitle" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="TTHTestRecord_TTHTestRuntimeParameter" Member="TTHTestRuntimeParameters" ThisKey="ID" OtherKey="THTestID" Type="TTHTestRuntimeParameter" />
+      <Association Name="TTHTestRecord_TTHTestRunInfo" Member="TTHTestRunInfos" ThisKey="ID" OtherKey="THTestID" Type="TTHTestRunInfo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TDotNetUpdate" Member="TDotNetUpdates">
+    <Type Name="TDotNetUpdate">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UpdateID" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Destination" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CBSBaseline" Member="CBSBaseline">
+    <Type Name="CBSBaseline">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SKU" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="OS" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Language" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ProcessorArchitecture" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PublicKeyToken" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TTHTestRuntimeInherit" Member="TTHTestRuntimeInherits">
+    <Type Name="TTHTestRuntimeInherit">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TFSID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PreviousTestID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Processed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TNWUStaticTestCase" Member="TNWUStaticTestCases">
+    <Type Name="TNWUStaticTestCase">
+      <Column Name="CaseID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CaseName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TNWURunInfo" Member="TNWURunInfos">
+    <Type Name="TNWURunInfo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UpdateRecordID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="ParameterFilePath" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="TestCaseID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OSImageID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RunStatusID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RunResultID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TNWUTestRecord" Member="TNWUTestRecords">
+    <Type Name="TNWUTestRecord">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TFSID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CPID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="TestStartTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="RuntimeStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TNWUUpdateRecord" Member="TNWUUpdateRecords">
+    <Type Name="TNWUUpdateRecord">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="WUTestID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BundleGUID" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="FriendlyName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CatalogOnly" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SupersededKB" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Properties" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="HasRuntimeTest" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="RuntimeStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StaticTestResult" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="RuntimeTestResult" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AnalyzedResult" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AnalysisComments" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TNWUPatchInfo" Member="TNWUPatchInfos">
+    <Type Name="TNWUPatchInfo">
+      <Column Name="UpdateRecordID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TFSID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TNWUTfsOSMapping" Member="TNWUTfsOSMappings">
+    <Type Name="TNWUTfsOSMapping">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TFSOS" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TFSSP" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FriendlyName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="WUOS" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TNWUStaticTestLog" Member="TNWUStaticTestLogs">
+    <Type Name="TNWUStaticTestLog">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UpdateID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CaseName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Result" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Target" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FailureCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ExpectValue" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="ActualValue" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TTHTestLog" Member="TTHTestLogs">
+    <Type Name="TTHTestLog">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LogResult" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="HasWarning" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsStaticTest" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="TimeStamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LogFilePath" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TNWURuntimeMatrix" Member="TNWURuntimeMatrixes">
+    <Type Name="TNWURuntimeMatrix">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OSInTitle" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TFSProductID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TestProductID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CPUArchitecture" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WUOSID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MDQueryMappingID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TVSMatrix" Member="TVSMatrixes">
+    <Type Name="TVSMatrix">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VS_Version" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Scenario" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="OS" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Arch" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Expect" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TNETCoreMU_MSI" Member="TNETCoreMU_MSIs">
+    <Type Name="TNETCoreMU_MSI">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BundleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Arch" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MSIName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Installer" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
+      <Column Name="ProductCode" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TNETCoreMU_Matrix" Member="TNETCoreMU_Matrixes">
+    <Type Name="TNETCoreMU_Matrix">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="WUOSID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OSArch" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsServer" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CaseQueryMappingID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Prerequistes" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Validation" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="ReleaseFilter" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TargetBundle" Type="System.String" DbType="NVarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="CaseSpecificData" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TNetCoreCaseInfo" Member="TNetCoreCaseInfo">
+    <Type Name="TNetCoreCaseInfo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(1024) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(1024) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TNetCoreStaticResultDetail" Member="TNetCoreStaticResultDetail">
+    <Type Name="TNetCoreStaticResultDetail">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ResultTitle" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ExpectResult" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="ActualResult" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CaseName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TestID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TNETCoreMU_Bundle" Member="TNETCoreMU_Bundle">
+    <Type Name="TNETCoreMU_Bundle">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Release" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ShortName" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="InstallerNameX86" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="InstallerNameX64" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="InstallerNameARM64" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="InstallerPath" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="BundleCodeX86" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BundleCodeX64" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BundleCodeARM64" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TNETCoreUpdate" Member="TNETCoreUpdate">
+    <Type Name="TNETCoreUpdate">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UpdateID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ReleaseDate" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TNetCoreStaticTest" Member="TNetCoreStaticTest">
+    <Type Name="TNetCoreStaticTest">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CaseID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Result" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Analyst" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="AnalyzeDate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TNetCoreRuntimeTest" Member="TNetCoreRuntimeTest">
+    <Type Name="TNetCoreRuntimeTest">
+      <Column Name="RunID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UpdateID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="CaseName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Result" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Analyst" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TPubsuiteStaticTest" Member="TPubsuiteStaticTest">
+    <Type Name="TPubsuiteStaticTest">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="CaseID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateGUID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Result" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Analyst" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="AnalyzeDate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="UpdateID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TPubsuiteStaticResultDetail" Member="TPubsuiteStaticResultDetail">
+    <Type Name="TPubsuiteStaticResultDetail">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ResultTitle" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ExpectResult" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="ActualResult" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CaseName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TestID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TPubsuiteTestCaseInfo" Member="TPubsuiteTestCaseInfo">
+    <Type Name="TPubsuiteTestCaseInfo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(1024) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(1024) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.THWinseHotfix" Member="THWinseHotfixes">
+    <Type Name="THWinseHotfix">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OSName" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="SPLevel" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="TargetProduct" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Win81WSDTest" Member="Win81WSDTests">
+    <Type Name="Win81WSDTest">
+      <Column Name="Release" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PackageType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="KB" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ComponentVersion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="JobID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ReleaseType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SKU" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Arch" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TPubsuiteProductRefreshStaticTest" Member="TPubsuiteProductRefreshStaticTests">
+    <Type Name="TPubsuiteProductRefreshStaticTest">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="CaseID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateGUID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Result" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Analyst" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="AnalyzeDate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="UpdateID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TPubsuiteProductRefreshStaticResultDetail" Member="TPubsuiteProductRefreshStaticResultDetails">
+    <Type Name="TPubsuiteProductRefreshStaticResultDetail">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ResultTitle" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ExpectResult" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="ActualResult" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CaseName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TestID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TPubsuiteProductRefreshTestCaseInfo" Member="TPubsuiteProductRefreshTestCaseInfos">
+    <Type Name="TPubsuiteProductRefreshTestCaseInfo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(1024) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(1024) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TPubsuiteProductRefreshUpdate" Member="TPubsuiteProductRefreshUpdates">
+    <Type Name="TPubsuiteProductRefreshUpdate">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FileName" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TPubsuiteUpdate" Member="TPubsuiteUpdates">
+    <Type Name="TPubsuiteUpdate">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FileName" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RunState" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TSmokeRuntimeUpgrade" Member="TSmokeRuntimeUpgrades">
+    <Type Name="TSmokeRuntimeUpgrade">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[OS Installed]" Member="OS_Installed" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="[OS SP Installed]" Member="OS_SP_Installed" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SKU" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="[Lastest SKU]" Member="Lastest_SKU" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FXBVTBlockedRun" Member="FXBVTBlockedRuns">
+    <Type Name="FXBVTBlockedRun">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RunID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HBMachineID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BlockReason" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FXBVTFailedCase" Member="FXBVTFailedCases">
+    <Type Name="FXBVTFailedCase">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RunID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TestCaseID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TestCaseName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="IsMailSent" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ContextID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ContextName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ResetCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FXBVTSchedule" Member="FXBVTSchedules">
+    <Type Name="FXBVTSchedule">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ScheduleID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Release" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TeamID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TestTeam" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="StartTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsSummaryMailSent" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="FXBVTTeam_FXBVTSchedule" Member="FXBVTTeam" ThisKey="TeamID" OtherKey="ID" Type="FXBVTTeam" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FXBVTTeam" Member="FXBVTTeams">
+    <Type Name="FXBVTTeam">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TeamName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Templates" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="ReleaseType" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TestTeam" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="FXBVTTeam_FXBVTSchedule" Member="FXBVTSchedules" ThisKey="ID" OtherKey="TeamID" Type="FXBVTSchedule" />
+    </Type>
+  </Table>
+</Database>

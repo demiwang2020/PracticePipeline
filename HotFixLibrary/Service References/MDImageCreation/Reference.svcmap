@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2c65dd88-b2e0-4c41-b5bd-660e7560afad" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://dtgpatchtest/MaddogImageCreation/MDImageCreation.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MDImageCreation.xsd" MetadataType="Schema" ID="d7f9244a-2789-4b9c-b91f-d917b54d683a" SourceId="1" SourceUrl="http://dtgpatchtest/MaddogImageCreation/MDImageCreation.svc?xsd=xsd1" />
+    <MetadataFile FileName="MDImageCreation.disco" MetadataType="Disco" ID="6801ab00-97f5-450b-a142-e93af365bbef" SourceId="1" SourceUrl="http://dtgpatchtest/MaddogImageCreation/MDImageCreation.svc?disco" />
+    <MetadataFile FileName="MDImageCreation1.xsd" MetadataType="Schema" ID="01d2eb4d-c8b5-43a3-9a54-0f4122304c2d" SourceId="1" SourceUrl="http://dtgpatchtest/MaddogImageCreation/MDImageCreation.svc?xsd=xsd0" />
+    <MetadataFile FileName="MDImageCreation.wsdl" MetadataType="Wsdl" ID="972d92d0-9eb8-4dc5-80c0-6e87bde01950" SourceId="1" SourceUrl="http://dtgpatchtest/MaddogImageCreation/MDImageCreation.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
