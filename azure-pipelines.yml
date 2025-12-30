@@ -14,14 +14,13 @@ pool:
 steps:
 - checkout: self
 
-# 1️⃣ 用 msbuild 构建指定 csproj（.NET Framework）
 - script: |
-    msbuild KickoffTHTestLib/KickoffTHTestLib.csproj ^
+    "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Current\Bin\MSBuild.exe" ^
+      KickoffTHTestLib/KickoffTHTestLib.csproj ^
       /p:Configuration=Release ^
       /p:Platform=AnyCPU
   displayName: Build KickoffTHTestLib
 
-# 2️⃣ 运行 Release 下生成的 exe
 - script: |
     .\KickoffTHTestLib\bin\Release\KickoffTHTestLib.exe
   displayName: Run KickoffTHTestLib
