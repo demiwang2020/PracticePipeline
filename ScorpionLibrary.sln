@@ -61,6 +61,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FxbvtMonitor", "..\FxbvtMon
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{C1A49CC6-6988-49F6-80F5-FFC35B654DFF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KickoffTHTestLib", "KickoffTHTestLib\KickoffTHTestLib.csproj", "{7752878A-1425-4C6B-BDAE-220CE185D1EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -381,6 +383,18 @@ Global
 		{C1A49CC6-6988-49F6-80F5-FFC35B654DFF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{C1A49CC6-6988-49F6-80F5-FFC35B654DFF}.Release|x86.ActiveCfg = Release|Any CPU
 		{C1A49CC6-6988-49F6-80F5-FFC35B654DFF}.Release|x86.Build.0 = Release|Any CPU
+		{7752878A-1425-4C6B-BDAE-220CE185D1EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7752878A-1425-4C6B-BDAE-220CE185D1EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7752878A-1425-4C6B-BDAE-220CE185D1EE}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7752878A-1425-4C6B-BDAE-220CE185D1EE}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7752878A-1425-4C6B-BDAE-220CE185D1EE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7752878A-1425-4C6B-BDAE-220CE185D1EE}.Debug|x86.Build.0 = Debug|Any CPU
+		{7752878A-1425-4C6B-BDAE-220CE185D1EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7752878A-1425-4C6B-BDAE-220CE185D1EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7752878A-1425-4C6B-BDAE-220CE185D1EE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{7752878A-1425-4C6B-BDAE-220CE185D1EE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{7752878A-1425-4C6B-BDAE-220CE185D1EE}.Release|x86.ActiveCfg = Release|Any CPU
+		{7752878A-1425-4C6B-BDAE-220CE185D1EE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
