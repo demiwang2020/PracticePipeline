@@ -1,0 +1,6 @@
+name: Hello YAML
+trigger:
+  - main
+
+steps:
+  - script: echo "Hello GitHub YAML"
