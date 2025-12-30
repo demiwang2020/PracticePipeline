@@ -1,6 +1,26 @@
-name: Hello YAML
-trigger:
-  - main
+trigger: none
+
+schedules:
+- cron: "*/2 * * * *"   # 每 10 分钟
+  displayName: Run every 10 minutes
+  branches:
+    include:
+    - main
+  always: true
+
+pool:
+  vmImage: 'windows-latest'
 
 steps:
-  - script: echo "Hello GitHub YAML"
+- checkout: self
+
+- task: VSBuild@1
+  inputs:
+    solution: '**/*.sln'
+    msbuildArgs: '/p:Configuration=Release'
+    platform: 'Any CPU'
+    configuration: 'Release'
+
+- script: |
+    .\KickoffTHTestLib\bin\Release\KickoffTHTestLib.exe
+  displayName: Run Scorpion Runner
